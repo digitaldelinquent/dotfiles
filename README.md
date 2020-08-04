@@ -1,0 +1,3 @@
+# archrice
+
+setup for arch
