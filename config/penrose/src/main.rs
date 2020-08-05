@@ -1,18 +1,15 @@
 #[macro_use]
 extern crate penrose;
 
-use penrose::core::helpers::spawn_for_output;
 use penrose::core::{Layout, WindowManager, XcbConnection};
 use penrose::layout::{bottom_stack, side_stack, LayoutConf};
 use penrose::{Backward, Config, Forward, Less, More};
 
-use penrose::contrib::actions::create_or_switch_to_workspace;
 use penrose::contrib::extensions::Scratchpad;
-use penrose::contrib::hooks::{DefaultWorkspace, LayoutSymbolAsRootName, RemoveEmptyWorkspaces};
+use penrose::contrib::hooks::{LayoutSymbolAsRootName, RemoveEmptyWorkspaces};
 use penrose::contrib::layouts::paper;
 
 use simplelog::{LevelFilter, SimpleLogger};
-use std::env;
 
 fn my_layouts() -> Vec<Layout> {
     let n_main = 1;
