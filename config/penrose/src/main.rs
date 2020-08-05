@@ -16,7 +16,7 @@ use std::env;
 
 fn my_layouts() -> Vec<Layout> {
     let n_main = 1;
-    let ratio = 0.6;
+    let ratio = 0.4;
     let follow_focus_conf = LayoutConf {
         floating: false,
         gapless: true,
@@ -33,16 +33,11 @@ fn my_layouts() -> Vec<Layout> {
 fn main() {
     SimpleLogger::init(LevelFilter::Debug, simplelog::Config::default()).unwrap();
     let mut config = Config::default();
-    config.workspaces = vec!["main"];
+    config.workspaces = vec!["1", "2", "3", "4"];
     config.layouts = my_layouts();
     config.hooks = vec![
         LayoutSymbolAsRootName::new(),
         RemoveEmptyWorkspaces::new(config.workspaces.clone()),
-        DefaultWorkspace::new("1term", "[side]", vec!["st"]),
-        DefaultWorkspace::new("2term", "[botm]", vec!["st", "st"]),
-        DefaultWorkspace::new("3term", "[side]", vec!["st", "st", "st"]),
-        DefaultWorkspace::new("web", "[papr]", vec!["firefox"]),
-        DefaultWorkspace::new("files", "[botm]", vec!["thunar"]),
     ];
 
     let sp = Scratchpad::new("st", 0.8, 0.8);
@@ -61,16 +56,6 @@ fn main() {
         "M-S-q" => run_internal!(kill_client),
         "M-slash" => sp.toggle(),
 
-        // workspace management
-        "M-w" => create_or_switch_to_workspace(
-            || {
-                let output = spawn_for_output(
-                    format!("{}/bin/ws_spawn.sh", env::var("HOME").unwrap())
-                );
-                output.trim_end().to_string()
-            },
-            my_layouts()
-        ),
         "M-Tab" => run_internal!(toggle_workspace),
         "M-bracketright" => run_internal!(cycle_screen, Forward),
         "M-bracketleft" => run_internal!(cycle_screen, Backward),
