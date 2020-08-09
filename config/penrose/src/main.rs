@@ -2,6 +2,7 @@
 extern crate penrose;
 
 use penrose::core::{Layout, WindowManager, XcbConnection};
+use penrose::helpers::spawn;
 use penrose::layout::{bottom_stack, side_stack, LayoutConf};
 use penrose::{Backward, Config, Forward, More};
 
@@ -13,7 +14,7 @@ use simplelog::{LevelFilter, SimpleLogger};
 
 fn my_layouts() -> Vec<Layout> {
     let n_main = 1;
-    let ratio = 0.4;
+    let ratio = 0.5;
     let follow_focus_conf = LayoutConf {
         floating: false,
         gapless: true,
@@ -31,8 +32,8 @@ fn main() {
     SimpleLogger::init(LevelFilter::Debug, simplelog::Config::default()).unwrap();
     let mut config = Config::default();
     config.workspaces = vec!["1", "2", "3", "4"];
-    config.gap_px = 10;
-    config.border_px = 5;
+    config.bar_height = 0;
+    config.border_px = 1;
     config.layouts = my_layouts();
     config.hooks = vec![
         LayoutSymbolAsRootName::new(),
@@ -45,7 +46,7 @@ fn main() {
     let key_bindings = gen_keybindings! {
         // Program launch
         "M-r" => run_external!("dmenu_run"),
-        "M-Return" => run_external!("brave"),
+        "M-Return" => run_external!("alacritty"),
 
         // client management
         "A-Tab" => run_internal!(cycle_client, Forward),
@@ -80,5 +81,6 @@ fn main() {
 
     let conn = XcbConnection::new();
     let mut wm = WindowManager::init(config, &conn);
+    spawn("alacritty");
     wm.grab_keys_and_run(key_bindings);
 }
