@@ -45,7 +45,7 @@ fn main() {
 
     let key_bindings = gen_keybindings! {
         // Program launch
-        "M-r" => run_external!("dmenu_run"),
+        "M-r" => run_external!("dmenu_run -i -b -p \"\" -fn \"DejaVu Sans-12\" -nb \"#282A36\" -nf \"#ffffff\" -sb \"#b18ef9\" -sf \"#ffffff\""),
         "M-Return" => run_external!("alacritty"),
 
         // client management
@@ -82,5 +82,6 @@ fn main() {
     let conn = XcbConnection::new();
     let mut wm = WindowManager::init(config, &conn);
     spawn("alacritty");
+    spawn("feh --bg-scale --no-fehbg ~/Pictures/mamimi_lofi_vibe.jpg");
     wm.grab_keys_and_run(key_bindings);
 }
