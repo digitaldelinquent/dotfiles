@@ -31,19 +31,21 @@ fn main() {
     SimpleLogger::init(LevelFilter::Debug, simplelog::Config::default()).unwrap();
     let mut config = Config::default();
     config.workspaces = vec!["1", "2", "3", "4"];
+    config.gap_px = 10.0;
+    config.border_px = 5.0;
     config.layouts = my_layouts();
     config.hooks = vec![
         LayoutSymbolAsRootName::new(),
         RemoveEmptyWorkspaces::new(config.workspaces.clone()),
     ];
 
-    let sp = Scratchpad::new("st", 0.8, 0.8);
+    let sp = Scratchpad::new("alacritty", 0.8, 0.8);
     sp.register(&mut config);
 
     let key_bindings = gen_keybindings! {
         // Program launch
         "M-r" => run_external!("dmenu_run"),
-        "M-Return" => run_external!("st"),
+        "M-Return" => run_external!("brave"),
 
         // client management
         "A-Tab" => run_internal!(cycle_client, Forward),
