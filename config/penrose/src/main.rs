@@ -31,8 +31,8 @@ fn main() {
     SimpleLogger::init(LevelFilter::Debug, simplelog::Config::default()).unwrap();
     let mut config = Config::default();
     config.workspaces = vec!["1", "2", "3", "4"];
-    config.gap_px = 10.0;
-    config.border_px = 5.0;
+    config.gap_px = 10;
+    config.border_px = 5;
     config.layouts = my_layouts();
     config.hooks = vec![
         LayoutSymbolAsRootName::new(),
