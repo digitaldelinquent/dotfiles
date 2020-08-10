@@ -47,6 +47,7 @@ fn main() {
         // Program launch
         "M-r" => run_external!("dmenu_run"),
         "M-Return" => run_external!("alacritty"),
+        "S-M-p" => run_external!("powermenu.sh"),
 
         // client management
         "A-Tab" => run_internal!(cycle_client, Forward),
@@ -82,6 +83,7 @@ fn main() {
     let conn = XcbConnection::new();
     let mut wm = WindowManager::init(config, &conn);
     spawn("alacritty");
-    spawn("feh --bg-scale --no-fehbg ~/Pictures/mamimi_lofi_vibe.jpg");
+    spawn("wallpaper.sh");
+    spawn("mons.sh");
     wm.grab_keys_and_run(key_bindings);
 }
