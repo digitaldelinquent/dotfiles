@@ -93,7 +93,7 @@ dependencies = [
 [[package]]
 name = "penrose"
 version = "0.1.8"
-source = "git+https://github.com/sminez/penrose?branch=develop#e570756fa2db0ef8fdc8453ca4d493854fdf278b"
+source = "git+https://github.com/roelycooly/penrose?branch=develop#7a5d62c33a7d301fc040a84493243da03b920aa7"
 dependencies = [
  "log",
  "nix",

@@ -31,7 +31,7 @@ fn my_layouts() -> Vec<Layout> {
 fn main() {
     SimpleLogger::init(LevelFilter::Debug, simplelog::Config::default()).unwrap();
     let mut config = Config::default();
-    config.workspaces = vec!["v", "c", "x", "z"];
+    config.workspaces = vec!["1", "2", "3", "4"];
     config.bar_height = 0;
     config.border_px = 1;
     config.layouts = my_layouts();
@@ -73,7 +73,7 @@ fn main() {
         "M-l" => run_internal!(exit);
 
         // setting up bindings for 6 possible workspaces
-        forall_workspaces: config.workspaces => {
+        forall_workspaces: vec!["v", "c", "x", "z"] => {
             "M-A-{}" => focus_workspace,
             "A-S-{}" => client_to_workspace,
         }
