@@ -45,7 +45,7 @@ fn main() {
 
     let key_bindings = gen_keybindings! {
         // Program launch
-        "M-r" => run_external!("dmenu_run -i -b -p '' -fn 'DejaVu Sans-12' -nb '#282A36' -nf '#ffffff' -sb '#b18ef9' -sf '#ffffff'"),
+        "M-r" => run_external!("dmenu_run"),
         "M-Return" => run_external!("alacritty"),
 
         // client management
