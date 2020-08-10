@@ -31,7 +31,7 @@ fn my_layouts() -> Vec<Layout> {
 fn main() {
     SimpleLogger::init(LevelFilter::Debug, simplelog::Config::default()).unwrap();
     let mut config = Config::default();
-    config.workspaces = vec!["1", "2", "3", "4"];
+    config.workspaces = vec!["v", "c", "x", "z"];
     config.bar_height = 0;
     config.border_px = 1;
     config.layouts = my_layouts();
@@ -45,7 +45,7 @@ fn main() {
 
     let key_bindings = gen_keybindings! {
         // Program launch
-        "M-r" => run_external!("dmenu_run -i -b -p \"\" -fn \"DejaVu Sans-12\" -nb \"#282A36\" -nf \"#ffffff\" -sb \"#b18ef9\" -sf \"#ffffff\""),
+        "M-r" => run_external!("dmenu_run -i -b -p '' -fn 'DejaVu Sans-12' -nb '#282A36' -nf '#ffffff' -sb '#b18ef9' -sf '#ffffff'"),
         "M-Return" => run_external!("alacritty"),
 
         // client management
@@ -57,8 +57,8 @@ fn main() {
         "M-slash" => sp.toggle(),
 
         "M-Tab" => run_internal!(toggle_workspace),
-        "C-S-A-l" => run_internal!(drag_workspace, Forward),
-        "C-S-A-h" => run_internal!(drag_workspace, Backward),
+        "C-A-l" => run_internal!(drag_workspace, Forward),
+        "C-A-h" => run_internal!(drag_workspace, Backward),
 
         // Layout management
         "M-grave" => run_internal!(cycle_layout, Forward),
@@ -73,7 +73,7 @@ fn main() {
         "M-l" => run_internal!(exit);
 
         // setting up bindings for 6 possible workspaces
-        forall_workspaces: &["v", "c", "x", "z"] => {
+        forall_workspaces: config.workspaces => {
             "M-A-{}" => focus_workspace,
             "A-S-{}" => client_to_workspace,
         }
