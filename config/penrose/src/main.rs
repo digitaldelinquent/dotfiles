@@ -2,7 +2,7 @@
 extern crate penrose;
 
 use penrose::core::{Layout, WindowManager, XcbConnection};
-use penrose::helpers::spawn;
+use penrose::core::data_types::ColorScheme;
 use penrose::layout::{bottom_stack, side_stack, LayoutConf};
 use penrose::{Backward, Config, Forward, More};
 
@@ -32,8 +32,16 @@ fn main() {
     SimpleLogger::init(LevelFilter::Debug, simplelog::Config::default()).unwrap();
     let mut config = Config::default();
     config.workspaces = vec!["1", "2", "3", "4"];
+    config.color_scheme = ColorScheme {
+        bg: 0x282A36,        // #282828
+        fg_1: 0xF8F8F2,      // #3c3836
+        fg_2: 0xb18ef9,      // #a89984
+        fg_3: 0x9370db,      // #f2e5bc
+        highlight: 0xb18ef9, // #cc241d
+        urgent: 0xFF0000,    // #458588
+    };
     config.bar_height = 0;
-    config.border_px = 1;
+    config.border_px = 3;
     config.layouts = my_layouts();
     config.hooks = vec![
         LayoutSymbolAsRootName::new(),
@@ -48,10 +56,12 @@ fn main() {
         "M-r" => run_external!("dmenu_run"),
         "M-Return" => run_external!("alacritty"),
         "S-M-p" => run_external!("powermenu.sh"),
+        "M-i" => run_external!("sysinfo.sh"),
 
         // client management
         "A-Tab" => run_internal!(cycle_client, Forward),
         "A-S-Tab" => run_internal!(cycle_client, Backward),
+        "M-f" => run_internal!(toggle_fullscreen),
         "M-j" => run_internal!(drag_client, Forward),
         "M-k" => run_internal!(drag_client, Backward),
         "M-q" => run_internal!(kill_client),
@@ -82,8 +92,5 @@ fn main() {
 
     let conn = XcbConnection::new();
     let mut wm = WindowManager::init(config, &conn);
-    spawn("alacritty");
-    spawn("wallpaper.sh");
-    spawn("mons.sh");
     wm.grab_keys_and_run(key_bindings);
 }
