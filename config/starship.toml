@@ -1,0 +1,21 @@
+add_newline = false
+
+prompt_order = [
+    "username",
+    "hostname",
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    "character",
+]
+
+[directory]
+style = "bold cyan"
+prefix = ""
+
+[username]
+disabled = false
+show_always = true
+style_user = "bold #b18ef9"

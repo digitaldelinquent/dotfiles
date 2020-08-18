@@ -72,8 +72,8 @@ killall -q gnome-keyring-daemon
 while pgrep gnome-keyring; do sleep 0.01s; done
 gnome-keyring-daemon -d
 killall -q compton
-while pgrep compton; do sleep 0.01s; done
-compton --vsync -b
+while pgrep picom; do sleep 0.01s; done
+picom -b
 killall -q sxhkd
 while pgrep sxhkd; do sleep 0.01s; done
 sxhkd -c "$XDG_CONFIG_HOME/sxhkd/sxhkdrc.bspwm" &
