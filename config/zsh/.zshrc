@@ -82,13 +82,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#888888"
 
 # Custom User Functions
 ef() { 
-    [ -n "$1" ] && find $1 -type f | fzf --preview='pistol {}' | xargs -r $EDITOR || 
-    find ~/.config/ -type f | fzf --preview='pistol {}' | xargs -r $EDITOR 
+    [ -n "$1" ] && find $1 -type f | fzf | xargs -r $EDITOR || 
+    find ~/.config/ -type f | fzf | xargs -r $EDITOR 
 }
 
 sef() {
-    [ -n "$1" ] && sudo find $1 -type f | fzf --preview='pistol {}' | sudo xargs -r $EDITOR || 
-    sudo find /etc/ -type f | fzf --preview='pistol {}' | sudo xargs -r $EDITOR 
+    [ -n "$1" ] && sudo find $1 -type f | fzf | sudo xargs -r $EDITOR || 
+    sudo find /etc/ -type f | fzf | sudo xargs -r $EDITOR 
 }
 
 bindkey -s "^F" "ef\r"
@@ -96,7 +96,7 @@ bindkey -s "^[^F" "sef\r"
 
 # Reinstall roelm packages
 reinstall() {
-    [ -n "$1" ] && yay -S - < $HOME/.to-download/packages.$1 || echo "specify arch based distro (arch or artix)";return 1
+    yay -S --needed - < $HOME/.to-download/packages; return 1
 }
 
 # User Configuration
@@ -109,6 +109,7 @@ alias transmit="transmission-remote"
 alias feh="devour feh -. --no-fehbg"
 alias mpv="devour mpv"
 alias mupdf="devour mupdf"
+alias ping="prettyping"
 alias vim="nvim"
 alias parrot="docker run --rm -ti -e DISPLAY=$DISPLAY --network host -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/parrotos/:/persistent -v $HOME/.Xauthority:/root/.Xauthority parrotsec/security"
 clear

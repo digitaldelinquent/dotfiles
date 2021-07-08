@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=dwm
+Comment=Executes the .xinitrc script in your home directory
+Exec=xinitrcsession-helper
+TryExec=xinitrcsession-helper
+Type=Application

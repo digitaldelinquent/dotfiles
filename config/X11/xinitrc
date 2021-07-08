@@ -38,43 +38,26 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-get_session(){
-	local dbus_args=(--sh-syntax --exit-with-session)
-	case $1 in
-		awesome) dbus_args+=(awesome) ;;
-		bspwm) dbus_args+=(bspwm-session) ;;
-		budgie) dbus_args+=(budgie-desktop) ;;
-		cinnamon) dbus_args+=(cinnamon-session) ;;
-		deepin) dbus_args+=(startdde) ;;
-		enlightenment) dbus_args+=(enlightenment_start) ;;
-		fluxbox) dbus_args+=(startfluxbox) ;;
-		gnome) dbus_args+=(gnome-session) ;;
-		i3|i3wm) dbus_args+=(i3 --shmlog-size 0) ;;
-		jwm) dbus_args+=(jwm) ;;
-		kde) dbus_args+=(startkde) ;;
-		lxde) dbus_args+=(startlxde) ;;
-		lxqt) dbus_args+=(lxqt-session) ;;
-		mate) dbus_args+=(mate-session) ;;
-		xfce) dbus_args+=(xfce4-session) ;;
-		openbox) dbus_args+=(openbox-session) ;;
-		*) dbus_args+=($DEFAULT_SESSION) ;;
-	esac
-
-	echo "dbus-launch ${dbus_args[*]}"
-}
-
 xsetroot -cursor_name left_ptr &
 
 export DESKTOP_SESSION="dwm"
 
-mons.sh
+# mons.sh
 lock.sh
-feh --bg-scale --no-fehbg ~/Pictures/mamimi_lofi_vibe.jpg
+# feh --bg-scale --no-fehbg ~/Pictures/mamimi_lofi_vibe.jpg
+# feh --bg-scale --no-fehbg ~/Pictures/htt_gang.jpg
+# feh --bg-scale --no-fehbg ~/Pictures/zero_two_pluto_projector.jpg
+# feh --bg-scale --no-fehbg ~/Pictures/mamimi_kodak.jpg
+# feh --bg-scale --no-fehbg ~/Pictures/rascal_dreams_of_bunny_girl_mai_san.jpg
+# feh --bg-scale --no-fehbg ~/Pictures/mai_san_does_not_dream_of_rascal.jpg
+# feh --bg-scale --no-fehbg ~/Pictures/bust_a_yui.png
+# feh --bg-scale --no-fehbg ~/Pictures/sakura.jpg
+feh --bg-scale --no-fehbg ~/Pictures/bna.png
 ~/.config/dunst/launch.sh
 killall -q gnome-keyring-daemon
 while pgrep gnome-keyring-daemon; do sleep 0.01s; done
 gnome-keyring-daemon -d
-killall -q compton
+killall -q picom
 while pgrep picom; do sleep 0.01s; done
 picom -b
 killall -q sxhkd
