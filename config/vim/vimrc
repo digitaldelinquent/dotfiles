@@ -53,6 +53,11 @@ set ruler
 
 set visualbell
 
+" Cursor line and column
+
+set cursorline
+set cursorcolumn
+
 " Encoding
 
 set encoding=utf-8
