@@ -1,0 +1,33 @@
+#! /usr/bin/sh
+
+# Profile file. Runs on login
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin/pip"
+export PATH="$PATH:$HOME/.config/scripts"
+export PATH="$PATH:$HOME/Games"
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export LESSHISTFILE=-
+export VBOX_USB=usbfs
+export EDITOR="nvim"
+export TERM="xterm-256color"
+export TERMINAL="alacritty"
+export BROWSER="firefox-developer-edition"
+export READER="mupdf"
+
+# Forcing XDG
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
+export CCACHE_CONFIGPATH="$XDG_CONFIG_HOME"/ccache.config
+export CCACHE_DIR="$XDG_CACHE_HOME"/ccache
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+# export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+export GOPATH="$XDG_DATA_HOME"/go
