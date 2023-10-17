@@ -26,7 +26,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
    issues with coc. When coc issues are resolved you can run `:CocInstall PLUGIN
    NAME` in order to download coc language servers.
 
-# Future To-Do's
+## Future To-Do's
 
 - Automate everything in ansible to make everything idempotent and remove
   manual steps
