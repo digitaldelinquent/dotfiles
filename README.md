@@ -1,12 +1,12 @@
 # Rice
 
-1. Copy the .zprofile, .profile and .to-download files into your home directory.
-2. After that copy everything over from the config directory into your .config directory.
+1. Copy/symlink the .zprofile, .profile and .to-download files into your home directory.
+2. After that copy/symlink everything over from the config directory into your .config directory.
 
 > **NOTE:** If on non-linux machine (UNIX-like OS like MacOS) copy the .zshrc into the
 > home directory. 
 
-3. Copy the scripts dir into your .local/bin dir.
+3. Copy/symlink the scripts dir into your .local/bin dir.
 4. Pass the packages file in the .to-download dir into your system package
    manager and install all necessary files.
 
