@@ -4,7 +4,8 @@
 
 # terminal emulator
 super + Return
-	$TERM
+	alacritty
+    # $TERM
 
 # program launcher
 super + r
@@ -12,7 +13,8 @@ super + r
 
 # htop
 super + alt + d
-    $TERM -e htop &
+    alacritty -e htop &
+    # $TERM -e htop &
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -36,13 +38,13 @@ Print
 shift + Print
     maim -s | xclip -selection clipboard -t image/png
 
-# multi-monitor fix
-# ctrl + m
-#     mons.sh
+# Multi-Monitor fix
+ctrl + m
+    mons.sh
 
 # SysInfo
 super + i
-    echo "$(date +"Date: %A %d %B %Y%nTime: %r")\nBattery: $(grep "POWER_SUPPLY_CAPACITY=" /sys/class/power_supply/BAT1/uevent | sed "s/POWER_SUPPLY_CAPACITY=//g")%" | xargs -d "\r" notify-send
+    echo "$(date +"Date: %A %d %B %Y%nTime: %r")\nBattery: $(grep "POWER_SUPPLY_CAPACITY=" /sys/class/power_supply/BAT0/uevent | sed "s/POWER_SUPPLY_CAPACITY=//g")%" | xargs -d "\r" notify-send
 
 # Powermenu
 super + shift + p
