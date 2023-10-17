@@ -4,7 +4,7 @@
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin/pip"
-export PATH="$PATH:$HOME/.config/scripts"
+export PATH="$PATH:$HOME/.local/bin/scripts"
 export PATH="$PATH:$HOME/Games"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export XDG_CONFIG_HOME="$HOME/.config"
