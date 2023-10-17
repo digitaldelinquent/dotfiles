@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	$TERM
+	$TERMINAL
 
 # program launcher
 super + r
@@ -12,7 +12,7 @@ super + r
 
 # htop
 super + alt + d
-    $TERM -e htop &
+    $TERMINAL -e htop &
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -89,8 +89,8 @@ super + q
     bspc node -c
 
 # multi-monitor fix
-# ctrl + m
-#     mons.sh
+ctrl + m
+    mons.sh
 
 # SysInfo
 super + i

@@ -4,8 +4,7 @@
 
 # terminal emulator
 super + Return
-	alacritty
-    # $TERM
+	$TERMINAL
 
 # program launcher
 super + r
@@ -13,8 +12,7 @@ super + r
 
 # htop
 super + alt + d
-    alacritty -e htop &
-    # $TERM -e htop &
+    $TERMINAL -e htop &
 
 # make sxhkd reload its configuration files:
 super + Escape
