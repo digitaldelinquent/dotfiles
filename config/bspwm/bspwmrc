@@ -74,7 +74,7 @@ feh --bg-scale --no-fehbg ~/Pictures/mamimi_kodak.jpg
 killall -q gnome-keyring-daemon
 while pgrep gnome-keyring; do sleep 0.01s; done
 gnome-keyring-daemon -d
-killall -q compton
+killall -q picom
 while pgrep picom; do sleep 0.01s; done
 picom -b
 killall -q sxhkd
