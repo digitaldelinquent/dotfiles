@@ -1,6 +1,6 @@
 " Plugins
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin()
 
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
