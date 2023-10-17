@@ -1,4 +1,5 @@
 # Rice
+---
 
 1. Copy the .zprofile, .profile and .to-download files into your home directory.
 2. After that copy everything over from the config directory into your .config directory.
@@ -27,6 +28,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
    NAME` in order to download coc language servers.
 
 # Future To-Do's
+---
 
 - Automate everything in ansible to make everything idempotent and remove
   manual steps
