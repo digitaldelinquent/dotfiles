@@ -67,7 +67,10 @@ bspc rule -a dmenu state floating
 # feh --bg-scale --no-fehbg ~/Pictures/mamimi_never_knows_best.png
 # feh --bg-scale --no-fehbg ~/Pictures/mamimi_and_naota.png
 # feh --bg-scale --no-fehbg ~/Pictures/download.jpeg
-feh --bg-scale --no-fehbg ~/Pictures/mamimi_lofi_vibe.jpg
+# feh --bg-scale --no-fehbg ~/Pictures/mamimi_lofi_vibe.jpg
+# feh --bg-scale --no-fehbg ~/Pictures/htt_gang.jpg
+# feh --bg-scale --no-fehbg ~/Pictures/zero_two_pluto_projector.jpg
+feh --bg-scale --no-fehbg ~/Pictures/mamimi_kodak.jpg
 killall -q gnome-keyring-daemon
 while pgrep gnome-keyring; do sleep 0.01s; done
 gnome-keyring-daemon -d

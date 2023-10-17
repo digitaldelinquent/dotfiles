@@ -111,8 +111,10 @@ alias mpv="devour mpv"
 alias mupdf="devour mupdf"
 alias ping="prettyping"
 alias vim="nvim"
-alias parrot="docker run --rm -ti -e DISPLAY=$DISPLAY --network host -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/parrotos/:/persistent -v $HOME/.Xauthority:/root/.Xauthority parrotsec/security"
+alias ovsctl="ovs-vsctl"
+alias parrot="sudo docker run --rm -ti -e DISPLAY=$DISPLAY --network host -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/parrotos/:/persistent -v $HOME/.Xauthority:/root/.Xauthority parrotsec/security"
 clear
 neofetch
 eval "$(starship init zsh)"
 export QT_QPA_PLATFORMTHEME="gtk2"
+export DBX_CONTAINER_MANAGER="podman"
