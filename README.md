@@ -10,7 +10,7 @@
 4. Pass the packages file in the .to-download dir into your system package
    manager and install all necessary files.
 
-> **NOTE:** This config was made for yay/pacman, so you may need to download manually for some, if not all packages. 
+> **NOTE:** This config was made for yay/pacman, so you may need to manually download some, if not all packages. 
 > Many packages maybe unnecessary if on a non-linux machine (UNIX-like OS like MacOS)
 
 5. Run the following command to install vim plug:
