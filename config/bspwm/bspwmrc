@@ -60,6 +60,7 @@ bspc config presel_feedback_color       "$color8"
 bspc rule -a dmenu state floating
 
 #### AUTOSTART ####
+# Commented these out as xinitrc does all this already
 # feh --bg-scale --no-fehbg ~/Pictures/pleasebullymekohai.jpeg
 # feh --bg-scale --no-fehbg ~/Pictures/wallpaperflare.com_wallpaper.jpg
 # feh --bg-scale --no-fehbg ~/Pictures/shinobu_kocho.png
@@ -70,14 +71,14 @@ bspc rule -a dmenu state floating
 # feh --bg-scale --no-fehbg ~/Pictures/mamimi_lofi_vibe.jpg
 # feh --bg-scale --no-fehbg ~/Pictures/htt_gang.jpg
 # feh --bg-scale --no-fehbg ~/Pictures/zero_two_pluto_projector.jpg
-feh --bg-scale --no-fehbg ~/Pictures/mamimi_kodak.jpg
-killall -q gnome-keyring-daemon
-while pgrep gnome-keyring; do sleep 0.01s; done
-gnome-keyring-daemon -d
-killall -q picom
-while pgrep picom; do sleep 0.01s; done
-picom -b
-killall -q sxhkd
-while pgrep sxhkd; do sleep 0.01s; done
-sxhkd -c "$XDG_CONFIG_HOME/sxhkd/sxhkdrc.bspwm" &
-~/.config/dunst/launch.sh
+# feh --bg-scale --no-fehbg ~/Pictures/mamimi_kodak.jpg
+# killall -q gnome-keyring-daemon
+# while pgrep gnome-keyring; do sleep 0.01s; done
+# gnome-keyring-daemon -d
+# killall -q picom
+# while pgrep picom; do sleep 0.01s; done
+# picom -b
+# killall -q sxhkd
+# while pgrep sxhkd; do sleep 0.01s; done
+# sxhkd -c "$XDG_CONFIG_HOME/sxhkd/sxhkdrc.bspwm" &
+# ~/.config/dunst/launch.sh
