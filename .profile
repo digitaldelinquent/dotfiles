@@ -2,6 +2,7 @@
 
 # Profile file. Runs on login
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.local/share/cargo/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin/pip"
 export PATH="$PATH:$HOME/.local/bin/scripts"
