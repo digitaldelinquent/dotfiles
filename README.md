@@ -31,12 +31,20 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 wget https://raw.githubusercontent.com/betterlockscreen/betterlockscreen/main/install.sh -O - -q | bash -s user
 ```
 
-9. Lastly clone the xdo repo and run the following in order to use mupdf and
+9. Clone the xdo repo and run the following in order to use mupdf and
    feh:
 
 ```
 git clone https://github.com/baskerville/xdo.git
 cd xdo
+sudo make install
+```
+
+10. Finally compile and install dmenu source that is in the .config dir:
+
+```
+cd $HOME/.config/dmenu
+make clean
 sudo make install
 ```
 
