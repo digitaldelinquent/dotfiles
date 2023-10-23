@@ -36,7 +36,59 @@ Print
 shift + Print
     maim -s | xclip -selection clipboard -t image/png
 
-# Multi-Monitor fix
+#
+# bspwm hotkeys
+#
+
+# windows
+super + Tab 
+    bspc monitor -f next
+super + shift + Tab 
+    bspc monitor -f prev
+ctrl + super + {h,j,k,l} 
+    bspc monitor -f {west,south,north,east}
+alt + Tab 
+    bspc node -f next.local.!hidden.window
+alt + shift + Tab 
+    bspc node -f prev.local.!hidden.window
+ctrl + alt + {h,j,k,l} 
+    bspc node -f {west,south,north,east}.local
+super + {h,j,k,l}
+    bspc node -s {west,south,north,east}
+super + alt + {h,l} 
+    bspc desktop -f {prev,next}.local
+super + alt + {v,c,x,z}
+    bspc desktop -f {1,2,3,4}.local
+alt + {h,j,k,l}
+    bspc node -p {west,south,north,east}
+alt + n
+    bspc node -n newest.\!automatic.local
+alt + x
+    bspc node -p cancel
+alt + shift + {h,l}
+    bspc node -d {prev,next}.local 
+alt + shift + {v,c,x,z}
+    bspc node -d {1,2,3,4}.local
+alt + shift + ctrl + {h,l}
+    bspc node -m {prev,next} --follow
+super + f 
+    bspc node -t \~fullscreen
+super + alt + f 
+    bspc node -t \~floating
+super + t
+    bspc desktop -l tiled
+super + m 
+    bspc desktop -l monocle
+ctrl + super + {h,j,k,l}
+    bspc node -v {-20 0,0 -20,0 20,20 0}
+super + shift + {h,j,k,l}
+    bspc node -z {right -10 0,bottom 0 -10,bottom 0 10,right 10 0}
+super + e
+    bspc node -e
+super + q
+    bspc node -c
+
+# multi-monitor fix
 ctrl + m
     mons.sh
 
@@ -44,6 +96,10 @@ ctrl + m
 super + i
     sysinfo.sh
 
-# Powermenu
+# quit/powermenu/restart bspwm
+ctrl + l
+    bspc quit
 super + shift + p
     powermenu.sh
+super + alt + r
+    bspc wm -r
