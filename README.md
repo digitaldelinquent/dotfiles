@@ -25,6 +25,20 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 7. Go into the .local/share/nvim/plugged/coc.nvim and run `npm ci` to resolve
    issues with coc. When coc issues are resolved you can run `:CocInstall PLUGIN
    NAME` in order to download coc language servers.
+8. Install the betterlockscreen screen locker by running the following command:
+
+```
+wget https://raw.githubusercontent.com/betterlockscreen/betterlockscreen/main/install.sh -O - -q | bash -s user
+```
+
+9. Lastly clone the xdo repo and run the following in order to use mupdf and
+   feh:
+
+```
+git clone https://github.com/baskerville/xdo.git
+cd xdo
+sudo make install
+```
 
 ## Future To-Do's
 
