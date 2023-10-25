@@ -97,8 +97,8 @@ super + i
     sysinfo.sh
 
 # Scratch Pad
-super + /
-	{$TERMINAL, bspc rule -a \* -o state=floating sticky=on layer=above rectangle=720x360+600+26 && $TERMINAL}
+super + slash
+    tdrop -a $TERMINAL
 
 # quit/powermenu/restart bspwm
 ctrl + l
