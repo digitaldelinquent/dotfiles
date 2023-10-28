@@ -55,4 +55,5 @@ picom -b
 killall -q sxhkd
 while pgrep sxhkd; do sleep 0.01s; done
 sxhkd &
-exec ssh-agent bspwm
+eval `ssh-agent -s`
+exec bspwm
