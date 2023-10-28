@@ -40,7 +40,18 @@ cd xdo
 sudo make install
 ```
 
-10. Finally compile and install dmenu source that is in the .config dir:
+10. To utilize the zsh extensions, you need to install the plugins into your
+    system as follows:
+
+```
+mkdir $HOME/.config/zsh/plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions\
+    ~/.config/zsh/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git\
+    ~/.config/zsh/plugins/zsh-syntax-highlighting
+```
+
+11. Finally compile and install dmenu source that is in the .config dir:
 
 ```
 cd $HOME/.config/dmenu
