@@ -6,7 +6,7 @@ opts=(
     [襤 Poweroff  ]="poweroff"
     [累 Reboot]="reboot"
     [ Logout]="bspc quit"
-    [ Lock]="betterlockscreen --text 'Hiya chief ^_^' -l"
+    [ Lock]="i3lock -i $HOME/Pictures/lain.png"
     [Sleep]="systemctl suspend"
 )
 
