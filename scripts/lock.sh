@@ -9,7 +9,7 @@ do
 done
 
 exec xautolock -detectsleep -time 15 \
-    -locker "$HOME/.local/bin/betterlockscreen --text 'Hiya chief ^_^' -l" \
+    -locker "i3lock -i $HOME/Pictures/lain.png" \
     -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Screen locking in 30 seconds'" &
 
 exec xidlehook --not-when-fullscreen --timer 1200 "suspend" - &
