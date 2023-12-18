@@ -10,10 +10,6 @@ super + Return
 super + r
     dmenu_run
 
-# htop
-super + alt + d
-    $TERMINAL -e htop &
-
 # make sxhkd reload its configuration files:
 super + Escape
     pkill -USR1 -x sxhkd
