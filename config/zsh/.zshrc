@@ -96,7 +96,8 @@ bindkey -s "^[^F" "sef\r"
 
 # Reinstall roelm packages
 reinstall() {
-    yay -S --needed - < $HOME/.to-download/packages; return 1
+    sudo dnf install $(cat $HOME/.to-download/packages);
+    return 1
 }
 
 # User Configuration
