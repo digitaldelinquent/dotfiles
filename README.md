@@ -61,7 +61,7 @@ sudo make install
 
 ## Future To-Do's
 
-- [] Automate everything in ansible to make everything idempotent and remove
+- [ ] Automate everything in ansible to make everything idempotent and remove
   manual steps.
-- [] Possibly moveover to a wayland based WM/Compositor. Possible considerations
+- [ ] Possibly moveover to a wayland based WM/Compositor. Possible considerations
   are river and hyprland.
