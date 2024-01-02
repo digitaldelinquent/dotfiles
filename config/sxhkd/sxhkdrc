@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + r
-    dmenu_run
+    dmenu_run -nb "#282A36" -nf "#ffffff" -sb "#b18ef9" -sf "#ffffff" -fn mono -b
 
 # make sxhkd reload its configuration files:
 super + Escape
