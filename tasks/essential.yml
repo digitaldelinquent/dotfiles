@@ -1,0 +1,15 @@
+---
+- name: Setup system
+  host: localhost
+  become: yes
+  
+  tasks:
+    - name: Update packages
+      dnf:
+        name: "*"
+        state: latest
+
+    - name: Install packages
+      dnf:
+        name: "{{ packages }}"
+        state: latest
