@@ -114,7 +114,9 @@ alias ping="prettyping"
 alias vim="nvim"
 alias ovsctl="ovs-vsctl"
 alias parrot="sudo docker run --rm -ti -e DISPLAY=$DISPLAY --network host -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/parrotos/:/persistent -v $HOME/.Xauthority:/root/.Xauthority parrotsec/security"
-clear
+alias k="kubectl"
+alias kc="kubectx"
+alias kn="kubens"
 neofetch
 eval "$(starship init zsh)"
 export QT_QPA_PLATFORMTHEME="gtk2"
