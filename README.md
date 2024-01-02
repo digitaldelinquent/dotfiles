@@ -8,9 +8,11 @@
 
 3. Copy/symlink the scripts dir into your .local/bin dir.
 4. Pass the packages file in the .to-download dir into your system package
-   manager and install all necessary files.
+   manager and install all necessary files. (If you are using the dnf package
+   manager, use the `reinstall` function in the shell.)
 
-> **NOTE:** This config was made for yay/pacman, so you may need to manually download some, if not all packages. 
+> **NOTE:** This config was made for dnf, so you may need to use a different package name,
+> or manually download some packages from their respective websites.
 > Many packages maybe unnecessary if on a non-linux machine (UNIX-like OS like MacOS)
 
 5. Run the following command to install vim plug:
@@ -40,7 +42,7 @@ cd xdo
 sudo make install
 ```
 
-10. To utilize the zsh extensions, you need to install the plugins into your
+10. Lastly, to utilize the zsh extensions, you need to install the plugins into your
     system as follows:
 
 ```
@@ -49,14 +51,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions\
     ~/.config/zsh/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git\
     ~/.config/zsh/plugins/zsh-syntax-highlighting
-```
-
-11. Finally compile and install dmenu source that is in the .config dir:
-
-```
-cd $HOME/.config/dmenu
-make clean
-sudo make install
 ```
 
 ## Future To-Do's
