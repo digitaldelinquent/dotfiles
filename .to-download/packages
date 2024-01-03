@@ -7,7 +7,7 @@ brightnessctl
 bspwm
 discord
 dmenu
-docker
+podman
 dunst
 exa
 feh

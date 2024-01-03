@@ -1,0 +1,34 @@
+- name: Copy .profile into home folder
+  copy:
+    src: "{{ playbook_dir }}/.profile"
+    dest: "/home/{{ user }}/"
+
+- name: Copy .zprofile into home folder
+  copy:
+    src: "{{ playbook_dir }}/.zprofile"
+    dest: "/home/{{ user }}/"
+
+- name: Copy configs
+  copy:
+    src: "{{ playbook_dir }}/config/"
+    dest: "/home/{{ user }}/.config/"
+
+- name: Copy scripts into bin
+  copy:
+    src: "{{ playbook_dir }}/scripts"
+    dest: "/home/{{ user }}/.local/bin/"
+
+- name: Copy .Xresources into home folder
+  copy:
+    src: "{{ playbook_dir }}/.Xresources"
+    dest: "/home/{{ user }}/"
+
+- name: Copy Dracula gtk theme into system folder
+  copy:
+    src: "{{ playbook_dir }}/.to-download/Dracula"
+    dest: "/usr/share/themes/"
+
+- name: Copy mouse settings into system folder
+  copy:
+    src: "{{ playbook_dir }}/.to-download/40-libinput.conf"
+    dest: "/etc/X11/xorg.conf.d/"

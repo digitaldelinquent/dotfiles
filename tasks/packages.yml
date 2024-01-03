@@ -1,0 +1,11 @@
+- name: Update packages
+  become_user: root
+  dnf:
+    name: "*"
+    state: latest
+
+- name: Install packages
+  become_user: root
+  dnf:
+    name: "{{ packages }}"
+    state: latest
