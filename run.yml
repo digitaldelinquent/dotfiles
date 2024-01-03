@@ -1,0 +1,10 @@
+---
+- name: Setup system
+  hosts: localhost
+  connection: local
+  become: yes
+  become_user: "{{ user }}"
+  
+  tasks:
+    - import_tasks: tasks/packages.yml
+    - import_tasks: tasks/configs.yml

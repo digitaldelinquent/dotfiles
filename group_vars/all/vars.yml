@@ -1,3 +1,4 @@
+user: roelm
 packages:
   - alacritty
   - alsa-utils
@@ -8,7 +9,7 @@ packages:
   - bspwm
   - discord
   - dmenu
-  - docker
+  - podman
   - dunst
   - exa
   - feh
@@ -46,9 +47,9 @@ packages:
   - breeze-cursor-theme
   - xdotool
   - zsh
-  - system76-firmware
-  - system76-firmware-daemon
+  # - system76-firmware
+  # - system76-firmware-daemon
   - solaar
   - terraform-ls
-  - tdrop
+  # - tdrop
   - prettyping
