@@ -1,4 +1,4 @@
-user: roelm
+user: PUT_USERNAME_HERE
 packages:
   - alacritty
   - alsa-utils
