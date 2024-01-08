@@ -53,3 +53,4 @@ packages:
   - terraform-ls
   # - tdrop
   - prettyping
+  - bat
