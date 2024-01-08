@@ -51,5 +51,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git\
 
 - [ ] Automate everything in ansible to make everything idempotent and remove
   manual steps.
+  - Ansible playbook has been created. Basic functionality has been implemented
+    and merged into the master branch, still needs work to automate other items
+    in the list above.
 - [ ] Possibly moveover to a wayland based WM/Compositor. Possible considerations
   are river and hyprland.
