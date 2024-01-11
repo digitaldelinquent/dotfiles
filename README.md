@@ -1,6 +1,6 @@
 # Rice
 
-1. Copy/symlink the .zprofile, .profile and .to-download files into your home directory.
+1. Copy/symlink the .zprofile, .profile, .gitconfig and .to-download files into your home directory.
 2. After that copy/symlink everything over from the config directory into your .config directory.
 
 > **NOTE:** If on non-linux machine (UNIX-like OS like MacOS) copy the .zshrc into the
