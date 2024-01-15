@@ -7,9 +7,6 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin/pip"
 export PATH="$PATH:$HOME/.local/bin/scripts"
 export PATH="$PATH:$HOME/Games"
-# Homebrew Compatibility
-export PATH="$PATH:/opt/homebrew/bin"
-export PATH="$PATH:/opt/homebrew/sbin"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -21,6 +18,9 @@ export TERM="xterm-256color"
 export TERMINAL="alacritty"
 export BROWSER="librewolf"
 export READER="mupdf"
+# Homebrew Compatibility
+export PATH="$PATH:/opt/homebrew/bin"
+export PATH="$PATH:/opt/homebrew/sbin"
 
 # Forcing XDG
 export ZDOTDIR="$XDG_CONFIG_HOME"/zsh/
@@ -36,3 +36,5 @@ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export GOPATH="$XDG_DATA_HOME"/go
+export KUBECONFIG="$XDG_CONFIG_HOME/kube" 
+export KUBECACHEDIR="$XDG_CACHE_HOME/kube"
