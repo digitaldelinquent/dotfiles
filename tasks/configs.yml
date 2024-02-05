@@ -38,4 +38,3 @@
   copy:
     src: "{{ playbook_dir }}/.to-download/40-libinput.conf"
     dest: "/etc/X11/xorg.conf.d/"
-    state: link

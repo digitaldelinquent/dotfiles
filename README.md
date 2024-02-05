@@ -2,13 +2,10 @@
 
 1. Copy/symlink the .zprofile, .profile, .gitconfig and .to-download files into your home directory.
 2. After that copy/symlink everything over from the config directory into your .config directory.
-<<<<<<< HEAD
-=======
 
 > **NOTE:** If on non-linux machine (UNIX-like OS like MacOS) copy the .zshrc into the
 > home directory. 
 
->>>>>>> 7eafb3c60cfd9b19fe52f26c4f9cc5ba4236cfce
 3. Copy/symlink the scripts dir into your .local/bin dir.
 4. Pass the packages file in the .to-download dir into your system package
    manager and install all necessary files. (If you are using the dnf package
@@ -30,7 +27,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 7. Go into the .local/share/nvim/plugged/coc.nvim and run `npm ci` to resolve
    issues with coc. When coc issues are resolved you can run `:CocInstall PLUGIN
    NAME` in order to download coc language servers.
-<<<<<<< HEAD
 8. Install starship shell prompt via install script:
 
 ```
@@ -38,9 +34,6 @@ curl -sS https://starship.rs/install.sh | sh
 ```
 
 9. Clone the xdo repo and run the following in order to use mupdf and
-=======
-8. Clone the xdo repo and run the following in order to use mupdf and
->>>>>>> 7eafb3c60cfd9b19fe52f26c4f9cc5ba4236cfce
    feh:
 
 ```
@@ -49,11 +42,7 @@ cd xdo
 sudo make install
 ```
 
-<<<<<<< HEAD
 10. Lastly, to utilize the zsh extensions, you need to install the plugins into your
-=======
-9. Lastly, to utilize the zsh extensions, you need to install the plugins into your
->>>>>>> 7eafb3c60cfd9b19fe52f26c4f9cc5ba4236cfce
     system as follows:
 
 ```
@@ -68,11 +57,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git\
 
 - [ ] Automate everything in ansible to make everything idempotent and remove
   manual steps.
-<<<<<<< HEAD
-    - Ansible playbook has been created. Basic functionality has been implemented
-=======
   - Ansible playbook has been created. Basic functionality has been implemented
->>>>>>> 7eafb3c60cfd9b19fe52f26c4f9cc5ba4236cfce
     and merged into the master branch, still needs work to automate other items
     in the list above.
 - [ ] Possibly moveover to a wayland based WM/Compositor. Possible considerations
