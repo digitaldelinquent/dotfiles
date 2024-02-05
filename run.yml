@@ -2,7 +2,12 @@
 - name: Setup system
   hosts: localhost
   connection: local
+<<<<<<< HEAD
   remote_user: "{{ user }}"
+=======
+  become: yes
+  become_user: "{{ user }}"
+>>>>>>> 7eafb3c60cfd9b19fe52f26c4f9cc5ba4236cfce
   
   tasks:
     - import_tasks: tasks/packages.yml
