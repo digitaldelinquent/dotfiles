@@ -1,40 +1,35 @@
 - name: Copy .profile into home folder
-  copy:
+  file:
     src: "{{ playbook_dir }}/.profile"
-    dest: "/home/{{ user }}/"
+    dest: "/home/{{ user }}/.profile"
     state: link
 
 - name: Copy .zprofile into home folder
-  copy:
+  file:
     src: "{{ playbook_dir }}/.zprofile"
-    dest: "/home/{{ user }}/"
+    dest: "/home/{{ user }}/.zprofile"
     state: link
 
 - name: Copy configs
-  copy:
-    src: "{{ playbook_dir }}/config/"
-    dest: "/home/{{ user }}/.config/"
+  file:
+    src: "{{ playbook_dir }}/config"
+    dest: "/home/{{ user }}/.config"
     state: link
 
 - name: Copy scripts into bin
-  copy:
+  file:
     src: "{{ playbook_dir }}/scripts"
-    dest: "/home/{{ user }}/.local/bin/"
+    dest: "/home/{{ user }}/.local/bin/scripts"
     state: link
 
 - name: Copy .Xresources into home folder
-  copy:
+  file:
     src: "{{ playbook_dir }}/.Xresources"
-    dest: "/home/{{ user }}/"
-    state: link
-
-- name: Copy Dracula gtk theme into system folder
-  copy:
-    src: "{{ playbook_dir }}/.to-download/Dracula"
-    dest: "/usr/share/themes/"
+    dest: "/home/{{ user }}/.Xresources"
     state: link
 
 - name: Copy mouse settings into system folder
+  become: yes
   copy:
     src: "{{ playbook_dir }}/.to-download/40-libinput.conf"
-    dest: "/etc/X11/xorg.conf.d/"
+    dest: "/etc/X11/xorg.conf.d/40-libinput.conf"

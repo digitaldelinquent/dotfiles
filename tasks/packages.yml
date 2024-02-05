@@ -28,3 +28,21 @@
   git:
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
     dest: "/home/{{ user }}/.config/zsh/zsh-syntax-highlighting"
+
+- name: Copy Dracula into .themes
+  file:
+    src: "{{ playbook_dir }}/.to-download/Dracula"
+    dest: "/home/{{ user }}/.themes/Dracula"
+    state: link
+
+
+- name: Clone qt5 Dracula theme
+  git:
+    repo: https://github.com/dracula/qt5.git
+    dest: "/home/{{ user }}/Downloads/qt5_dracula"
+
+- name: Symlink Dracula theme to qt5 config
+  file:
+    src: "/home/{{ user }}/Downloads/qt5_dracula/Dracula.conf"
+    dest: "/home/{{ user }}/.config/qt5ct/colors/Dracula.conf"
+    state: link
