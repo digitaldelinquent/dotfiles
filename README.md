@@ -23,7 +23,13 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 7. Go into the .local/share/nvim/plugged/coc.nvim and run `npm ci` to resolve
    issues with coc. When coc issues are resolved you can run `:CocInstall PLUGIN
    NAME` in order to download coc language servers.
-8. Clone the xdo repo and run the following in order to use mupdf and
+8. Install starship shell prompt via install script:
+
+```
+curl -sS https://starship.rs/install.sh | sh
+```
+
+9. Clone the xdo repo and run the following in order to use mupdf and
    feh:
 
 ```
@@ -32,7 +38,7 @@ cd xdo
 sudo make install
 ```
 
-9. Lastly, to utilize the zsh extensions, you need to install the plugins into your
+10. Lastly, to utilize the zsh extensions, you need to install the plugins into your
     system as follows:
 
 ```
