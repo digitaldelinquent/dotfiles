@@ -139,8 +139,6 @@ set smartcase
 
 set showmatch
 
-autocmd BufWritePost *.md !pandoc -s <afile> -o <afile>.pdf
-
 map <leader><space> :let @/=''<cr> " clear search
 
 " Remap help key.
