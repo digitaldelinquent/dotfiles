@@ -82,17 +82,9 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#888888"
 
 # Custom User Functions
 ef() { 
-    [ -n "$1" ] && find $1 -type f | fzf | xargs -r $EDITOR || 
-    find ~/.config/ -type f | fzf | xargs -r $EDITOR 
+    [ -n "$1" ] && $EDITOR "$(find $1 -type f | fzf)" || 
+    $EDITOR "$(find $HOME/.config -type f | fzf)"
 }
-
-sef() {
-    [ -n "$1" ] && sudo find $1 -type f | fzf | sudo xargs -r $EDITOR || 
-    sudo find /etc/ -type f | fzf | sudo xargs -r $EDITOR 
-}
-
-bindkey -s "^F" "ef\r"
-bindkey -s "^[^F" "sef\r"
 
 # Reinstall roelm packages
 reinstall() {
