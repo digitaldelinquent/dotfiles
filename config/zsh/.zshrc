@@ -1,7 +1,7 @@
 # Just in case
-source ~/.zprofile
+source $HOME/.zprofile
 
-source ~/.alias_zsh 
+source $HOME/.aliases
 
 # Default fzf command
 export FZF_DEFAULT_COMMAND="find ~/ -type f"
