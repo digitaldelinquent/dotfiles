@@ -1,7 +1,10 @@
 # Just in case
 source $HOME/.zprofile
 
-source $HOME/.aliases
+if [ -f $HOME/.aliases ];
+then
+    source $HOME/.aliases
+fi
 
 # Default fzf command
 export FZF_DEFAULT_COMMAND="find ~/ -type f"
