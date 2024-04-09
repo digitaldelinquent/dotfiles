@@ -1,8 +1,8 @@
 # Just in case
 source $HOME/.zprofile
 
-if [ -f $HOME/.aliases ];
-then
+# For aliases that are machine specific
+if [ -f $HOME/.aliases ]; then
     source $HOME/.aliases
 fi
 
