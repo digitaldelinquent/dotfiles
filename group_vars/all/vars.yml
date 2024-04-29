@@ -50,7 +50,6 @@ packages:
   # - system76-firmware
   # - system76-firmware-daemon
   - solaar
-  - terraform-ls
   # - tdrop
   - prettyping
   - bat
