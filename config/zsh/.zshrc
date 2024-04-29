@@ -25,12 +25,13 @@ export KEYTIMEOUT=1
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
+
 # Auto complete with case insenstivity
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots)		# Include hidden files
+_comp_options+=(globdots) # Include hidden files
 
 ## Keybinds
 
