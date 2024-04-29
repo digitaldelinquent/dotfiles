@@ -1,5 +1,6 @@
 user: PUT_USERNAME_HERE
 packages:
+  - ansible
   - alacritty
   - alsa-utils
   - android-tools
@@ -16,7 +17,6 @@ packages:
   - librewolf
   - fuse
   - fzf
-  - gimp
   - gnome-keyring
   - htop
   - i3lock
@@ -47,8 +47,6 @@ packages:
   - breeze-cursor-theme
   - xdotool
   - zsh
-  # - system76-firmware
-  # - system76-firmware-daemon
   - solaar
   # - tdrop
   - prettyping
