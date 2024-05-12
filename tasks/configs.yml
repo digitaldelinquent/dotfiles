@@ -38,3 +38,10 @@
   copy:
     src: "{{ playbook_dir }}/.to-download/40-libinput.conf"
     dest: "/etc/X11/xorg.conf.d/40-libinput.conf"
+
+- name: Enable and start libvirtd service
+  become: yes
+  systemd_service:
+    name: libvirtd
+    enabled: true
+    state: started
