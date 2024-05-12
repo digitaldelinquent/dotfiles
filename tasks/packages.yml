@@ -4,19 +4,19 @@
     name: "*"
     state: latest
 
-- name: Install packages
+- name: Install packages (Fedora)
   become_user: root
   dnf:
     name: "{{ packages_fedora }}"
     state: latest
   when: ansible_distribution == 'Fedora'
 
-- name: Install packages
+- name: Install packages (ParrotOS)
   become_user: root
-  dnf:
-    name: "{{ packages_kali }}"
+  apt:
+    name: "{{ packages_parrot }}"
     state: latest
-  when: ansible_distribution == 'Kali'
+  when: ansible_distribution == 'Parrot'
 
 - name: Download installer script for starship
   get_url: 
