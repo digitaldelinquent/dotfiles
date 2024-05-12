@@ -1,4 +1,4 @@
-packages:
+packages_fedora:
   - ansible
   - alacritty
   - alsa-utils
@@ -27,19 +27,15 @@ packages:
   - neofetch
   - neovim
   - network-manager-applet
-  - nodejs
-  - npm
   - pandoc
   - picom
   - piper
   - playerctl
-  - python-pip
+  - python
   - qt5ct
   - remmina
-  - rust
   - sxhkd
   - transmission-cli
-  - wine
   - wireguard-tools
   - xautolock
   - xclip
@@ -47,7 +43,20 @@ packages:
   - xdotool
   - zsh
   - solaar
-  # - tdrop
   - prettyping
   - bat
   - "@virtualization"
+
+packages_kali:
+  - ansible
+  - alacritty
+  - podman
+  - exa
+  - fzf
+  - htop
+  - neofetch
+  - neovim
+  - remmina
+  - wireguard-tools
+  - prettyping
+  - bat

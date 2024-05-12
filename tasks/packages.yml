@@ -7,8 +7,16 @@
 - name: Install packages
   become_user: root
   dnf:
-    name: "{{ packages }}"
+    name: "{{ packages_fedora }}"
     state: latest
+  when: ansible_distribution == 'Fedora'
+
+- name: Install packages
+  become_user: root
+  dnf:
+    name: "{{ packages_kali }}"
+    state: latest
+  when: ansible_distribution == 'Kali'
 
 - name: Download installer script for starship
   get_url: 
@@ -34,17 +42,20 @@
     src: "{{ playbook_dir }}/.to-download/Dracula"
     dest: "/home/{{ user }}/.themes/Dracula"
     state: link
+  when: ansible_distribution == 'Fedora'
 
 - name: Clone qt5 Dracula theme
   git:
     repo: https://github.com/dracula/qt5.git
     dest: "/home/{{ user }}/Downloads/qt5_dracula"
+  when: ansible_distribution == 'Fedora'
 
 - name: Symlink Dracula theme to qt5 config
   file:
     src: "/home/{{ user }}/Downloads/qt5_dracula/Dracula.conf"
     dest: "/home/{{ user }}/.config/qt5ct/colors/Dracula.conf"
     state: link
+  when: ansible_distribution == 'Fedora'
 
 - name: Create a fonts directory
   file:
