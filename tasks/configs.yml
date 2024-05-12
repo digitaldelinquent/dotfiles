@@ -1,6 +1,6 @@
 - name: Change default user shell
   user:
-    name: {{ user }}
+    name: "{{ user }}"
     shell: /bin/zsh
 
 - name: Copy .profile into home folder
