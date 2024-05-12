@@ -70,3 +70,4 @@
   unarchive:
     src: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.0/Hack.zip"
     dest: "/home/{{user}}/.local/share/fonts"
+    remote_src: yes
