@@ -1,3 +1,19 @@
+- name: Delete .profile from home folder
+  file:
+    path: "/home/{{ user }}/.profile"
+    state: absent
+
+- name: Delete .zprofile from home folder
+  file:
+    path: "/home/{{ user }}/.zprofile"
+    state: absent
+
+- name: Delete .Xresources from home folder
+  file:
+    path: "/home/{{ user }}/.Xresources"
+    state: absent
+  when: ansible_distribution == 'Fedora'
+
 - name: Change default user shell
   user:
     name: "{{ user }}"
@@ -26,20 +42,24 @@
     src: "{{ playbook_dir }}/scripts"
     dest: "/home/{{ user }}/.local/bin/scripts"
     state: link
+  when: ansible_distribution == 'Fedora'
 
 - name: Copy .Xresources into home folder
   file:
     src: "{{ playbook_dir }}/.Xresources"
     dest: "/home/{{ user }}/.Xresources"
     state: link
+  when: ansible_distribution == 'Fedora'
 
 - name: Copy mouse settings into system folder
   copy:
     src: "{{ playbook_dir }}/.to-download/40-libinput.conf"
     dest: "/etc/X11/xorg.conf.d/40-libinput.conf"
+  when: ansible_distribution == 'Fedora'
 
 - name: Enable and start libvirtd service
   systemd_service:
     name: libvirtd
     enabled: true
     state: started
+  when: ansible_distribution == 'Fedora'
