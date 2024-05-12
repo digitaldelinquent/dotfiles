@@ -8,6 +8,11 @@
     path: "/home/{{ user }}/.zprofile"
     state: absent
 
+- name: Delete zsh from config folder
+  file:
+    path: "/home/{{ user }}/.config/zsh"
+    state: absent
+
 - name: Delete .Xresources from home folder
   file:
     path: "/home/{{ user }}/.Xresources"
