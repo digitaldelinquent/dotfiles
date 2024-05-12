@@ -1,4 +1,3 @@
-user: PUT_USERNAME_HERE
 packages:
   - ansible
   - alacritty
