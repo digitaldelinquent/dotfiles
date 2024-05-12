@@ -3,6 +3,8 @@
   hosts: localhost
   connection: local
   remote_user: "{{ user }}"
+  ansible_become_pass: "{{ password }}"
+  become: yes
   
   tasks:
     - import_tasks: tasks/packages.yml
