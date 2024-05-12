@@ -1,3 +1,4 @@
+user: INSERT USER HERE
 packages_fedora:
   - ansible
   - alacritty
