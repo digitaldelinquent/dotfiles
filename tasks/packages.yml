@@ -29,7 +29,7 @@
     mode: '0755'
 
 - name : Run installer script for starship
-  command: "/home/{{ user }}/Downloads/starship_install.sh"
+  command: "/home/{{ user }}/Downloads/starship_install.sh -y"
 
 - name: Clone zsh autosuggestions plugin into .config
   git:
