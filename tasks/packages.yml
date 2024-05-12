@@ -35,7 +35,6 @@
     dest: "/home/{{ user }}/.themes/Dracula"
     state: link
 
-
 - name: Clone qt5 Dracula theme
   git:
     repo: https://github.com/dracula/qt5.git
@@ -46,3 +45,13 @@
     src: "/home/{{ user }}/Downloads/qt5_dracula/Dracula.conf"
     dest: "/home/{{ user }}/.config/qt5ct/colors/Dracula.conf"
     state: link
+
+- name: Create a fonts directory
+  file:
+    path: /home/{{user}}/.local/share/fonts
+    state: directory
+
+- name: Get and unpack Hack Font
+  unarchive:
+    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.0/Hack.zip 
+    dest: "/home/{{user}}/.local/share/fonts"
