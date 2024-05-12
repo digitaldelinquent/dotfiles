@@ -60,3 +60,4 @@ packages_kali:
   - wireguard-tools
   - prettyping
   - bat
+  - zsh
