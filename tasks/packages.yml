@@ -1,30 +1,22 @@
 - name: Update packages
-  ansible_become_pass: "{{ password }}"
-  become: yes
   dnf:
     name: "*"
     state: latest
   when: ansible_distribution == 'Fedora'
 
 - name: Update packages
-  ansible_become_pass: "{{ password }}"
-  become: yes
   apt:
     name: "*"
     state: latest
   when: ansible_distribution == 'Fedora'
 
 - name: Install packages
-  ansible_become_pass: "{{ password }}"
-  become: yes
   dnf:
     name: "{{ packages_fedora }}"
     state: latest
   when: ansible_distribution == 'Fedora'
 
 - name: Install packages
-  ansible_become_pass: "{{ password }}"
-  become: yes
   apt:
     name: "{{ packages_parrot }}"
     state: latest
