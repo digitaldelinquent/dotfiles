@@ -9,6 +9,6 @@ opts=(
     [ Lock]="i3lock -i $HOME/Pictures/lain.png; systemctl suspend"
 )
 
-choice=$(printf "%s\n" "${!opts[@]}" | rofi -dmenu)
+choice=$(printf "%s\n" "${!opts[@]}" | rofi -dmenu -p "Power")
 
 eval ${opts[$choice]}
