@@ -102,20 +102,13 @@
     state: link
   when: ansible_distribution == 'Fedora'
 
-- name: Link .Xresources into home folder
-  file:
-    src: "{{ playbook_dir }}/.Xresources"
-    dest: "/home/{{ user }}/.Xresources"
-    state: link
-  when: ansible_distribution == 'Fedora'
-
 - name: Copy mouse settings into system folder
   copy:
     src: "{{ playbook_dir }}/.to-download/40-libinput.conf"
     dest: "/etc/X11/xorg.conf.d/40-libinput.conf"
   when: ansible_distribution == 'Fedora'
 
-- name: Enable and start libvirtd service
+- name: Edit rofi config to have hack nerd font
   lineinfile:
     path: /home/{{user}}/.config/rofi/config.rasi 
     search_string: "font: \"Jetbrains Mono 12\";"

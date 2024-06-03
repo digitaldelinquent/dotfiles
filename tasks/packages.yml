@@ -72,6 +72,18 @@
     dest: "/home/{{ user }}/.config/rofi/config.rasi"
   when: ansible_distribution == 'Fedora'
 
+- name: Clone Xresources Dracula theme
+  git:
+    repo: https://github.com/dracula/xresources.git
+    dest: "/home/{{ user }}/Downloads/xresources"
+  when: ansible_distribution == 'Fedora'
+
+- name: Copy Dracula Xresources into home folder
+  copy:
+    src: "/home/{{ user }}/Downloads/xresources/Xresources"
+    dest: "/home/{{ user }}/.Xresources"
+  when: ansible_distribution == 'Fedora'
+
 - name: Create a fonts directory
   file:
     path: /home/{{user}}/.local/share/fonts
