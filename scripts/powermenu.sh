@@ -9,6 +9,6 @@ opts=(
     [ Lock]="i3lock -i $HOME/Pictures/lain.png; systemctl suspend"
 )
 
-choice=$(printf "%s\n" "${!opts[@]}" | dmenu -nb "#282A36" -nf "#ffffff" -sb "#b18ef9" -sf "#ffffff" -fn monospace -b)
+choice=$(printf "%s\n" "${!opts[@]}" | rofi -dmenu)
 
 eval ${opts[$choice]}

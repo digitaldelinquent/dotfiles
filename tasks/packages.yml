@@ -54,11 +54,22 @@
     dest: "/home/{{ user }}/Downloads/qt5_dracula"
   when: ansible_distribution == 'Fedora'
 
-- name: Symlink Dracula theme to qt5 config
-  file:
+- name: Copy Dracula theme to qt5 config
+  copy:
     src: "/home/{{ user }}/Downloads/qt5_dracula/Dracula.conf"
     dest: "/home/{{ user }}/.config/qt5ct/colors/Dracula.conf"
-    state: link
+  when: ansible_distribution == 'Fedora'
+
+- name: Clone rofi Dracula theme
+  git:
+    repo: https://github.com/dracula/rofi.git
+    dest: "/home/{{ user }}/Downloads/rofi"
+  when: ansible_distribution == 'Fedora'
+
+- name: Copy Dracula theme to rofi config
+  copy:
+    src: "/home/{{ user }}/Downloads/rofi/theme/config1.rasi"
+    dest: "/home/{{ user }}/.config/rofi/config.rasi"
   when: ansible_distribution == 'Fedora'
 
 - name: Create a fonts directory

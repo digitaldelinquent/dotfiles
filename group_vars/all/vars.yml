@@ -9,7 +9,7 @@ packages_fedora:
   - brightnessctl
   - bspwm
   - discord
-  - dmenu
+  - rofi
   - podman
   - dunst
   - exa

@@ -116,6 +116,13 @@
   when: ansible_distribution == 'Fedora'
 
 - name: Enable and start libvirtd service
+  lineinfile:
+    path: /home/{{user}}/.config/rofi/config.rasi 
+    search_string: "font: \"Jetbrains Mono 12\";"
+    line: "font: \"Hack Nerd Font Mono 12\";"
+  when: ansible_distribution == 'Fedora'
+
+- name: Enable and start libvirtd service
   systemd_service:
     name: libvirtd
     enabled: true
