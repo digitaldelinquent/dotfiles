@@ -120,3 +120,8 @@ neofetch
 eval "$(starship init zsh)"
 export QT_QPA_PLATFORMTHEME="gtk2"
 export DBX_CONTAINER_MANAGER="podman"
+
+# Tmux autostart
+if [ -z "${TMUX}" ]; then
+    exec tmux new -A -s lain >/dev/null 2>&1
+fi

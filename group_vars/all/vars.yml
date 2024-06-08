@@ -27,6 +27,7 @@ packages_fedora:
   - mupdf
   - neofetch
   - neovim
+  - tmux
   - network-manager-applet
   - pandoc
   - picom
@@ -57,6 +58,7 @@ packages_parrot:
   - htop
   - neofetch
   - neovim
+  - tmux
   - remmina
   - wireguard-tools
   - prettyping
