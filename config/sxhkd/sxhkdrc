@@ -92,10 +92,6 @@ ctrl + m
 super + i
     sysinfo.sh
 
-# Scratch Pad
-super + slash
-    tdrop -a $TERMINAL
-
 # quit/powermenu/restart bspwm
 ctrl + l
     bspc quit
