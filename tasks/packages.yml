@@ -84,9 +84,19 @@
     dest: "/home/{{ user }}/.Xresources"
   when: ansible_distribution == 'Fedora'
 
+- name: Create a Tmux plugins directory
+  file:
+    path: "/home/{{user}}/.config/tmux/plugins"
+    state: directory
+
+- name: Clone tmux packagem manager into tmux plugins directory
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: "/home/{{ user }}/.config/tmux/plugins/tpm"
+
 - name: Create a fonts directory
   file:
-    path: /home/{{user}}/.local/share/fonts
+    path: "/home/{{user}}/.local/share/fonts"
     state: directory
 
 - name: Get and unpack Hack Font
