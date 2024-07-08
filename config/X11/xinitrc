@@ -44,7 +44,7 @@ export DESKTOP_SESSION="dwm"
 
 # mons.sh
 lock.sh
-feh --bg-fill --no-fehbg ~/Pictures/Wallpapers/lain.png 
+feh --bg-fill --no-fehbg ~/Media/Wallpapers/lain.png 
 ~/.config/dunst/launch.sh
 killall -q gnome-keyring-daemon
 while pgrep gnome-keyring-daemon; do sleep 0.01s; done
