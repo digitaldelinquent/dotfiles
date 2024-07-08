@@ -121,3 +121,10 @@
     enabled: true
     state: started
   when: ansible_distribution == 'Fedora'
+
+- name: Enable and start syncthing service
+  systemd_service:
+    name: syncthing@{{user}}
+    enabled: true
+    state: started
+  when: ansible_distribution == 'Fedora'
