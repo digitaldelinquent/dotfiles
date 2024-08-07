@@ -2,8 +2,8 @@
 source $HOME/.zprofile
 
 # For aliases that are machine specific
-if [ -f $HOME/.aliases ]; then
-    source $HOME/.aliases
+if [ -f $HOME/.extend ]; then
+    source $HOME/.extend
 fi
 
 # Default fzf command
