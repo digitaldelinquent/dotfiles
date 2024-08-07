@@ -1,13 +1,7 @@
 # Rice
 
-1. Copy/symlink the .zprofile, .profile, .gitconfig and .to-download files into your home directory.
-2. After that copy/symlink everything over from the config directory into your .config directory.
-
-> **NOTE:** If on non-linux machine (UNIX-like OS like MacOS) copy the .zshrc into the
-> home directory. 
-
-3. Copy/symlink the scripts dir into your .local/bin dir.
-4. Pass the packages file in the .to-download dir into your system package
+1. Symlink the dotfiles via stow: `stow --adopt .`
+2. Pass the packages file in the .to-download dir into your system package
    manager and install all necessary files. (If you are using the dnf package
    manager, use the `reinstall` function in the shell.)
 
@@ -15,25 +9,25 @@
 > or manually download some packages from their respective websites.
 > Many packages maybe unnecessary if on a non-linux machine (UNIX-like OS like MacOS)
 
-5. Run the following command to install vim plug:
+3. Run the following command to install vim plug:
 
 ```
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-6. After that run `:PlugInstall` while inside the init.vim to download all vim
+4. After that run `:PlugInstall` while inside the init.vim to download all vim
    plug packages.
-7. Go into the .local/share/nvim/plugged/coc.nvim and run `npm ci` to resolve
+5. Go into the .local/share/nvim/plugged/coc.nvim and run `npm ci` to resolve
    issues with coc. When coc issues are resolved you can run `:CocInstall PLUGIN
    NAME` in order to download coc language servers.
-8. Install starship shell prompt via install script:
+6. Install starship shell prompt via install script:
 
 ```
 curl -sS https://starship.rs/install.sh | sh
 ```
 
-9. Clone the xdo repo and run the following in order to use mupdf and
+7. Clone the xdo repo and run the following in order to use mupdf and
    feh:
 
 ```
@@ -42,7 +36,7 @@ cd xdo
 sudo make install
 ```
 
-10. Lastly, to utilize the zsh extensions, you need to install the plugins into your
+8. Lastly, to utilize the zsh extensions, you need to install the plugins into your
     system as follows:
 
 ```
