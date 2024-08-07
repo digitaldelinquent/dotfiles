@@ -26,7 +26,7 @@
 
 - name: Copy mouse settings into system folder
   copy:
-    src: "{{ playbook_dir }}/.to-download/40-libinput.conf"
+    src: "{{ playbook_dir }}/mouse/40-libinput.conf"
     dest: "/etc/X11/xorg.conf.d/40-libinput.conf"
   when: ansible_distribution == 'Fedora'
 
