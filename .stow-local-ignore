@@ -1,0 +1,8 @@
+.git
+.gitconfig
+.gitignore
+.to-download
+group_vars
+README.md
+run.yml
+tasks
