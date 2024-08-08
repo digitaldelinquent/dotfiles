@@ -38,3 +38,6 @@ export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export GOPATH="$XDG_DATA_HOME"/go
 export KUBECONFIG="$XDG_CONFIG_HOME/kube/config.yaml"
 export KUBECACHEDIR="$XDG_CACHE_HOME/kube"
+export ANSIBLE_HOME="${XDG_CONFIG_HOME}/ansible"
+export ANSIBLE_CONFIG="${XDG_CONFIG_HOME}/ansible.cfg"
+export ANSIBLE_GALAXY_CACHE_DIR="${XDG_CACHE_HOME}/ansible/galaxy_cache"
