@@ -13,6 +13,11 @@
     path: "/home/{{ user }}/.config/zsh"
     state: absent
 
+- name: Delete .zshrc from home folder
+  file:
+    path: "/home/{{ user }}/.zshrc"
+    state: absent
+
 - name: Delete .Xresources from home folder
   file:
     path: "/home/{{ user }}/.Xresources"
