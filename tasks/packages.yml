@@ -101,6 +101,6 @@
 
 - name: Get and unpack Hack Font
   unarchive:
-    src: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.0/Hack.zip"
+    src: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip"
     dest: "/home/{{user}}/.local/share/fonts"
     remote_src: yes
