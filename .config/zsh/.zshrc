@@ -3,7 +3,7 @@ source $HOME/.zprofile
 
 # For aliases that are machine specific
 if [ -f $HOME/.extend ]; then
-    source $HOME/.extend
+    source $HOME/.extend.sh
 fi
 
 # Default fzf command
