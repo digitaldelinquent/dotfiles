@@ -1,4 +1,4 @@
-- name: Update and install packages [FEDORA]
+- name: Update and install packages
   become: true
   block:
     - name: Update packages
@@ -9,19 +9,6 @@
     - name: Install packages
       dnf:
         name: "{{ packages_fedora }}"
-        state: latest
-
-- name: Update and install packages [ParrotOS]
-  become: true
-  block:
-    - name: Update packages
-      apt:
-        name: "*"
-        state: latest
-
-    - name: Install packages
-      apt:
-        name: "{{ packages_parrot }}"
         state: latest
 
 - name: Install zsh plugins
