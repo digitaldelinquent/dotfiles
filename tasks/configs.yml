@@ -24,10 +24,12 @@
       file:
         path: "/home/{{ user }}/.Xresources"
         state: absent
-      when: ansible_distribution == 'Fedora'
 
-- name: Configure settings not in dotfiles
+- name: Configure settings
   block:
+    - name: Symlink dotfiles
+      ansible.builtin.shell:
+        cmd: "stow --adopt -d {{ playbook_dir }}/.dotfiles -t /home/{{ user }}"
     - name: Change default user shell
       become: true
       user:
@@ -39,14 +41,12 @@
       copy:
         src: "{{ playbook_dir }}/mouse/40-libinput.conf"
         dest: "/etc/X11/xorg.conf.d/40-libinput.conf"
-      when: ansible_distribution == 'Fedora'
 
     - name: Edit rofi config to have hack nerd font
       lineinfile:
         path: /home/{{user}}/.config/rofi/config.rasi 
         search_string: "font: \"Jetbrains Mono 12\";"
         line: "font: \"Hack Nerd Font Mono 12\";"
-      when: ansible_distribution == 'Fedora'
 
 - name: Enable services that are not up by default
   become: true
@@ -56,11 +56,9 @@
         name: libvirtd
         enabled: true
         state: started
-      when: ansible_distribution == 'Fedora'
 
     - name: Enable and start syncthing service
       systemd_service:
         name: syncthing@{{user}}
         enabled: true
         state: started
-      when: ansible_distribution == 'Fedora'

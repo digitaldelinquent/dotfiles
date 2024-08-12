@@ -5,13 +5,11 @@
       dnf:
         name: "*"
         state: latest
-      when: ansible_distribution == 'Fedora'
 
     - name: Install packages
       dnf:
         name: "{{ packages_fedora }}"
         state: latest
-      when: ansible_distribution == 'Fedora'
 
 - name: Update and install packages [ParrotOS]
   become: true
@@ -25,7 +23,6 @@
       apt:
         name: "{{ packages_parrot }}"
         state: latest
-  when: ansible_distribution == 'Parrot'
 
 - name: Install zsh plugins
   block:
@@ -89,10 +86,10 @@
         dest: "/home/{{ user }}/Downloads/xdo"
 
     - name: Compile and install xdo binary
+      become: true
       community.general.make:
         chdir: "/home/{{ user }}/Downloads/xdo"
         target: install
-      become: true
 
 - name: Install Dracula theme
   block:
@@ -101,40 +98,33 @@
         src: "https://github.com/dracula/gtk/archive/master.zip"
         dest: "/home/{{ user }}/.themes/Dracula"
         remote_src: yes
-      when: ansible_distribution == 'Fedora'
 
     - name: Clone qt5 Dracula theme
       git:
         repo: https://github.com/dracula/qt5.git
         dest: "/home/{{ user }}/Downloads/qt5_dracula"
-      when: ansible_distribution == 'Fedora'
 
     - name: Clone rofi Dracula theme
       git:
         repo: https://github.com/dracula/rofi.git
         dest: "/home/{{ user }}/Downloads/rofi"
-      when: ansible_distribution == 'Fedora'
 
     - name: Clone Xresources Dracula theme
       git:
         repo: https://github.com/dracula/xresources.git
         dest: "/home/{{ user }}/Downloads/xresources"
-      when: ansible_distribution == 'Fedora'
 
     - name: Copy Dracula theme to qt5 config
       copy:
         src: "/home/{{ user }}/Downloads/qt5_dracula/Dracula.conf"
         dest: "/home/{{ user }}/.config/qt5ct/colors/Dracula.conf"
-      when: ansible_distribution == 'Fedora'
 
     - name: Copy Dracula theme to rofi config
       copy:
         src: "/home/{{ user }}/Downloads/rofi/theme/config1.rasi"
         dest: "/home/{{ user }}/.config/rofi/config.rasi"
-      when: ansible_distribution == 'Fedora'
 
     - name: Copy Dracula Xresources into home folder
       copy:
         src: "/home/{{ user }}/Downloads/xresources/Xresources"
         dest: "/home/{{ user }}/.Xresources"
-      when: ansible_distribution == 'Fedora'
