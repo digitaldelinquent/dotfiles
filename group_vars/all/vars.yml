@@ -1,6 +1,5 @@
 user: INSERT USER HERE
 packages_fedora:
-  - ansible
   - alacritty
   - alsa-utils
   - android-tools
@@ -49,9 +48,9 @@ packages_fedora:
   - bat
   - "@virtualization"
   - syncthing
+  - stow
 
 packages_parrot:
-  - ansible
   - alacritty
   - podman
   - exa
@@ -65,3 +64,4 @@ packages_parrot:
   - prettyping
   - bat
   - zsh
+  - stow
