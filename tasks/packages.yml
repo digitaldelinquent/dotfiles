@@ -1,106 +1,140 @@
-- name: Update packages
-  dnf:
-    name: "*"
-    state: latest
-  when: ansible_distribution == 'Fedora'
+- name: Update and install packages [FEDORA]
+  become: true
+  block:
+    - name: Update packages
+      dnf:
+        name: "*"
+        state: latest
+      when: ansible_distribution == 'Fedora'
 
-- name: Update packages
-  apt:
-    name: "*"
-    state: latest
-  when: ansible_distribution == 'Fedora'
+    - name: Install packages
+      dnf:
+        name: "{{ packages_fedora }}"
+        state: latest
+      when: ansible_distribution == 'Fedora'
 
-- name: Install packages
-  dnf:
-    name: "{{ packages_fedora }}"
-    state: latest
-  when: ansible_distribution == 'Fedora'
+- name: Update and install packages [ParrotOS]
+  become: true
+  block:
+    - name: Update packages
+      apt:
+        name: "*"
+        state: latest
 
-- name: Install packages
-  apt:
-    name: "{{ packages_parrot }}"
-    state: latest
+    - name: Install packages
+      apt:
+        name: "{{ packages_parrot }}"
+        state: latest
   when: ansible_distribution == 'Parrot'
 
-- name: Download installer script for starship
+- name: Install zsh plugins
+  block:
+    - name: Clone zsh autosuggestions plugin into .config
+      git:
+        repo: https://github.com/zsh-users/zsh-autosuggestions
+        dest: "/home/{{ user }}/.config/zsh/zsh-autosuggestions"
+
+    - name: Clone zsh syntax highlighting plugins into .config
+      git:
+        repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+        dest: "/home/{{ user }}/.config/zsh/zsh-syntax-highlighting"
+
+- name: Install tmux package manager
+  block:
+    - name: Create a Tmux plugins directory
+      file:
+        path: "/home/{{user}}/.config/tmux/plugins"
+        state: directory
+
+    - name: Clone tmux package manager into tmux plugins directory
+      git:
+        repo: https://github.com/tmux-plugins/tpm
+        dest: "/home/{{ user }}/.config/tmux/plugins/tpm"
+
+- name: Install starship prompt
+  block:
+    - name: Download installer script for starship
+      get_url: 
+        url: https://starship.rs/install.sh
+        dest: "/home/{{ user }}/Downloads/starship_install.sh"
+        mode: '0755'
+
+    - name : Run installer script for starship
+      command: "/home/{{ user }}/Downloads/starship_install.sh -y"
+
+- name: Install vim-plug
   get_url: 
-    url: https://starship.rs/install.sh
-    dest: "/home/{{ user }}/Downloads/starship_install.sh"
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: "/home/{{ user }}/.local/share/nvim/site/autoload/plug.vim"
     mode: '0755'
 
-- name : Run installer script for starship
-  command: "/home/{{ user }}/Downloads/starship_install.sh -y"
+- name: Install and configure fonts
+  block:
+    - name: Create a fonts directory
+      file:
+        path: "/home/{{user}}/.local/share/fonts"
+        state: directory
 
-- name: Clone zsh autosuggestions plugin into .config
-  git:
-    repo: https://github.com/zsh-users/zsh-autosuggestions
-    dest: "/home/{{ user }}/.config/zsh/zsh-autosuggestions"
+    - name: Get and unpack Hack Font
+      unarchive:
+        src: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip"
+        dest: "/home/{{user}}/.local/share/fonts"
+        remote_src: yes
 
-- name: Clone zsh syntax highlighting plugins into .config
-  git:
-    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
-    dest: "/home/{{ user }}/.config/zsh/zsh-syntax-highlighting"
+- name: Install xdo binary
+  block:
+    - name: Clone xdo repo into Downloads
+      git:
+        repo: https://github.com/baskerville/xdo.git
+        dest: "/home/{{ user }}/Downloads/xdo"
 
-- name: Unzip Dracula GTK theme into .themes
-  unarchive:
-    src: "https://github.com/dracula/gtk/archive/master.zip"
-    dest: "/home/{{ user }}/.themes/Dracula"
-    remote_src: yes
-  when: ansible_distribution == 'Fedora'
+    - name: Compile and install xdo binary
+      community.general.make:
+        chdir: "/home/{{ user }}/Downloads/xdo"
+        target: install
+      become: true
 
-- name: Clone qt5 Dracula theme
-  git:
-    repo: https://github.com/dracula/qt5.git
-    dest: "/home/{{ user }}/Downloads/qt5_dracula"
-  when: ansible_distribution == 'Fedora'
+- name: Install Dracula theme
+  block:
+    - name: Unzip Dracula GTK theme into .themes
+      unarchive:
+        src: "https://github.com/dracula/gtk/archive/master.zip"
+        dest: "/home/{{ user }}/.themes/Dracula"
+        remote_src: yes
+      when: ansible_distribution == 'Fedora'
 
-- name: Copy Dracula theme to qt5 config
-  copy:
-    src: "/home/{{ user }}/Downloads/qt5_dracula/Dracula.conf"
-    dest: "/home/{{ user }}/.config/qt5ct/colors/Dracula.conf"
-  when: ansible_distribution == 'Fedora'
+    - name: Clone qt5 Dracula theme
+      git:
+        repo: https://github.com/dracula/qt5.git
+        dest: "/home/{{ user }}/Downloads/qt5_dracula"
+      when: ansible_distribution == 'Fedora'
 
-- name: Clone rofi Dracula theme
-  git:
-    repo: https://github.com/dracula/rofi.git
-    dest: "/home/{{ user }}/Downloads/rofi"
-  when: ansible_distribution == 'Fedora'
+    - name: Clone rofi Dracula theme
+      git:
+        repo: https://github.com/dracula/rofi.git
+        dest: "/home/{{ user }}/Downloads/rofi"
+      when: ansible_distribution == 'Fedora'
 
-- name: Copy Dracula theme to rofi config
-  copy:
-    src: "/home/{{ user }}/Downloads/rofi/theme/config1.rasi"
-    dest: "/home/{{ user }}/.config/rofi/config.rasi"
-  when: ansible_distribution == 'Fedora'
+    - name: Clone Xresources Dracula theme
+      git:
+        repo: https://github.com/dracula/xresources.git
+        dest: "/home/{{ user }}/Downloads/xresources"
+      when: ansible_distribution == 'Fedora'
 
-- name: Clone Xresources Dracula theme
-  git:
-    repo: https://github.com/dracula/xresources.git
-    dest: "/home/{{ user }}/Downloads/xresources"
-  when: ansible_distribution == 'Fedora'
+    - name: Copy Dracula theme to qt5 config
+      copy:
+        src: "/home/{{ user }}/Downloads/qt5_dracula/Dracula.conf"
+        dest: "/home/{{ user }}/.config/qt5ct/colors/Dracula.conf"
+      when: ansible_distribution == 'Fedora'
 
-- name: Copy Dracula Xresources into home folder
-  copy:
-    src: "/home/{{ user }}/Downloads/xresources/Xresources"
-    dest: "/home/{{ user }}/.Xresources"
-  when: ansible_distribution == 'Fedora'
+    - name: Copy Dracula theme to rofi config
+      copy:
+        src: "/home/{{ user }}/Downloads/rofi/theme/config1.rasi"
+        dest: "/home/{{ user }}/.config/rofi/config.rasi"
+      when: ansible_distribution == 'Fedora'
 
-- name: Create a Tmux plugins directory
-  file:
-    path: "/home/{{user}}/.config/tmux/plugins"
-    state: directory
-
-- name: Clone tmux packagem manager into tmux plugins directory
-  git:
-    repo: https://github.com/tmux-plugins/tpm
-    dest: "/home/{{ user }}/.config/tmux/plugins/tpm"
-
-- name: Create a fonts directory
-  file:
-    path: "/home/{{user}}/.local/share/fonts"
-    state: directory
-
-- name: Get and unpack Hack Font
-  unarchive:
-    src: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip"
-    dest: "/home/{{user}}/.local/share/fonts"
-    remote_src: yes
+    - name: Copy Dracula Xresources into home folder
+      copy:
+        src: "/home/{{ user }}/Downloads/xresources/Xresources"
+        dest: "/home/{{ user }}/.Xresources"
+      when: ansible_distribution == 'Fedora'

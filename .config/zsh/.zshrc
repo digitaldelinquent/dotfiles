@@ -94,7 +94,7 @@ ef() {
 
 # Reinstall roelm packages
 reinstall() {
-    sudo dnf install $(cat $HOME/.to-download/packages);
+    sudo dnf install $(cat $HOME/.dotfiles/packages);
     return 1
 }
 

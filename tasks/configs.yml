@@ -1,57 +1,66 @@
-- name: Delete .profile from home folder
-  file:
-    path: "/home/{{ user }}/.profile"
-    state: absent
+- name: Delete existing dotfiles
+  block:
+    - name: Delete .profile from home folder
+      file:
+        path: "/home/{{ user }}/.profile"
+        state: absent
 
-- name: Delete .zprofile from home folder
-  file:
-    path: "/home/{{ user }}/.zprofile"
-    state: absent
+    - name: Delete .zprofile from home folder
+      file:
+        path: "/home/{{ user }}/.zprofile"
+        state: absent
 
-- name: Delete zsh from config folder
-  file:
-    path: "/home/{{ user }}/.config/zsh"
-    state: absent
+    - name: Delete zsh from config folder
+      file:
+        path: "/home/{{ user }}/.config/zsh"
+        state: absent
 
-- name: Delete .zshrc from home folder
-  file:
-    path: "/home/{{ user }}/.zshrc"
-    state: absent
+    - name: Delete .zshrc from home folder
+      file:
+        path: "/home/{{ user }}/.zshrc"
+        state: absent
 
-- name: Delete .Xresources from home folder
-  file:
-    path: "/home/{{ user }}/.Xresources"
-    state: absent
-  when: ansible_distribution == 'Fedora'
+    - name: Delete .Xresources from home folder
+      file:
+        path: "/home/{{ user }}/.Xresources"
+        state: absent
+      when: ansible_distribution == 'Fedora'
 
-- name: Change default user shell
-  user:
-    name: "{{ user }}"
-    shell: /bin/zsh
+- name: Configure settings not in dotfiles
+  block:
+    - name: Change default user shell
+      become: true
+      user:
+        name: "{{ user }}"
+        shell: /bin/zsh
 
-- name: Copy mouse settings into system folder
-  copy:
-    src: "{{ playbook_dir }}/mouse/40-libinput.conf"
-    dest: "/etc/X11/xorg.conf.d/40-libinput.conf"
-  when: ansible_distribution == 'Fedora'
+    - name: Copy mouse settings into system folder
+      become: true
+      copy:
+        src: "{{ playbook_dir }}/mouse/40-libinput.conf"
+        dest: "/etc/X11/xorg.conf.d/40-libinput.conf"
+      when: ansible_distribution == 'Fedora'
 
-- name: Edit rofi config to have hack nerd font
-  lineinfile:
-    path: /home/{{user}}/.config/rofi/config.rasi 
-    search_string: "font: \"Jetbrains Mono 12\";"
-    line: "font: \"Hack Nerd Font Mono 12\";"
-  when: ansible_distribution == 'Fedora'
+    - name: Edit rofi config to have hack nerd font
+      lineinfile:
+        path: /home/{{user}}/.config/rofi/config.rasi 
+        search_string: "font: \"Jetbrains Mono 12\";"
+        line: "font: \"Hack Nerd Font Mono 12\";"
+      when: ansible_distribution == 'Fedora'
 
-- name: Enable and start libvirtd service
-  systemd_service:
-    name: libvirtd
-    enabled: true
-    state: started
-  when: ansible_distribution == 'Fedora'
+- name: Enable services that are not up by default
+  become: true
+  block:
+    - name: Enable and start libvirtd service
+      systemd_service:
+        name: libvirtd
+        enabled: true
+        state: started
+      when: ansible_distribution == 'Fedora'
 
-- name: Enable and start syncthing service
-  systemd_service:
-    name: syncthing@{{user}}
-    enabled: true
-    state: started
-  when: ansible_distribution == 'Fedora'
+    - name: Enable and start syncthing service
+      systemd_service:
+        name: syncthing@{{user}}
+        enabled: true
+        state: started
+      when: ansible_distribution == 'Fedora'
