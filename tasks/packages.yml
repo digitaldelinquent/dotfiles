@@ -86,32 +86,38 @@
         dest: "/home/{{ user }}/.themes/Dracula"
         remote_src: yes
 
-    - name: Clone qt5 Dracula theme
-      git:
-        repo: https://github.com/dracula/qt5.git
-        dest: "/home/{{ user }}/Downloads/qt5_dracula"
+    - name: Download and install Dracula theme for qt5
+      block:
+        - name: Clone qt5 Dracula theme
+          git:
+            repo: https://github.com/dracula/qt5.git
+            dest: "/home/{{ user }}/Downloads/qt5_dracula"
 
-    - name: Clone rofi Dracula theme
-      git:
-        repo: https://github.com/dracula/rofi.git
-        dest: "/home/{{ user }}/Downloads/rofi"
+        - name: Copy Dracula theme to qt5 config
+          copy:
+            src: "/home/{{ user }}/Downloads/qt5_dracula/Dracula.conf"
+            dest: "/home/{{ user }}/.config/qt5ct/colors/Dracula.conf"
 
-    - name: Clone Xresources Dracula theme
-      git:
-        repo: https://github.com/dracula/xresources.git
-        dest: "/home/{{ user }}/Downloads/xresources"
+    - name: Download and install Dracula theme for rofi
+      block:
+        - name: Clone rofi Dracula theme
+          git:
+            repo: https://github.com/dracula/rofi.git
+            dest: "/home/{{ user }}/Downloads/rofi"
 
-    - name: Copy Dracula theme to qt5 config
-      copy:
-        src: "/home/{{ user }}/Downloads/qt5_dracula/Dracula.conf"
-        dest: "/home/{{ user }}/.config/qt5ct/colors/Dracula.conf"
+        - name: Copy Dracula theme to rofi config
+          copy:
+            src: "/home/{{ user }}/Downloads/rofi/theme/config1.rasi"
+            dest: "/home/{{ user }}/.config/rofi/config.rasi"
 
-    - name: Copy Dracula theme to rofi config
-      copy:
-        src: "/home/{{ user }}/Downloads/rofi/theme/config1.rasi"
-        dest: "/home/{{ user }}/.config/rofi/config.rasi"
+    - name: Download and install Dracula theme for Xresources
+      block:
+        - name: Clone Xresources Dracula theme
+          git:
+            repo: https://github.com/dracula/xresources.git
+            dest: "/home/{{ user }}/Downloads/xresources"
 
-    - name: Copy Dracula Xresources into home folder
-      copy:
-        src: "/home/{{ user }}/Downloads/xresources/Xresources"
-        dest: "/home/{{ user }}/.Xresources"
+        - name: Copy Dracula Xresources into home folder
+          copy:
+            src: "/home/{{ user }}/Downloads/xresources/Xresources"
+            dest: "/home/{{ user }}/.Xresources"
