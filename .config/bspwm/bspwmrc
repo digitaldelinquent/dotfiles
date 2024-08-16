@@ -1,7 +1,12 @@
 #! /bin/sh
 
 #### WORKSPACES ####
-mons.sh
+MONS=($(xrandr -q | grep " connected" | cut -d ' ' -f1))
+
+for i in ${MONS[*]}
+do
+    bspc monitor $i -d 1 2 3 4
+done
 
 #### LOCKING ####
 lock.sh
