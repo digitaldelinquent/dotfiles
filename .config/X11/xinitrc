@@ -40,9 +40,8 @@ fi
 
 xsetroot -cursor_name left_ptr &
 
-export DESKTOP_SESSION="dwm"
+export DESKTOP_SESSION="bspwm"
 
-# mons.sh
 lock.sh
 feh --bg-fill --no-fehbg ~/Media/Wallpapers/lain.png 
 ~/.config/dunst/launch.sh
