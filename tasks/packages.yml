@@ -65,19 +65,6 @@
         dest: "/home/{{user}}/.local/share/fonts"
         remote_src: yes
 
-- name: Install xdo binary
-  block:
-    - name: Clone xdo repo into Downloads
-      git:
-        repo: https://github.com/baskerville/xdo.git
-        dest: "/home/{{ user }}/Downloads/xdo"
-
-    - name: Compile and install xdo binary
-      become: true
-      community.general.make:
-        chdir: "/home/{{ user }}/Downloads/xdo"
-        target: install
-
 - name: Install Dracula theme
   block:
     - name: Unzip Dracula GTK theme into .themes
