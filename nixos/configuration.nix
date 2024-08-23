@@ -10,7 +10,7 @@
             ./hardware-configuration.nix
         ];
 
-    # Bootloader.
+    # Bootloader stuffies
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
@@ -51,7 +51,7 @@
         LC_TIME = "en_US.UTF-8";
     };
 
-
+    # Enable zsh shell for use below
     programs.zsh.enable = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -66,6 +66,7 @@
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
+    # Allow EOL electron in order to use Obsidian
     nixpkgs.config.permittedInsecurePackages = [
         "electron-25.9.0"
     ];
@@ -95,6 +96,7 @@
         fuse
         fzf
         gnome.gnome-keyring
+        virtualbox
         htop
         i3lock
         lxappearance
@@ -136,7 +138,7 @@
         stow
     ];
 
-    # Configure keymap in X11
+    # Configure X11
     services.xserver = {
         enable = true;
         videoDrivers = [ "amdgpu" ];
@@ -144,15 +146,16 @@
         layout = "us";
         xkbVariant = "";
 
+        # Libinput configuration
         libinput = {
             enable = true;
 
-            # disabling mouse acceleration
+            # Disable mouse acceleration
             mouse = {
                 accelProfile = "flat";
             };
 
-            # disabling touchpad acceleration
+            # Configure touchpad
             touchpad = {
                 accelProfile = "flat";
                 tapping = true;
@@ -164,9 +167,11 @@
         };
     };
     
+    # Enable hardware acceleration for Xserver
     hardware.opengl.enable = true;
     hardware.opengl.driSupport = true;
 
+    # Enable flakes bc they cool
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     # This value determines the NixOS release from which the default
