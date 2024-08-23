@@ -66,6 +66,10 @@
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
+    nixpkgs.config.permittedInsecurePackages = [
+        "electron-25.9.0"
+    ];
+
     # List packages installed in system profile.
     environment.systemPackages = with pkgs; [
         neovim
@@ -84,6 +88,7 @@
         rofi
         podman
         dunst
+        libnotify
         eza
         feh
         librewolf
@@ -113,6 +118,7 @@
         xorg.xf86inputlibinput
         xorg.xf86videoati
         starship
+        obsidian
         nodejs
         qt5ct
         remmina
@@ -137,6 +143,25 @@
         displayManager.startx.enable = true;
         layout = "us";
         xkbVariant = "";
+
+        libinput = {
+            enable = true;
+
+            # disabling mouse acceleration
+            mouse = {
+                accelProfile = "flat";
+            };
+
+            # disabling touchpad acceleration
+            touchpad = {
+                accelProfile = "flat";
+                tapping = true;
+                naturalScrolling = true;
+                scrollMethod = "twofinger";
+                disableWhileTyping = false;
+                clickMethod = "clickfinger";
+            };
+        };
     };
     
     hardware.opengl.enable = true;

@@ -1,9 +1,0 @@
----
-- name: Setup system
-  hosts: localhost
-  connection: local
-  remote_user: "{{ user }}"
-  
-  tasks:
-    - import_tasks: tasks/packages.yml
-    - import_tasks: tasks/configs.yml
