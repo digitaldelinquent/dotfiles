@@ -19,7 +19,7 @@
     # Enable networking
     networking.networkmanager.enable = true;
 
-    networking.nameservers = ["1.1.1.1"];
+    networking.nameservers = [ "192.168.1.241" "1.1.1.1" ];
 
     # Firewall configuration
     networking.firewall = {
