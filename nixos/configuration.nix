@@ -19,7 +19,6 @@
     # Enable networking
     networking.networkmanager.enable = true;
 
-    networking.defaultGateway = "192.168.1.1";
     networking.nameservers = ["1.1.1.1"];
 
     # Firewall configuration
@@ -42,21 +41,18 @@
 
     i18n.extraLocaleSettings = {
         LC_ADDRESS = "en_US.UTF-8";
-	LC_IDENTIFICATION = "en_US.UTF-8";
-	LC_MEASUREMENT = "en_US.UTF-8";
-	LC_MONETARY = "en_US.UTF-8";
-	LC_NAME = "en_US.UTF-8";
-	LC_NUMERIC = "en_US.UTF-8";
-	LC_PAPER = "en_US.UTF-8";
-	LC_TELEPHONE = "en_US.UTF-8";
-	LC_TIME = "en_US.UTF-8";
+        LC_IDENTIFICATION = "en_US.UTF-8";
+        LC_MEASUREMENT = "en_US.UTF-8";
+        LC_MONETARY = "en_US.UTF-8";
+        LC_NAME = "en_US.UTF-8";
+        LC_NUMERIC = "en_US.UTF-8";
+        LC_PAPER = "en_US.UTF-8";
+        LC_TELEPHONE = "en_US.UTF-8";
+        LC_TIME = "en_US.UTF-8";
     };
 
-    # Configure keymap in X11
-    services.xserver = {
-        layout = "us";
-	xkbVariant = "";
-    };
+
+    programs.zsh.enable = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.roelm = {
@@ -64,6 +60,7 @@
        description = "Roel Mendoza";
        extraGroups = [ "networkmanager" "wheel" ];
        packages = with pkgs; [];
+       shell = pkgs.zsh;
     };
 
     # Allow unfree packages
@@ -76,55 +73,74 @@
         git
         docker
         docker-compose
-	alacritty
-	alsa-utils
-	android-tools
-	arandr
-	blueman
-	brightnessctl
-	bspwm
-	discord
-	rofi
-	podman
-	dunst
-	exa
-	feh
-	librewolf
-	fuse
-	fzf
-	gnome-keyring
-	htop
-	i3lock
-	lxappearance
-	maim
-	mpv
-	mullvad-vpn
-	mupdf
-	neofetch
-	neovim
-	tmux
-	network-manager-applet
-	pandoc
-	picom
-	piper
-	playerctl
-	python
-	qt5ct
-	remmina
-	sxhkd
-	transmission-cli
-	wireguard-tools
-	xautolock
-	xclip
-	breeze-cursor-theme
-	xdotool
-	zsh
-	solaar
-	prettyping
-	bat
-	syncthing
-	stow
-   ];
+        alacritty
+        alsa-utils
+        android-tools
+        arandr
+        blueman
+        brightnessctl
+        bspwm
+        discord
+        rofi
+        podman
+        dunst
+        eza
+        feh
+        librewolf
+        fuse
+        fzf
+        gnome.gnome-keyring
+        htop
+        i3lock
+        lxappearance
+        maim
+        mpv
+        mullvad-vpn
+        mupdf
+        neofetch
+        neovim
+        tmux
+        networkmanagerapplet
+        pandoc
+        picom
+        piper
+        playerctl
+        python3
+        xorg.xinit
+        xorg.xorgserver
+        xorg.xf86inputevdev
+        xorg.xf86inputsynaptics
+        xorg.xf86inputlibinput
+        xorg.xf86videoati
+        starship
+        nodejs
+        qt5ct
+        remmina
+        sxhkd
+        transmission
+        wireguard-tools
+        xautolock
+        xclip
+        xdotool
+        zsh
+        solaar
+        prettyping
+        bat
+        syncthing
+        stow
+    ];
+
+    # Configure keymap in X11
+    services.xserver = {
+        enable = true;
+        videoDrivers = [ "amdgpu" ];
+        displayManager.startx.enable = true;
+        layout = "us";
+        xkbVariant = "";
+    };
+    
+    hardware.opengl.enable = true;
+    hardware.opengl.driSupport = true;
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
