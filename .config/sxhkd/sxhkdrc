@@ -18,9 +18,9 @@ super + Escape
 XF86PowerOff 
     poweroff
 XF86AudioMute 
-    pulsemixer --toggle-mute
+    amixer set Master toggle
 XF86Audio{Raise,Lower}Volume 
-    pulsemixer --change-volume {+,-}5
+    amixer set Master 5%{+,-}
 XF86Audio{Next,Prev} 
     playerctl {next,previous}
 XF86AudioPlay 

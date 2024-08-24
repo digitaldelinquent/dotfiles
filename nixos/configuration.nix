@@ -115,7 +115,7 @@
         picom
         piper
         playerctl
-        pavucontrol
+        pwvucontrol
         xorg.xinit
         xorg.xorgserver
         xorg.xf86inputevdev
