@@ -98,6 +98,7 @@
         bspwm
         discord
         rofi
+        blueberry
         podman
         dunst
         libnotify
