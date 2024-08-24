@@ -98,7 +98,7 @@
         gnome.gnome-keyring
         virtualbox
         htop
-        i3lock
+        betterlockscreen
         lxappearance
         maim
         mpv
@@ -112,6 +112,7 @@
         picom
         piper
         playerctl
+        pavucontrol
         python3
         xorg.xinit
         xorg.xorgserver
@@ -166,7 +167,18 @@
             };
         };
     };
-    
+
+    # rtkit is optional but recommended
+    security.rtkit.enable = true;
+
+    # Configure PipeWire
+    services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+    };
+
     # Enable hardware acceleration for Xserver
     hardware.opengl.enable = true;
     hardware.opengl.driSupport = true;
