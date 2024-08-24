@@ -113,10 +113,9 @@ alias parrot="sudo docker run --rm -ti -e DISPLAY=$DISPLAY --network host -v /tm
 alias k="kubectl"
 alias kc="kubectx"
 alias kn="kubens"
+alias lock="systemctl suspend; betterlockscreen --text 'Hiya chief ^_^' -l"
 neofetch
 eval "$(starship init zsh)"
-export QT_QPA_PLATFORMTHEME="gtk2"
-export DBX_CONTAINER_MANAGER="podman"
 
 # Tmux autostart
 if [ -z "${TMUX}" ]; then

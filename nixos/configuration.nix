@@ -99,7 +99,6 @@
         virtualbox
         htop
         betterlockscreen
-        lxappearance
         maim
         mpv
         mullvad-vpn
@@ -113,30 +112,39 @@
         piper
         playerctl
         pavucontrol
-        python3
         xorg.xinit
         xorg.xorgserver
         xorg.xf86inputevdev
         xorg.xf86inputsynaptics
         xorg.xf86inputlibinput
         xorg.xf86videoati
+        xidlehook
         starship
         obsidian
         nodejs
+        python3
+        lxappearance
         qt5ct
         remmina
         sxhkd
         transmission
         wireguard-tools
         xautolock
+        killall
         xclip
         xdotool
         zsh
+        dig
         solaar
         prettyping
         bat
         syncthing
         stow
+    ];
+
+    # Install fonts
+    fonts.packages = with pkgs; [
+        (nerdfonts.override { fonts = [ "Hack" ]; })
     ];
 
     # Configure X11
@@ -168,6 +176,10 @@
         };
     };
 
+    # Enable hardware acceleration for Xserver
+    hardware.opengl.enable = true;
+    hardware.opengl.driSupport = true;
+
     # rtkit is optional but recommended
     security.rtkit.enable = true;
 
@@ -179,9 +191,13 @@
         pulse.enable = true;
     };
 
-    # Enable hardware acceleration for Xserver
-    hardware.opengl.enable = true;
-    hardware.opengl.driSupport = true;
+    # Syncthing Service
+    services.syncthing = {
+        enable = true;
+        user = "roelm";
+        dataDir = "/home/roelm"; 
+        configDir = "/home/roelm/.config/syncthing";
+    };
 
     # Enable flakes bc they cool
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
