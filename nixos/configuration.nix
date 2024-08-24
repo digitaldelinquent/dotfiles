@@ -33,9 +33,6 @@
         ];
     };
 
-    # Enable bluetooth
-    hardware.bluetooth.enable = true; # enables support for Bluetooth
-    hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
     # Set your time zone.
     time.timeZone = "America/Los_Angeles";
@@ -151,57 +148,70 @@
         (nerdfonts.override { fonts = [ "Hack" ]; })
     ];
 
-    # Configure X11
-    services.xserver = {
-        enable = true;
-        videoDrivers = [ "amdgpu" ];
-        displayManager.startx.enable = true;
-        layout = "us";
-        xkbVariant = "";
-
-        # Libinput configuration
-        libinput = {
+    # Configure services
+    services = {
+        # Configure X11
+        xserver = {
             enable = true;
+            videoDrivers = [ "amdgpu" ];
+            displayManager.startx.enable = true;
+            layout = "us";
+            xkbVariant = "";
 
-            # Disable mouse acceleration
-            mouse = {
-                accelProfile = "flat";
-            };
+            # Libinput configuration
+            libinput = {
+                enable = true;
 
-            # Configure touchpad
-            touchpad = {
-                accelProfile = "flat";
-                tapping = true;
-                naturalScrolling = true;
-                scrollMethod = "twofinger";
-                disableWhileTyping = false;
-                clickMethod = "clickfinger";
+                # Disable mouse acceleration
+                mouse = {
+                    accelProfile = "flat";
+                };
+
+                # Configure touchpad
+                touchpad = {
+                    accelProfile = "flat";
+                    tapping = true;
+                    naturalScrolling = true;
+                    scrollMethod = "twofinger";
+                    disableWhileTyping = false;
+                    clickMethod = "clickfinger";
+                };
             };
+        };
+
+        # Enable blueman
+        blueman.enable = true;
+
+        # Configure PipeWire
+        pipewire = {
+            enable = true;
+            alsa.enable = true;
+            alsa.support32Bit = true;
+            pulse.enable = true;
+        };
+
+        # Configure Syncthing Service
+        syncthing = {
+            enable = true;
+            user = "roelm";
+            dataDir = "/home/roelm"; 
+            configDir = "/home/roelm/.config/syncthing";
         };
     };
 
-    # Enable hardware acceleration for Xserver
+    # Enable hardware acceleration for X11
     hardware.opengl.enable = true;
     hardware.opengl.driSupport = true;
+
+    # Enable bluetooth
+    hardware.bluetooth = {
+        enable = true; # enables support for Bluetooth
+        powerOnBoot = true; # powers up the default Bluetooth controller on boot
+    };
 
     # rtkit is optional but recommended
     security.rtkit.enable = true;
 
-    # Configure PipeWire
-    services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-    };
-
-    # Syncthing Service
-    services.syncthing = {
-        enable = true;
-        user = "roelm";
-        dataDir = "/home/roelm"; 
-        configDir = "/home/roelm/.config/syncthing";
-    };
 
     # Enable flakes bc they cool
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
