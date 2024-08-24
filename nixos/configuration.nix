@@ -5,18 +5,16 @@
 { config, pkgs, ... }:
 
 {
-    imports =
-        [ # Include the results of the hardware scan.
-            ./hardware-configuration.nix
-        ];
+    # Include the results of the hardware scan.
+    imports = [ ./hardware-configuration.nix ];
 
     # Bootloader stuffies
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
+    # Configure netowrking
     networking.hostName = "comp22"; # Define your hostname.
 
-    # Enable networking
     networking.networkmanager.enable = true;
 
     networking.nameservers = [ "192.168.1.241" "1.1.1.1" ];
@@ -33,6 +31,19 @@
         ];
     };
 
+    # Enable bluetooth
+    hardware.bluetooth = {
+        enable = true; # enables support for Bluetooth
+        powerOnBoot = true; # powers up the default Bluetooth controller on boot
+    };
+
+    # Enable hardware acceleration for X11
+    hardware.opengl.enable = true;
+    hardware.opengl.driSupport = true;
+
+
+    # rtkit is optional but recommended
+    security.rtkit.enable = true;
 
     # Set your time zone.
     time.timeZone = "America/Los_Angeles";
@@ -83,7 +94,6 @@
         alsa-utils
         android-tools
         arandr
-        blueman
         brightnessctl
         bspwm
         discord
@@ -179,9 +189,6 @@
             };
         };
 
-        # Enable blueman
-        blueman.enable = true;
-
         # Configure PipeWire
         pipewire = {
             enable = true;
@@ -198,20 +205,6 @@
             configDir = "/home/roelm/.config/syncthing";
         };
     };
-
-    # Enable hardware acceleration for X11
-    hardware.opengl.enable = true;
-    hardware.opengl.driSupport = true;
-
-    # Enable bluetooth
-    hardware.bluetooth = {
-        enable = true; # enables support for Bluetooth
-        powerOnBoot = true; # powers up the default Bluetooth controller on boot
-    };
-
-    # rtkit is optional but recommended
-    security.rtkit.enable = true;
-
 
     # Enable flakes bc they cool
     nix.settings.experimental-features = [ "nix-command" "flakes" ];

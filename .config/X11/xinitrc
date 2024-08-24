@@ -45,7 +45,6 @@ export DESKTOP_SESSION="bspwm"
 lock.sh
 feh --bg-fill --no-fehbg ~/Media/Wallpapers/lain.png 
 ~/.config/dunst/launch.sh
-blueman-applet
 killall -q gnome-keyring-daemon
 while pgrep gnome-keyring-daemon; do sleep 0.01s; done
 gnome-keyring-daemon -d
