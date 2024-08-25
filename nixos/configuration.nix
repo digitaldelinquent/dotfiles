@@ -200,6 +200,15 @@
             pulse.enable = true;
         };
 
+        # Configure printing
+        printing.enable = true;
+
+        avahi = {
+            enable = true;
+            nssmdns4 = true;
+            openFirewall = true;
+        };
+
         # Enable netbird
         netbird.enable = true;
 
