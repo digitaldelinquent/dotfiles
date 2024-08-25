@@ -97,7 +97,7 @@
         brightnessctl # CLI tool to configure brightness of the screen
         bspwm # Window manager of choice
         discord # Look it up lol
-        rofi # Application runner
+        rofi # Application launcher
         blueberry # GTK interface for bluetooth (from Linux Mint)
         podman # OCI container runtime as well, but with a more efficient approach
         dunst # Displays notifications from apps
