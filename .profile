@@ -10,7 +10,7 @@ export PATH="$PATH:$HOME/Games"
 # Homebrew Compatibility
 export PATH="$PATH:/opt/homebrew/bin"
 export PATH="$PATH:/opt/homebrew/sbin"
-export QT_QPA_PLATFORMTHEME="gtk2"
+export QT_QPA_PLATFORMTHEME="qt5ct"
 export DBX_CONTAINER_MANAGER="podman"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
