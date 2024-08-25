@@ -146,7 +146,7 @@
         transmission
         wireguard-tools
         killall
-        lsusb
+        usbutils
         zsh
         dig
         solaar
