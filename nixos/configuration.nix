@@ -85,75 +85,74 @@
 
     # List packages installed in system profile.
     environment.systemPackages = with pkgs; [
-        neovim
-        wget
-        git
-        docker
-        docker-compose
-        alacritty
-        alsa-utils
-        android-tools
-        arandr
-        brightnessctl
-        bspwm
-        discord
-        rofi
-        blueberry
-        podman
-        dunst
-        libnotify
-        eza
-        feh
-        librewolf
-        fuse
-        fzf
-        gnome.gnome-keyring
-        virtualbox
-        htop
-        betterlockscreen
-        maim
-        mpv
-        mullvad-vpn
-        mupdf
-        neofetch
-        neovim
-        tmux
-        networkmanagerapplet
-        pandoc
-        picom
-        piper
-        playerctl
-        pavucontrol
-        xorg.xinit
-        xorg.xorgserver
-        xorg.xf86inputevdev
-        xorg.xf86inputsynaptics
-        xorg.xf86inputlibinput
-        xorg.xf86videoati
-        xorg.xkill
-        xidlehook
-        xautolock
-        xclip
-        xdotool
-        starship
-        obsidian
-        nodejs
-        python3
-        lxappearance
-        qt5ct
-        remmina
-        sxhkd
-        transmission
-        wireguard-tools
-        killall
-        usbutils
-        zsh
-        dig
-        solaar
-        prettyping
-        bat
-        syncthing
-        stow
+        neovim # Editor of choice
+        wget # Grab files from an HTTP host
+        git # VCS
+        docker # OCI container runtime
+        docker-compose # Evaluate docker compose files
+        alacritty # Terminal of choice
+        alsa-utils # Low level sound stuffies
+        android-tools # Tools to use for when connecting to an Android device
+        arandr # GTK app to configure displays
+        brightnessctl # CLI tool to configure brightness of the screen
+        bspwm # Window manager of choice
+        discord # Look it up lol
+        rofi # Application runner
+        blueberry # GTK interface for bluetooth (from Linux Mint)
+        podman # OCI container runtime as well, but with a more efficient approach
+        dunst # Displays notifications from apps
+        libnotify # Library of tools to send notifcations (useful for testing notifications with notify-send)
+        eza # Used to be exa... this is an ls alternative
+        feh # CLI image viewer and used to load wallpaper while in bspwm
+        librewolf # Browser of choice
+        fuse # Filesystems, but in userspace!
+        fzf # Cool fuzzy finding tool!
+        gnome.gnome-keyring # Needed this for Wi-Fi if I remember correctly
+        virtualbox # Virtualization software (use this for spinning up kali)
+        htop # Hardware utilization viewer CLI tool
+        betterlockscreen # Screen locker
+        maim # For screenshots
+        mpv # CLI video viewer
+        mullvad-vpn # VPN client for Mullvad VPN provider
+        mupdf # CLI pdf viewer
+        neofetch # Something cool to put in your shell rc
+        tmux # Terminal multiplexer!
+        networkmanagerapplet # Used to manage networks, interface sucks but best I could find
+        pandoc # File conversions
+        picom # Compositor
+        piper # Mouse configuration tool
+        playerctl # CLI tool to control media
+        pavucontrol # GTK tool to control audio
+        xorg.xinit # Start X11 and window manager
+        xorg.xorgserver # Renders stuff on screen, really old though
+        xorg.xf86inputevdev # X11 stuff
+        xorg.xf86inputsynaptics # X11 stuff
+        xorg.xf86inputlibinput # X11 stuff
+        xorg.xf86videoati # Xll stuff
+        xorg.xkill # Useful for killing frozen windows
+        xidlehook # Screen locking stuff
+        xautolock # Screen locking stuff
+        xclip # I honestly don't remember why I need this...
+        xdotool # I honestly don't remember why I need this...
+        starship # Cool shell prompt written in Rust
+        obsidian # Awesome note taking app
+        nodejs # Some stuff relies on this awful thing (some neovim plugins)
+        python3 # We all know what this is
+        lxappearance # Used to configure GTK
+        qt5ct # Used to configure QT
+        remmina # RDP tool
+        sxhkd # Keyboard shortcut daemon, built with BSPWM in mind
+        transmission # Torrenting Linux ISOs
+        wireguard-tools # Utilities for connecting and using wireguard VPNs
+        killall # Neat tool to kill processes by name
+        usbutils # Contains lsusb
+        zsh # Shell of choice
+        dig # Cool nslookup alternative
+        solaar # For configuring logitech mice
+        prettyping # Pretty ping alternative
+        bat # Pretty cat alternative
+        syncthing # Cool way to sync files yo!
+        stow # Dotfile manager (just auto symlinks pretty much)
     ];
 
     # Install fonts
