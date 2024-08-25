@@ -200,6 +200,8 @@
             pulse.enable = true;
         };
 
+        logind.extraConfig = "HandleLidSwitch=systemctl suspend; betterlockscreen --text 'Hiya chief ^_^' -l";
+
         # Configure Syncthing Service
         syncthing = {
             enable = true;
