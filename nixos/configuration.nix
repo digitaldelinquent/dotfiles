@@ -144,7 +144,7 @@
         sxhkd # Keyboard shortcut daemon, built with BSPWM in mind
         transmission # Torrenting Linux ISOs
         wireguard-tools # Utilities for connecting and using wireguard VPNs
-        netbird # Homelab VPN
+        netbird-ui # Homelab VPN
         killall # Neat tool to kill processes by name
         usbutils # Contains lsusb
         zsh # Shell of choice
@@ -199,6 +199,9 @@
             alsa.support32Bit = true;
             pulse.enable = true;
         };
+
+        # Enable netbird
+        netbird.enable = true;
 
         # Configure Syncthing Service
         syncthing = {
