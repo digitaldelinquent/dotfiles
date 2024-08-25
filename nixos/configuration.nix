@@ -131,6 +131,10 @@
         xorg.xf86inputlibinput
         xorg.xf86videoati
         xidlehook
+        xautolock
+        xclip
+        xkill
+        xdotool
         starship
         obsidian
         nodejs
@@ -141,10 +145,8 @@
         sxhkd
         transmission
         wireguard-tools
-        xautolock
         killall
-        xclip
-        xdotool
+        lsusb
         zsh
         dig
         solaar
