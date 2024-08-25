@@ -130,10 +130,10 @@
         xorg.xf86inputsynaptics
         xorg.xf86inputlibinput
         xorg.xf86videoati
+        xorg.xkill
         xidlehook
         xautolock
         xclip
-        xkill
         xdotool
         starship
         obsidian
