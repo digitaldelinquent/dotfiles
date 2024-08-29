@@ -69,11 +69,13 @@ alt + shift + ctrl + {h,l}
     bspc node -m {prev,next} --follow
 super + f 
     bspc node -t \~fullscreen
-super + alt + f 
+super + shift + f 
     bspc node -t \~floating
 super + t
+    bspc node -t \~tiled
+super + alt + t
     bspc desktop -l tiled
-super + m 
+super + alt + m 
     bspc desktop -l monocle
 ctrl + super + {h,j,k,l}
     bspc node -v {-20 0,0 -20,0 20,20 0}
@@ -83,10 +85,6 @@ super + e
     bspc node -e
 super + q
     bspc node -c
-
-# multi-monitor fix
-ctrl + m
-    mons.sh
 
 # SysInfo
 super + i
