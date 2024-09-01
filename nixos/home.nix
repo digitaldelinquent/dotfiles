@@ -27,6 +27,12 @@
         ".local/bin".source = ~/.dotfiles/scripts;
     };
 
+    programs.git = {
+        enable = true;
+        userEmail = "6541669-digital_delinquent@users.noreply.gitlab.com";
+        userName = "digital_delinquent";
+    };
+
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
     # when a new Home Manager release introduces backwards
