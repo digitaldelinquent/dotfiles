@@ -9,19 +9,19 @@
 
     # Dotfiles
     home.file = {
-        ".profile".source = ./.profile;
-        ".zprofile".source = ./.zprofile;
-        ".config/zsh/.zshrc".source = ./zshrc/.zshrc;
-        ".config/starship.toml".source = ./config/starship.toml;
-        ".config/nvim".source = ./config/nvim;
-        ".config/tmux".source = ./config/tmux;
-        ".config/alacritty".source = ./config/alacritty;
-        ".config/X11".source = ./config/X11;
-        ".config/bspwm".source = ./config/bspwm;
-        ".config/picom.conf".source = ./config/picom.conf;
-        ".config/sxhkd".source = ./config/sxhkd;
-        ".config/dunst".source = ./config/dunst;
-        ".local/bin".source = ./scripts;
+        ".profile".source = ../.profile;
+        ".zprofile".source = ../.zprofile;
+        ".config/zsh/.zshrc".source = ../zshrc/.zshrc;
+        ".config/starship.toml".source = ../config/starship.toml;
+        ".config/nvim".source = ../config/nvim;
+        ".config/tmux".source = ../config/tmux;
+        ".config/alacritty".source = ../config/alacritty;
+        ".config/X11".source = ../config/X11;
+        ".config/bspwm".source = ../config/bspwm;
+        ".config/picom.conf".source = ../config/picom.conf;
+        ".config/sxhkd".source = ../config/sxhkd;
+        ".config/dunst".source = ../config/dunst;
+        ".local/bin".source = ../scripts;
     };
 
     programs.git = {
