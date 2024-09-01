@@ -11,7 +11,7 @@
     home.file = {
         ".profile".source = ../.profile;
         ".zprofile".source = ../.zprofile;
-        ".config/zsh/.zshrc".source = ../config/zshrc/.zshrc;
+        ".config/zsh/.zshrc".source = ../config/zsh/.zshrc;
         ".config/starship.toml".source = ../config/starship.toml;
         ".config/nvim".source = ../config/nvim;
         ".config/tmux".source = ../config/tmux;
@@ -21,7 +21,8 @@
         ".config/picom.conf".source = ../config/picom.conf;
         ".config/sxhkd".source = ../config/sxhkd;
         ".config/dunst".source = ../config/dunst;
-        ".local/bin".source = ../scripts;
+        ".local/bin/sysinfo.sh".source = ../scripts/sysinfo.sh;
+        ".local/bin/lock.sh".source = ../scripts/lock.sh;
     };
 
     programs.git = {
