@@ -6,25 +6,22 @@
     home.username = "roelm";
     home.homeDirectory = "/home/roelm";
 
-    # Enable zsh shell for use below
-    programs.zsh.enable = true;
-
 
     # Dotfiles
     home.file = {
-        ".profile".source = ~/.dotfiles/.profile;
-        ".zprofile".source = ~/.dotfiles/.zprofile;
-        ".config/zsh/.zshrc".source = ~/.dotfiles/zshrc/.zshrc;
-        ".config/starship.toml".source = ~/.dotfiles/config/starship.toml;
-        ".config/nvim".source = ~/.dotfiles/config/nvim;
-        ".config/tmux".source = ~/.dotfiles/config/tmux;
-        ".config/alacritty".source = ~/.dotfiles/config/alacritty;
-        ".config/X11".source = ~/.dotfiles/config/X11;
-        ".config/bspwm".source = ~/.dotfiles/config/bspwm;
-        ".config/picom.conf".source = ~/.dotfiles/config/picom.conf;
-        ".config/sxhkd".source = ~/.dotfiles/config/sxhkd;
-        ".config/dunst".source = ~/.dotfiles/config/dunst;
-        ".local/bin".source = ~/.dotfiles/scripts;
+        ".profile".source = ./.profile;
+        ".zprofile".source = ./.zprofile;
+        ".config/zsh/.zshrc".source = ./zshrc/.zshrc;
+        ".config/starship.toml".source = ./config/starship.toml;
+        ".config/nvim".source = ./config/nvim;
+        ".config/tmux".source = ./config/tmux;
+        ".config/alacritty".source = ./config/alacritty;
+        ".config/X11".source = ./config/X11;
+        ".config/bspwm".source = ./config/bspwm;
+        ".config/picom.conf".source = ./config/picom.conf;
+        ".config/sxhkd".source = ./config/sxhkd;
+        ".config/dunst".source = ./config/dunst;
+        ".local/bin".source = ./scripts;
     };
 
     programs.git = {
