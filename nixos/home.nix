@@ -14,6 +14,7 @@
         ".config/zsh/.zshrc".source = ../config/zsh/.zshrc;
         ".config/starship.toml".source = ../config/starship.toml;
         ".config/nvim".source = ../config/nvim;
+        ".config/tmux/tmux.conf".source = ../config/tmux/tmux.conf;
         ".config/alacritty".source = ../config/alacritty;
         ".config/X11".source = ../config/X11;
         ".config/bspwm".source = ../config/bspwm;
