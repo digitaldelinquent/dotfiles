@@ -11,7 +11,7 @@
     home.file = {
         ".profile".source = ../.profile;
         ".zprofile".source = ../.zprofile;
-        ".config/zsh/.zshrc".source = ../zshrc/.zshrc;
+        ".config/zsh/.zshrc".source = ../config/zshrc/.zshrc;
         ".config/starship.toml".source = ../config/starship.toml;
         ".config/nvim".source = ../config/nvim;
         ".config/tmux".source = ../config/tmux;
