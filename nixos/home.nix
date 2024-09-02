@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
     # Home Manager needs a bit of information about you and the
@@ -12,6 +12,8 @@
         ".profile".source = ../.profile;
         ".zprofile".source = ../.zprofile;
         ".config/zsh/.zshrc".source = ../config/zsh/.zshrc;
+        ".config/zsh/plugins/zsh-autosuggestions".source = inputs.zsh-autosuggestions;
+        ".config/zsh/plugins/zsh-syntax-highlighting".source = inputs.zsh-syntax-highlighting;
         ".config/starship.toml".source = ../config/starship.toml;
         ".config/nvim".source = ../config/nvim;
         ".config/tmux/tmux.conf".source = ../config/tmux/tmux.conf;
