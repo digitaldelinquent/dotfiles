@@ -34,10 +34,6 @@
             url = "https://raw.githubusercontent.com/dracula/xresources/master/Xresources";
             flake = false;
         };
-        rofi-dracula-preprocessed = {
-            url = "https://raw.githubusercontent.com/dracula/rofi/main/theme/config1.rasi";
-            flake = false;
-        };
     };
     outputs = { self, nixpkgs, home-manager, ... }@inputs:
         let
