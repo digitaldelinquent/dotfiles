@@ -61,12 +61,25 @@
         "url": "https://raw.githubusercontent.com/dracula/qt5/master/Dracula.conf"
       }
     },
+    "rofi-dracula-preprocessed": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-Fs41VszD8Nhn4cGRIsjALsVfj6rraC5SuaSkpo2uXn0=",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/dracula/rofi/main/theme/config1.rasi"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/dracula/rofi/main/theme/config1.rasi"
+      }
+    },
     "root": {
       "inputs": {
         "gtk-dracula": "gtk-dracula",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "qt5-dracula": "qt5-dracula",
+        "rofi-dracula-preprocessed": "rofi-dracula-preprocessed",
         "tmux-tpm": "tmux-tpm",
         "vim-plug": "vim-plug",
         "xresources-dracula": "xresources-dracula",

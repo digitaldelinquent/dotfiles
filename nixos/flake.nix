@@ -34,13 +34,18 @@
             url = "https://raw.githubusercontent.com/dracula/xresources/master/Xresources";
             flake = false;
         };
+        rofi-dracula-preprocessed = {
+            url = "https://raw.githubusercontent.com/dracula/rofi/main/theme/config1.rasi";
+            flake = false;
+        };
     };
     outputs = { self, nixpkgs, home-manager, ... }@inputs:
         let
+            system = "x86_64-linux";
             lib = nixpkgs.lib;
         in {
         nixosConfigurations.comp22 = lib.nixosSystem {
-            system = "x86_64-linux";
+            inherit system;
             modules = [ 
                 ./configuration.nix 
                 home-manager.nixosModules.home-manager {
