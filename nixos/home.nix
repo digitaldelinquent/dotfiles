@@ -16,7 +16,9 @@
         ".config/zsh/plugins/zsh-syntax-highlighting".source = inputs.zsh-syntax-highlighting;
         ".config/starship.toml".source = ../config/starship.toml;
         ".config/nvim".source = ../config/nvim;
+        ".local/share/nvim/site/autoload/plug.vim".source = inputs.vim-plug;
         ".config/tmux/tmux.conf".source = ../config/tmux/tmux.conf;
+        ".config/tmux/plugins/tpm".source = inputs.tmux-tpm;
         ".config/alacritty".source = ../config/alacritty;
         ".config/X11".source = ../config/X11;
         ".config/bspwm".source = ../config/bspwm;

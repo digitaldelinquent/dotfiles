@@ -14,6 +14,14 @@
             url = "github:zsh-users/zsh-syntax-highlighting";
             flake = false;
         };
+        vim-plug = {
+            url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim";
+            flake = false;
+        };
+        tmux-tpm = {
+            url = "github:tmux-plugins/tpm";
+            flake = false;
+        };
     };
     outputs = { self, nixpkgs, home-manager, ... }@inputs:
         let
