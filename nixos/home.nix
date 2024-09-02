@@ -1,3 +1,5 @@
+# Nix configuration for roelm user.
+
 { config, pkgs, inputs, ... }:
 
 {
@@ -27,6 +29,9 @@
         ".config/dunst".source = ../config/dunst;
         ".local/bin/sysinfo.sh".source = ../scripts/sysinfo.sh;
         ".local/bin/lock.sh".source = ../scripts/lock.sh;
+        ".themes/Dracula".source = inputs.gtk-dracula;
+        ".config/qt5ct/colors/Dracula.conf".source = inputs.qt5-dracula;
+        ".Xresources".source = inputs.xresources-dracula;
     };
 
     programs.git = {

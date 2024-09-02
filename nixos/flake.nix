@@ -22,6 +22,18 @@
             url = "github:tmux-plugins/tpm";
             flake = false;
         };
+        gtk-dracula = {
+            url = "https://github.com/dracula/gtk/archive/master.zip";
+            flake = false;
+        };
+        qt5-dracula = {
+            url = "https://raw.githubusercontent.com/dracula/qt5/master/Dracula.conf";
+            flake = false;
+        };
+        xresources-dracula = {
+            url = "https://raw.githubusercontent.com/dracula/xresources/master/Xresources";
+            flake = false;
+        };
     };
     outputs = { self, nixpkgs, home-manager, ... }@inputs:
         let
