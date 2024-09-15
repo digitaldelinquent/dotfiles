@@ -44,7 +44,7 @@
             comp22 = lib.nixosSystem {
                 inherit system;
                 modules = [ 
-                    ./hosts/workstation
+                    ./hosts/comp22
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
