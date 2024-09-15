@@ -22,7 +22,7 @@ This repo is under active development and will see more future updates soon.
 In order to provision your server with the same config simply clone this repo
 and run the following command:
 
-`sudo nixos-rebuild switch --flake .`
+`sudo nixos-rebuild switch --flake .#homelab`
 
 > **NOTE**: This uses the UUIDs of my disks, please copy your hardware config
 > after you installed nixos into this repo and delete the existing
@@ -52,7 +52,7 @@ docker compose up -d
 > Standalone nix support is coming soon...
 
 1. Build the flake onto the new system to perform some system configuration. Please use the 
-   following command to build: `sudo nixos-rebuild switch --flake .`
+   following command to build: `sudo nixos-rebuild switch --flake .#comp22`
 
 2. After that run `:PlugInstall` while inside the a neovim process to download all vim
    plug packages.
