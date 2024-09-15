@@ -12,7 +12,7 @@
     home.file = {
         ".profile".source = ../../.profile;
         ".zprofile".source = ../../.zprofile;
-        ".config/zsh/.zshrc".sour../ce = ../../config/zsh/.zshrc;
+        ".config/zsh/.zshrc".source = ../../config/zsh/.zshrc;
         ".config/zsh/plugins/zsh-autosuggestions".source = inputs.zsh-autosuggestions;
         ".config/zsh/plugins/zsh-syntax-highlighting".source = inputs.zsh-syntax-highlighting;
         ".config/starship.toml".source = ../../config/starship.toml;
