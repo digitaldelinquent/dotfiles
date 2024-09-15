@@ -8,28 +8,27 @@
     home.username = "roelm";
     home.homeDirectory = "/home/roelm";
 
-
     # Dotfiles
     home.file = {
-        ".profile".source = ../.profile;
-        ".zprofile".source = ../.zprofile;
-        ".config/zsh/.zshrc".source = ../config/zsh/.zshrc;
+        ".profile".source = ../../.profile;
+        ".zprofile".source = ../../.zprofile;
+        ".config/zsh/.zshrc".sour../ce = ../../config/zsh/.zshrc;
         ".config/zsh/plugins/zsh-autosuggestions".source = inputs.zsh-autosuggestions;
         ".config/zsh/plugins/zsh-syntax-highlighting".source = inputs.zsh-syntax-highlighting;
-        ".config/starship.toml".source = ../config/starship.toml;
-        ".config/nvim".source = ../config/nvim;
+        ".config/starship.toml".source = ../../config/starship.toml;
+        ".config/nvim".source = ../../config/nvim;
         ".local/share/nvim/site/autoload/plug.vim".source = inputs.vim-plug;
-        ".config/tmux/tmux.conf".source = ../config/tmux/tmux.conf;
+        ".config/tmux/tmux.conf".source = ../../config/tmux/tmux.conf;
         ".config/tmux/plugins/tpm".source = inputs.tmux-tpm;
-        ".config/alacritty".source = ../config/alacritty;
-        ".config/X11".source = ../config/X11;
-        ".config/bspwm".source = ../config/bspwm;
-        ".config/picom.conf".source = ../config/picom.conf;
-        ".config/sxhkd".source = ../config/sxhkd;
-        ".config/dunst".source = ../config/dunst;
-        ".local/bin/sysinfo.sh".source = ../scripts/sysinfo.sh;
-        ".local/bin/lock.sh".source = ../scripts/lock.sh;
-        ".config/rofi".source = ../config/rofi;
+        ".config/alacritty".source = ../../config/alacritty;
+        ".config/X11".source = ../../config/X11;
+        ".config/bspwm".source = ../../config/bspwm;
+        ".config/picom.conf".source = ../../config/picom.conf;
+        ".config/sxhkd".source = ../../config/sxhkd;
+        ".config/dunst".source = ../../config/dunst;
+        ".local/bin/sysinfo.sh".source = ../../scripts/sysinfo.sh;
+        ".local/bin/lock.sh".source = ../../scripts/lock.sh;
+        ".config/rofi".source = ../../config/rofi;
         ".themes/Dracula".source = inputs.gtk-dracula;
         ".config/qt5ct/colors/Dracula.conf".source = inputs.qt5-dracula;
         ".Xresources".source = inputs.xresources-dracula;

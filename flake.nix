@@ -1,5 +1,5 @@
 {
-    description = "NixOS Workstation";
+    description = "NixOS Configs";
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-23.11";
         home-manager = {
@@ -40,17 +40,23 @@
             system = "x86_64-linux";
             lib = nixpkgs.lib;
         in {
-        nixosConfigurations.comp22 = lib.nixosSystem {
-            inherit system;
-            modules = [ 
-                ./configuration.nix 
-                home-manager.nixosModules.home-manager {
-                    home-manager.useGlobalPkgs = true;
-                    home-manager.useUserPackages = true;
-                    home-manager.users.roelm = import ./home.nix;
-                    home-manager.extraSpecialArgs = { inherit inputs; };
-                }
-            ];
+        nixosConfigurations = {
+            comp22 = lib.nixosSystem {
+                inherit system;
+                modules = [ 
+                    ./hosts/workstation
+                    home-manager.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.useUserPackages = true;
+                        home-manager.users.roelm = import ./hosts/workstation/home.nix;
+                        home-manager.extraSpecialArgs = { inherit inputs; };
+                    }
+                ];
+            };
+            homelab = lib.nixosSystem {
+                inherit system;
+                modules = [ ./hosts/homelab ];
+            };
         };
     };
 
