@@ -60,3 +60,13 @@ docker compose up -d
 3. Lastly, go into the .local/share/nvim/plugged/coc.nvim and run `npm ci` to resolve
    issues with coc. When coc issues are resolved you can run `:CocInstall PLUGIN
    NAME` in order to download coc language servers.
+
+### Non-Nix Systems
+
+If you are running on a non-nix system and wish to use the same dotfiles and
+have all the necessary packages in place; please follow the steps below:
+
+1. Change directories into the dots directory: `cd dots`
+
+2. Run the following stow command to symlink the dotfiles to your home
+   directory: `stow . -t ~/ -D`
