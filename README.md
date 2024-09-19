@@ -64,9 +64,5 @@ docker compose up -d
 ### Non-Nix Systems
 
 If you are running on a non-nix system and wish to use the same dotfiles and
-have all the necessary packages in place; please follow the steps below:
-
-1. Change directories into the dots directory: `cd dots`
-
-2. Run the following stow command to symlink the dotfiles to your home
-   directory: `stow . -t ~/ -D`
+have all the necessary packages in place; please run the following stow command 
+to symlink the dotfiles to your home directory: `stow dots -D`
