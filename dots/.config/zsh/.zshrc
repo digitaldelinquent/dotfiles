@@ -2,7 +2,7 @@
 source $HOME/.zprofile
 
 # For aliases that are machine specific
-if [ -f $HOME/.extend ]; then
+if [ -f $HOME/.extend.sh ]; then
     source $HOME/.extend.sh
 fi
 
