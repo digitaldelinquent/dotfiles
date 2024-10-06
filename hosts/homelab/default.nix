@@ -77,6 +77,9 @@
         packages = with pkgs; [];
     };
 
+    # Disable root
+    users.users.root.hashedPassword = "!";
+
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
