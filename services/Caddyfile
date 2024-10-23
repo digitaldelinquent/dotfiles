@@ -3,6 +3,11 @@
         dns cloudflare {env.CLOUDFLARE_API_TOKEN}
     }
 
+    @portainer host portainer.digitaldelinquency.xyz 
+    handle @portainer {
+        reverse_proxy portainer:9000
+    }
+
     @pihole host pihole.digitaldelinquency.xyz 
     handle @pihole {
         reverse_proxy pihole:80
