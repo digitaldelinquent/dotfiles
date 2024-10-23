@@ -68,6 +68,9 @@ services:
     volumes: 
       - /var/vaultwarden:/backup/vaultw
       - /var/syncthing:/backup/syncthing
+      - /var/portainer:/backup/portainer
+      - /var/pihole:/backup/pihole
+      - /var/pihole-dnsmasq:/backup/pihole-dnsmasq
   syncthing:
     image: syncthing/syncthing
     restart: unless-stopped
