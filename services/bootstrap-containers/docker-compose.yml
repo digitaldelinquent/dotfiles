@@ -1,5 +1,5 @@
 version: '3.8'
-name: container-mgr
+name: bootstrap-services
 services:
   portainer:
     image: portainer/portainer-ce:2.21.3
@@ -20,6 +20,19 @@ services:
     volumes:
       - /var/pihole:/etc/pihole
       - /var/pihole-dnsmasq:/etc/dnsmasq.d
+  caddy:
+    build: ./data/caddy/Dockerfile
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+      - 443:443/udp
+    environment:
+      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
+    volumes:
+      - ./data/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - /var/caddy/data:/data
+      - /var/caddy/config:/config
 networks:
   default:
     external: true
