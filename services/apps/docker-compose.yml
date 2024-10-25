@@ -1,5 +1,4 @@
 version: '3.8'
-name: homelab-app-services
 services:
   syncthing:
     image: syncthing/syncthing

@@ -1,5 +1,4 @@
 version: '3.8'
-name: homelab-system-services
 services:
   netbird:
     image: netbirdio/netbird:latest
