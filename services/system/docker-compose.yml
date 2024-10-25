@@ -17,19 +17,6 @@ services:
     command: tunnel run
     environment:
       TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN}
-  caddy:
-    build: ./data/caddy/Dockerfile
-    restart: unless-stopped
-    ports:
-      - 80:80
-      - 443:443
-      - 443:443/udp
-    environment:
-      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
-    volumes:
-      - ./data/caddy/Caddyfile:/etc/caddy/Caddyfile
-      - /var/caddy/data:/data
-      - /var/caddy/config:/config
   restic:
     image: mazzolino/restic
     restart: unless-stopped
