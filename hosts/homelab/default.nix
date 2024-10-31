@@ -85,7 +85,7 @@
 
     # List packages installed in system profile.
     environment.systemPackages = with pkgs; [
-        neovim
+        vim
         wget
         git
         docker
