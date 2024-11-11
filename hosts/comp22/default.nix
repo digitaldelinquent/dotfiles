@@ -171,27 +171,29 @@
             enable = true;
             videoDrivers = [ "amdgpu" ];
             displayManager.startx.enable = true;
-            layout = "us";
-            xkbVariant = "";
+            xkb = {
+                layout = "us";
+                variant = "";
+            };
+        };
 
-            # Libinput configuration
-            libinput = {
-                enable = true;
+        # Libinput configuration
+        libinput = {
+            enable = true;
 
-                # Disable mouse acceleration
-                mouse = {
-                    accelProfile = "flat";
-                };
+            # Disable mouse acceleration
+            mouse = {
+                accelProfile = "flat";
+            };
 
-                # Configure touchpad
-                touchpad = {
-                    accelProfile = "flat";
-                    tapping = true;
-                    naturalScrolling = true;
-                    scrollMethod = "twofinger";
-                    disableWhileTyping = false;
-                    clickMethod = "clickfinger";
-                };
+            # Configure touchpad
+            touchpad = {
+                accelProfile = "flat";
+                tapping = true;
+                naturalScrolling = true;
+                scrollMethod = "twofinger";
+                disableWhileTyping = false;
+                clickMethod = "clickfinger";
             };
         };
 
@@ -229,5 +231,5 @@
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
     # on your system were taken.
-    system.stateVersion = "23.11";
+    system.stateVersion = "24.05";
 }
