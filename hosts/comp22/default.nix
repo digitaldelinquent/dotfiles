@@ -107,7 +107,7 @@
         libnotify # Library of tools to send notifcations (useful for testing notifications with notify-send)
         eza # Used to be exa... this is an ls alternative
         feh # CLI image viewer and used to load wallpaper while in bspwm
-        librewolf # Browser of choice
+        firefox # Browser of choice
         fuse # Filesystems, but in userspace!
         fzf # Cool fuzzy finding tool!
         gnome.gnome-keyring # Needed this for Wi-Fi if I remember correctly
