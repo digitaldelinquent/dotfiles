@@ -113,7 +113,6 @@
         firefox # Browser of choice
         fuse # Filesystems, but in userspace!
         fzf # Cool fuzzy finding tool!
-        gnome # DE of choice (for now...)
         virtualbox # Virtualization software (use this for spinning up kali)
         htop # Hardware utilization viewer CLI tool
         betterlockscreen # Screen locker
@@ -221,7 +220,7 @@
         };
 
         # Enable TLP for battery optimizations
-        tlp.enable = true;
+        # tlp.enable = true;
 
         # Configure printing
         printing.enable = true;
