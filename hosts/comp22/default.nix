@@ -206,7 +206,7 @@
         };
 
         # Enable TLP for battery optimizations
-        tlp.enable = true
+        tlp.enable = true;
 
         # Configure printing
         printing.enable = true;
