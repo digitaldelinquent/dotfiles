@@ -110,7 +110,7 @@
         firefox # Browser of choice
         fuse # Filesystems, but in userspace!
         fzf # Cool fuzzy finding tool!
-        gnome.gnome-keyring # Needed this for Wi-Fi if I remember correctly
+        gnome # DE of choice (for now...)
         virtualbox # Virtualization software (use this for spinning up kali)
         htop # Hardware utilization viewer CLI tool
         betterlockscreen # Screen locker
@@ -170,7 +170,19 @@
         xserver = {
             enable = true;
             videoDrivers = [ "amdgpu" ];
-            displayManager.startx.enable = true;
+            # displayManager.startx.enable = true;
+			
+            # Use GDM display manager
+            displayManager = {
+				gdm = {
+					enable = true;
+					wayland = true;
+				};
+			};
+			
+            # Enable Desktop Environment.
+			desktopManager.gnome.enable = true;
+            
             xkb = {
                 layout = "us";
                 variant = "";
