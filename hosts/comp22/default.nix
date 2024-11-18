@@ -205,6 +205,9 @@
             pulse.enable = true;
         };
 
+        # Enable TLP for battery optimizations
+        tlp.enable = true
+
         # Configure printing
         printing.enable = true;
 
