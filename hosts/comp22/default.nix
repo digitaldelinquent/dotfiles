@@ -31,6 +31,9 @@
         ];
     };
 
+    # Disable PulseAudio
+    hardware.pulseaudio.enable = false;
+
     # Enable bluetooth
     hardware.bluetooth = {
         enable = true; # enables support for Bluetooth
