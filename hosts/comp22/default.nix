@@ -124,6 +124,7 @@
         nodejs # Some stuff relies on this awful thing (some neovim plugins)
         python3 # We all know what this is
         gnome.gnome-tweaks # Used to configure GTK
+        xwayland # Allow for non-wayland applications
         qt5ct # Used to configure QT
         remmina # RDP tool
         transmission # Torrenting Linux ISOs
