@@ -26,7 +26,6 @@
         ".config/picom.conf".source = ../../dots/.config/picom.conf;
         ".config/sxhkd".source = ../../dots/.config/sxhkd;
         ".config/dunst".source = ../../dots/.config/dunst;
-        ".local/bin/sysinfo.sh".source = ../../scripts/sysinfo.sh;
         ".local/bin/lock.sh".source = ../../scripts/lock.sh;
         ".config/rofi".source = ../../dots/.config/rofi;
         ".themes/Dracula".source = inputs.gtk-dracula;

@@ -113,7 +113,7 @@ alias parrot="sudo docker run --rm -ti -e DISPLAY=$DISPLAY --network host -v /tm
 alias k="kubectl"
 alias kc="kubectx"
 alias kn="kubens"
-alias lock="systemctl suspend; betterlockscreen --text 'Hiya chief ^_^' -l"
+alias lock="systemctl suspend"
 neofetch
 eval "$(starship init zsh)"
 
