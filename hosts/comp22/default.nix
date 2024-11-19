@@ -129,6 +129,7 @@
         transmission # Torrenting Linux ISOs
         wireguard-tools # Utilities for connecting and using wireguard VPNs
         netbird # Homelab VPN
+        netbird-ui # UI for netbird overlay VPN
         killall # Neat tool to kill processes by name
         usbutils # Contains lsusb
         zsh # Shell of choice
