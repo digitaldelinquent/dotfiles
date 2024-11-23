@@ -21,10 +21,6 @@
         ".config/tmux/tmux.conf".source = ../../dots/.config/tmux/tmux.conf;
         ".config/tmux/plugins/tpm".source = inputs.tmux-tpm;
         ".config/alacritty".source = ../../dots/.config/alacritty;
-        ".config/X11".source = ../../dots/.config/X11;
-        ".config/bspwm".source = ../../dots/.config/bspwm;
-        ".config/picom.conf".source = ../../dots/.config/picom.conf;
-        ".config/sxhkd".source = ../../dots/.config/sxhkd;
         ".config/dunst".source = ../../dots/.config/dunst;
         ".local/bin/lock.sh".source = ../../scripts/lock.sh;
         ".config/rofi".source = ../../dots/.config/rofi;
