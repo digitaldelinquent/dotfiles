@@ -218,6 +218,9 @@
             dataDir = "/home/roelm"; 
             configDir = "/home/roelm/.config/syncthing";
         };
+
+        # Mullvad VPN
+        mullvad-vpn.enable = true;
     };
 
     # Enable flakes bc they cool
