@@ -92,14 +92,7 @@ ef() {
     $EDITOR "$(find $HOME/.config -type f | fzf)"
 }
 
-# Reinstall roelm packages
-reinstall() {
-    sudo dnf install $(cat $HOME/.dotfiles/packages);
-    return 1
-}
-
 # User Configuration
-# alias suspend="systemctl suspend"
 alias ls="exa --icons"
 alias ll="exa -lg --header --icons"
 alias la="exa -a --icons"
