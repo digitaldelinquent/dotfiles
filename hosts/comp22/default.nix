@@ -109,7 +109,6 @@
         firefox # Browser of choice
         fuse # Filesystems, but in userspace!
         fzf # Cool fuzzy finding tool!
-        virtualbox # Virtualization software (use this for spinning up kali)
         htop # Hardware utilization viewer CLI tool
         mpv # CLI video viewer
         mullvad-vpn # VPN client for Mullvad VPN provider
@@ -222,6 +221,12 @@
         # Mullvad VPN
         mullvad-vpn.enable = true;
     };
+
+    # Virtualbox stuff
+    virtualisation.virtualbox.host.enable = true;
+    virtualisation.virtualbox.host.enableExtensionPack = true;
+    virtualisation.virtualbox.guest.enable = true;
+    virtualisation.virtualbox.guest.dragAndDrop = true;
 
     # Enable flakes bc they cool
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
