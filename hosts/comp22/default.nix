@@ -46,10 +46,7 @@
         };
 
         # Enable hardware acceleration
-        opengl = {
-            enable = true;
-            driSupport = true;
-        };
+        graphics.enable = true;
     };
 
 
@@ -139,15 +136,16 @@
         obsidian # Awesome note taking app
         nodejs # Some stuff relies on this awful thing (some neovim plugins)
         python3 # We all know what this is
-        gnome.gnome-tweaks # Used to configure GTK
-        qt5ct # Used to configure QT
+        gnome-tweaks # Used to configure GTK
+        libsForQt5.qt5ct # Used to configure QT
         remmina # RDP tool
-        transmission # Torrenting Linux ISOs
+        transmission_4 # Torrenting Linux ISOs
         wireguard-tools # Utilities for connecting and using wireguard VPNs
         netbird # Homelab VPN
         netbird-ui # UI for netbird overlay VPN
         killall # Neat tool to kill processes by name
         usbutils # Contains lsusb
+        lshw # For listing hardware information
         zsh # Shell of choice
         dig # Cool nslookup alternative
         iw # For TMUX bar to show current network
@@ -219,6 +217,9 @@
             openFirewall = true;
         };
 
+        # Enable fingerprint reader
+        fprintd.enable = true;
+
         # Enable netbird
         netbird.enable = true;
 
@@ -251,5 +252,5 @@
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
     # on your system were taken.
-    system.stateVersion = "24.05";
+    system.stateVersion = "24.11";
 }
