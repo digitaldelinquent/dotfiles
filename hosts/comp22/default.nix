@@ -9,40 +9,48 @@
     imports = [ ./hardware-configuration.nix ];
 
     # Bootloader stuffies
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader = {
+        systemd-boot.enable = true;
+        efi.canTouchEfiVariables = true;
+    };
 
     # Configure netowrking
-    networking.hostName = "comp22"; # Define your hostname.
+    networking = {
+        hostName = "comp22"; # Define your hostname.
 
-    networking.networkmanager.enable = true;
+        networkmanager.enable = true;
 
-    networking.nameservers = [ "192.168.1.241" "1.1.1.1" ];
+        nameservers = [ "192.168.1.241" "1.1.1.1" ];
 
-    # Firewall configuration
-    networking.firewall = {
-        enable = true;
-        allowedTCPPorts = [ 
-            22000 # Syncthing
-        ];
-        allowedUDPPorts = [
-            22000 # Syncthing
-            21027 # Syncthing
-        ];
+        # Firewall configuration
+        firewall = {
+            enable = true;
+            allowedTCPPorts = [ 
+                22000 # Syncthing
+            ];
+            allowedUDPPorts = [
+                22000 # Syncthing
+                21027 # Syncthing
+            ];
+        };
     };
+    
+    hardware = {
+        # Disable PulseAudio
+        pulseaudio.enable = false;
 
-    # Disable PulseAudio
-    hardware.pulseaudio.enable = false;
+        # Enable bluetooth
+        bluetooth = {
+            enable = true; # enables support for Bluetooth
+            powerOnBoot = true; # powers up the default Bluetooth controller on boot
+        };
 
-    # Enable bluetooth
-    hardware.bluetooth = {
-        enable = true; # enables support for Bluetooth
-        powerOnBoot = true; # powers up the default Bluetooth controller on boot
+        # Enable hardware acceleration
+        opengl = {
+            enable = true;
+            driSupport = true;
+        };
     };
-
-    # Enable hardware acceleration for X11
-    hardware.opengl.enable = true;
-    hardware.opengl.driSupport = true;
 
 
     # rtkit is optional but recommended
@@ -51,35 +59,39 @@
     # Set your time zone.
     time.timeZone = "America/Los_Angeles";
 
-    # Select internationalisation properties.
-    i18n.defaultLocale = "en_US.UTF-8";
+    i18n = {
+        # Select internationalisation properties.
+        defaultLocale = "en_US.UTF-8";
 
-    i18n.extraLocaleSettings = {
-        LC_ADDRESS = "en_US.UTF-8";
-        LC_IDENTIFICATION = "en_US.UTF-8";
-        LC_MEASUREMENT = "en_US.UTF-8";
-        LC_MONETARY = "en_US.UTF-8";
-        LC_NAME = "en_US.UTF-8";
-        LC_NUMERIC = "en_US.UTF-8";
-        LC_PAPER = "en_US.UTF-8";
-        LC_TELEPHONE = "en_US.UTF-8";
-        LC_TIME = "en_US.UTF-8";
+        extraLocaleSettings = {
+            LC_ADDRESS = "en_US.UTF-8";
+            LC_IDENTIFICATION = "en_US.UTF-8";
+            LC_MEASUREMENT = "en_US.UTF-8";
+            LC_MONETARY = "en_US.UTF-8";
+            LC_NAME = "en_US.UTF-8";
+            LC_NUMERIC = "en_US.UTF-8";
+            LC_PAPER = "en_US.UTF-8";
+            LC_TELEPHONE = "en_US.UTF-8";
+            LC_TIME = "en_US.UTF-8";
+        };
     };
 
     # Enable zsh shell for use below
     programs.zsh.enable = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.roelm = {
-       isNormalUser = true;
-       description = "Roel Mendoza";
-       extraGroups = [ "networkmanager" "wheel" ];
-       packages = with pkgs; [];
-       shell = pkgs.zsh;
-    };
+    users.users = {
+        roelm = {
+           isNormalUser = true;
+           description = "Roel Mendoza";
+           extraGroups = [ "networkmanager" "wheel" ];
+           packages = with pkgs; [];
+           shell = pkgs.zsh;
+        };
 
-    # Disable root
-    users.users.root.hashedPassword = "!";
+        # Disable root
+        root.hashedPassword = "!";
+    };
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
@@ -225,9 +237,15 @@
     };
 
     # Virtualbox stuff
-    virtualisation.virtualbox.host.enable = true;
-    virtualisation.virtualbox.host.enableExtensionPack = true;
-    virtualisation.virtualbox.guest.enable = true;
+    virtualisation = {
+        virtualbox = {
+            host = {
+                enable = true;
+                enableExtensionPack = true;
+            };
+            guest.enable = true;
+        };
+    };
 
     # Enable flakes bc they cool
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
