@@ -134,6 +134,7 @@
         usbutils # Contains lsusb
         zsh # Shell of choice
         dig # Cool nslookup alternative
+        iw # For TMUX bar to show current network
         solaar # For configuring logitech mice
         prettyping # Pretty ping alternative
         bat # Pretty cat alternative
