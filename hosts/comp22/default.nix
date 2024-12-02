@@ -76,8 +76,13 @@
         };
     };
 
-    # Enable zsh shell for use below
-    programs.zsh.enable = true;
+    programs = {
+        # Enable zsh shell for use below
+        zsh.enable = true;
+        
+        # Enable XWayland
+        xwayland.enable = true;
+    };
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users = {
@@ -135,7 +140,6 @@
         nodejs # Some stuff relies on this awful thing (some neovim plugins)
         python3 # We all know what this is
         gnome.gnome-tweaks # Used to configure GTK
-        xwayland # Allow for non-wayland applications
         qt5ct # Used to configure QT
         remmina # RDP tool
         transmission # Torrenting Linux ISOs
@@ -166,15 +170,9 @@
         xserver = {
             enable = true;
             videoDrivers = [ "amdgpu" ];
-            # displayManager.startx.enable = true;
 			
             # Use GDM display manager
-            displayManager = {
-				gdm = {
-					enable = true;
-					wayland = true;
-				};
-			};
+            displayManager.gdm.enable = true;
 			
             # Enable Desktop Environment.
 			desktopManager.gnome.enable = true;
