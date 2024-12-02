@@ -1,9 +1,13 @@
-# Dotfiles!
+# Nix Configs!
 
 This repo contains my confirgurations for all my nix managed systems, which
-span from my homelab to my personal computer. The following sections detail how 
-to provision a simple homelab using nixos and docker! For this setup the following 
-services are used:
+span from my homelab to my personal computer. This repo is under active development 
+and will see more future updates soon.
+
+## Homelab
+
+The following section details how to provision a simple homelab using nixos 
+and docker! For this setup the following services are used:
 
 - Caddy: Used as a reverse proxy for all the services with an
   HTTP interface.
@@ -11,13 +15,6 @@ services are used:
 - Pi-Hole: Used for Ad-Blocking and a local DNS.
 - Syncthing: Used to sync files across devices and backup files.
 - VaultWarden: Used to maintain a backup copy of a bitwarden vault.
-
-It will also go over the setup and provisioning of my personal workstation
-which uses home manager to manage all my dotfiles.
-
-This repo is under active development and will see more future updates soon.
-
-## Homelab
 
 In order to provision your server with the same config simply clone this repo
 and run the following command:
@@ -46,6 +43,8 @@ docker compose up -d
 ```
 
 ## Dotfiles
+
+For my nixos workstation, I use home manager to manage all my dotfiles.
 
 > **NOTE**: Before running the commands bellow, you will need to have nix
 > installed on your system. Currently this setup only works on nixos systems.
