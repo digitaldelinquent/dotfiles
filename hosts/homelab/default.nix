@@ -76,12 +76,21 @@
             isNormalUser = true;
             description = "admin";
             extraGroups = [ "networkmanager" "wheel" "docker" ];
-            packages = with pkgs; [];
+        };
+
+        git = {
+            isNormalUser = true;
+            home = "/home/git";
+            description = "git";
+            extraGroups = [ "networkmanager" ];
+            uid = 1000;
         };
 
         # Disable root
         root.hashedPassword = "!";
     };
+
+    users.groups.git.gid = 1000;
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
