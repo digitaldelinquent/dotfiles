@@ -32,7 +32,7 @@ services:
     restart: always
     volumes:
       - /var/gitea:/data
-      - /home/admin:/data/git/.ssh
+      - /home/git/.ssh:/data/git/.ssh
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
 networks:
