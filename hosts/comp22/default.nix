@@ -127,7 +127,7 @@
         mpv # CLI video viewer
         mullvad-vpn # VPN client for Mullvad VPN provider
         mupdf # CLI pdf viewer
-        neofetch # Something cool to put in your shell rc
+        fastfetch # Something cool to put in your shell rc
         tmux # Terminal multiplexer!
         pandoc # File conversions
         piper # Mouse configuration tool
