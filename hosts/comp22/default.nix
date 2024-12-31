@@ -156,6 +156,8 @@
         bat # Pretty cat alternative
         syncthing # Cool way to sync files yo!
         stow # Dotfile manager (just auto symlinks pretty much)
+        exfat # Support for the exFAT Filesystem
+        exfatprogs # Userspace utils for exfat
     ];
 
     # Install fonts
