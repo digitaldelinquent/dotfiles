@@ -145,7 +145,7 @@
         netbird-ui # UI for netbird overlay VPN
         killall # Neat tool to kill processes by name
         usbutils # Contains lsusb
-        ventoy # Mult-ISO tool
+        ventoy-full # Mult-ISO tool
         lshw # For listing hardware information
         zsh # Shell of choice
         dig # Cool nslookup alternative
