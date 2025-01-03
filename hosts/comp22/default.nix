@@ -106,6 +106,7 @@
     # List packages installed in system profile.
     environment.systemPackages = with pkgs; [
         neovim # Editor of choice
+        dbeaver-bin # SQL editor
         wget # Grab files from an HTTP host
         git # VCS
         docker # OCI container runtime
