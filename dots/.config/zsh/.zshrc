@@ -93,10 +93,10 @@ ef() {
 }
 
 # User Configuration
-alias ls="exa --icons"
-alias ll="exa -lg --header --icons"
-alias la="exa -a --icons"
-alias lla="exa -lga --header --icons"
+alias ls="eza --icons"
+alias ll="eza -lg --header --icons"
+alias la="eza -a --icons"
+alias lla="eza -lga --header --icons"
 alias cat="bat --theme Dracula"
 alias transmit="transmission-remote"
 alias ping="prettyping"
