@@ -69,4 +69,4 @@ For my nixos workstation, I use home manager to manage all my dotfiles.
 
 If you are running on a non-nix system and wish to use the same dotfiles and
 have all the necessary packages in place; please run the following stow command 
-to symlink the dotfiles to your home directory: `stow dots -D`
+to symlink the dotfiles to your home directory: `stow --adopt dots`
