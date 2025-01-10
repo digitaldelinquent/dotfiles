@@ -1,5 +1,3 @@
-#! /usr/bin/sh
-
 # Profile file. Runs on login
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/share/cargo/bin"
@@ -7,7 +5,6 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin/pip"
 export PATH="$PATH:$HOME/.local/bin/scripts"
 export PATH="$PATH:$HOME/Games"
-# Homebrew Compatibility
 export PATH="$PATH:/opt/homebrew/bin"
 export PATH="$PATH:/opt/homebrew/sbin"
 export QT_QPA_PLATFORMTHEME="qt5ct"
