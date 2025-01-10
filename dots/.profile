@@ -17,7 +17,7 @@ export VBOX_USB=usbfs
 export EDITOR="nvim"
 export TERM="xterm-256color"
 export TERMINAL="alacritty"
-export BROWSER="librewolf"
+export BROWSER="firefox"
 export READER="mupdf"
 
 # Forcing XDG
