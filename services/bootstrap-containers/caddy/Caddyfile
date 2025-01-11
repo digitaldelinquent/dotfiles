@@ -22,9 +22,4 @@
     handle @vaultw {
         reverse_proxy vaultwarden:80
     }
-
-    @gitea host gitea.digitaldelinquency.xyz 
-    handle @gitea {
-        reverse_proxy gitea:3000
-    }
 }

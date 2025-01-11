@@ -39,7 +39,6 @@ services:
       TZ: "America/Los_Angeles"
     volumes: 
       - /var/vaultwarden:/backup/vaultw
-      - /var/gitea:/backup/gitea
       - /var/syncthing:/backup/syncthing
       - /var/portainer:/backup/portainer
       - /var/pihole:/backup/pihole

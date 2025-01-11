@@ -23,18 +23,6 @@ services:
       ADMIN_TOKEN: ${VAULTW_ADMIN_TOKEN}
     volumes: 
       - /var/vaultwarden:/data
-  gitea:
-    image: docker.io/gitea/gitea:1.22.6
-    environment:
-      USER_UID: 1000
-      USER_GID: 1000
-      DISABLE_REGISTRATION: true
-    restart: always
-    volumes:
-      - /var/gitea:/data
-      - /home/git/.ssh:/data/git/.ssh
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
 networks:
   default:
     external: true
