@@ -159,7 +159,7 @@
         stow # Dotfile manager (just auto symlinks pretty much)
         exfat # Support for the exFAT Filesystem
         exfatprogs # Userspace utils for exfat
-        make # For running makefiles
+        gnumake # For running makefiles
     ];
 
     # Install fonts
