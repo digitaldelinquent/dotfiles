@@ -69,4 +69,13 @@ For my nixos workstation, I use home manager to manage all my dotfiles.
 
 If you are running on a non-nix system and wish to use the same dotfiles and
 have all the necessary packages in place; please run the following stow command 
-to symlink the dotfiles to your home directory: `stow --adopt dots`
+to symlink the dotfiles to your home directory: 
+
+```
+stow --adopt dots
+```
+
+> **NOTE** Be sure the .config directory in the dots package exists in your
+> home directory, otherwise the .config directory in this repository will be
+> symlinked. This will cause unmanaged folders to populate the repo and dirty
+> the git tree.
