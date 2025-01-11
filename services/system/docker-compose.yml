@@ -43,6 +43,12 @@ services:
       - /var/portainer:/backup/portainer
       - /var/pihole:/backup/pihole
       - /var/pihole-dnsmasq:/backup/pihole-dnsmasq
+      - /var/uptime-kuma:/backup/uptime-kuma
+  uptime-kuma:
+    image: louislam/uptime-kuma:latest
+    volumes:
+      - /var/uptime-kuma:/app/data
+    restart: unless-stopped
 networks:
   default:
     external: true
