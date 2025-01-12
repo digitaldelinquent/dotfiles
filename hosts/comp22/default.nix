@@ -160,7 +160,7 @@
         exfat # Support for the exFAT Filesystem
         exfatprogs # Userspace utils for exfat
         gnumake # For running makefiles
-        libgcc # GCC compiler
+        gcc # GCC compiler
     ];
 
     # Install fonts
