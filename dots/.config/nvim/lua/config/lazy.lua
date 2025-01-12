@@ -24,6 +24,7 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
+        { "Mofiqul/dracula.nvim" },
         -- import your plugins
         { import = "plugins" },
     },
