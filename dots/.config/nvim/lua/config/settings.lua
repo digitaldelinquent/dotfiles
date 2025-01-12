@@ -1,5 +1,7 @@
 -- Set theme
 vim.cmd.colorscheme('dracula')
+vim.opt.termguicolors = true
+vim.api.nvim_set_hl(0, "Normal", { ctermbg=None })
 
 -- Show line numbers
 
