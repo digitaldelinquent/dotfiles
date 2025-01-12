@@ -28,7 +28,6 @@ require("lazy").setup({
         { "Mofiqul/dracula.nvim" },
         { import = "plugins" },
     },
-    install = { colorscheme = { "dracula" } },
     -- automatically check for plugin updates
     checker = { enabled = true },
 })
