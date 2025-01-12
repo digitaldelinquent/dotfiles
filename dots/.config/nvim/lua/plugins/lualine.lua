@@ -1,5 +1,8 @@
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    options = { theme = 'dracula' }
+    options = {
+        icons_enabled = true,
+        theme = 'dracula-nvim' 
+    }
 }
