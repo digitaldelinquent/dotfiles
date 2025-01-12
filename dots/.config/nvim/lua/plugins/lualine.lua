@@ -3,6 +3,6 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     options = {
         icons_enabled = true,
-        theme = 'dracula-nvim' 
+        theme = 'dracula'
     }
 }
