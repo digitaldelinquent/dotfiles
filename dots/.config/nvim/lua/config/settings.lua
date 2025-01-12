@@ -39,8 +39,6 @@ vim.opt.softtabstop=4
 
 vim.opt.expandtab=true
 
-vim.opt.noshiftround=true
-
 -- Cursor motion
 
 vim.opt.scrolloff=3
