@@ -12,7 +12,7 @@ return {
                 "vimdoc", 
                 "sql",
                 "terraform",
-                "shell",
+                "sh",
                 "python",
                 "javascript", 
                 "html"
