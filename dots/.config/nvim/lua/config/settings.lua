@@ -13,7 +13,7 @@ vim.opt.visualbell = true
 -- Cursor line and column
 
 vim.opt.cursorline = true
-vim.opt.cursorcolum = true
+vim.opt.cursorcolumn = true
 
 -- Encoding
 
@@ -29,7 +29,7 @@ vim.opt.wrap = true
 
 vim.opt.textwidth = 79
 
-vim.opt.formatoptions ='tcqrn1'
+vim.opt.formatoptions = 'tcqrn1'
 
 vim.opt.tabstop = 4
 
