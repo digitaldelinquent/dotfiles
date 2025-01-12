@@ -1,6 +1,3 @@
--- Set theme
-vim.cmd.colorscheme('dracula')
-
 -- Show line numbers
 
 vim.opt.number = true
