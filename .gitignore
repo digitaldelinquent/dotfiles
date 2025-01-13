@@ -3,4 +3,5 @@ dots/.config/zsh/plugins/
 dots/.config/zsh/.zcompdump
 dots/.config/zsh/.zsh_sessions/
 dots/.config/zsh/.zsh_history
+lazy-lock.json
 .env
