@@ -7,7 +7,7 @@ return {
     version = '*',
 
     opts = {
-        keymap = { preset = 'default' },
+        keymap = { preset = 'enter' },
 
         appearance = {
             -- Sets the fallback highlight groups to nvim-cmp's highlight groups
