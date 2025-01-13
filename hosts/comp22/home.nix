@@ -18,7 +18,6 @@
         ".config/starship.toml".source = ../../dots/.config/starship.toml;
         ".config/nvim/init.lua".source = ../../dots/.config/nvim/init.lua;
         ".config/nvim/lua".source = ../../dots/.config/nvim/lua;
-        ".local/share/nvim/site/autoload/plug.vim".source = inputs.vim-plug;
         ".config/tmux/tmux.conf".source = ../../dots/.config/tmux/tmux.conf;
         ".config/tmux/plugins/tpm".source = inputs.tmux-tpm;
         ".config/alacritty".source = ../../dots/.config/alacritty;

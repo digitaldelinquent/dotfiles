@@ -68,7 +68,6 @@
         "nixpkgs": "nixpkgs",
         "qt5-dracula": "qt5-dracula",
         "tmux-tpm": "tmux-tpm",
-        "vim-plug": "vim-plug",
         "xresources-dracula": "xresources-dracula",
         "zsh-autosuggestions": "zsh-autosuggestions",
         "zsh-syntax-highlighting": "zsh-syntax-highlighting"
@@ -88,18 +87,6 @@
         "owner": "tmux-plugins",
         "repo": "tpm",
         "type": "github"
-      }
-    },
-    "vim-plug": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-E38kcBIv/CdPkgyIJK0/VXFMyf3FtDyF1MoMImEzX1A=",
-        "type": "file",
-        "url": "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
       }
     },
     "xresources-dracula": {
