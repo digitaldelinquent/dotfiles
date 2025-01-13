@@ -16,7 +16,8 @@
         ".config/zsh/plugins/zsh-autosuggestions".source = inputs.zsh-autosuggestions;
         ".config/zsh/plugins/zsh-syntax-highlighting".source = inputs.zsh-syntax-highlighting;
         ".config/starship.toml".source = ../../dots/.config/starship.toml;
-        ".config/nvim".source = ../../dots/.config/nvim;
+        ".config/nvim/init.lua".source = ../../dots/.config/nvim/init.lua;
+        ".config/nvim/lua".source = ../../dots/.config/nvim/lua;
         ".local/share/nvim/site/autoload/plug.vim".source = inputs.vim-plug;
         ".config/tmux/tmux.conf".source = ../../dots/.config/tmux/tmux.conf;
         ".config/tmux/plugins/tpm".source = inputs.tmux-tpm;
