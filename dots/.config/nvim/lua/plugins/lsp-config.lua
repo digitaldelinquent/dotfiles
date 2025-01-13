@@ -12,6 +12,7 @@ return {
                 'ast_grep',
                 'sqlls',
                 'terraformls',
+                'svelte',
                 'nil_ls',
                 'jsonls',
             }
