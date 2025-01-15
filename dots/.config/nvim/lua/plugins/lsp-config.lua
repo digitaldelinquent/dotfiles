@@ -31,6 +31,6 @@ return {
 
         vim.keymaps.set('n', 'gd', vim.lsp.buf.definition, {})
         vim.keymaps.set('n', 'K', vim.lsp.buf.hover, {})
-        vim.keymaps.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
+        vim.keymaps.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, {})
     end
 }
