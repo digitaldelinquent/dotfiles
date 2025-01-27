@@ -161,6 +161,8 @@
         exfatprogs # Userspace utils for exfat
         gnumake # For running makefiles
         gcc # GCC compiler
+        apfs-fuse
+        apfsprogs
     ];
 
     # Install fonts
