@@ -1,6 +1,6 @@
 theme = Dracula
 background-opacity = 0.8
-backnground-blur = true
+background-blur = true
 font-family = Hack Nerd Font Mono
 font-feature = -liga
 font-size = 18

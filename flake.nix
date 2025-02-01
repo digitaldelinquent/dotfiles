@@ -6,6 +6,9 @@
             url = "github:nix-community/home-manager/release-24.11";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        ghostty = {
+            url = "github:ghostty-org/ghostty";
+        };
         zsh-autosuggestions = {
             url = "github:zsh-users/zsh-autosuggestions";
             flake = false;
@@ -31,7 +34,7 @@
             flake = false;
         };
     };
-    outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    outputs = { self, nixpkgs, home-manager, ghostty, ... }@inputs:
         let
             system = "x86_64-linux";
             lib = nixpkgs.lib;
@@ -46,6 +49,11 @@
                         home-manager.useUserPackages = true;
                         home-manager.users.roelm = import ./hosts/comp22/home.nix;
                         home-manager.extraSpecialArgs = { inherit inputs; };
+                    }
+                    {
+                        environment.systemPackages = [
+                            ghostty.packages.x86_64-linux.default
+                        ];
                     }
                 ];
             };
