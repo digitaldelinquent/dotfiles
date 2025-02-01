@@ -115,6 +115,7 @@
         alsa-utils # Low level sound stuffies
         android-tools # Tools to use for when connecting to an Android device
         brightnessctl # CLI tool to configure brightness of the screen
+        wl-clipboard # CLI clipboard tool for wayland
         discord # Look it up lol
         rofi # Application launcher
         podman # OCI container runtime as well, but with a more efficient approach
