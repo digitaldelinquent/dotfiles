@@ -1,3 +1,4 @@
+# Look and feel
 theme = Dracula
 background-opacity = 0.8
 background-blur = true
@@ -6,3 +7,15 @@ font-feature = -liga
 font-size = 18
 window-padding-x = 10
 window-padding-y = 10
+
+# Keybinds
+keybind = super+d=new_split:right
+keybind = shift+super+d=new_split:down
+keybind = super+alt+up=goto_split:up
+keybind = super+alt+down=goto_split:down
+keybind = super+alt+left=goto_split:left
+keybind = super+alt+right=goto_split:right
+keybind = super+t new_tab
+keybind = super+n new_window
+keybind = super+w close_tab
+keybind = super+r reload_config
