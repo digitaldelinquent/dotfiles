@@ -107,6 +107,6 @@ fastfetch -l $XDG_DATA_HOME/fastfetch/logo
 eval "$(starship init zsh)"
 
 # Tmux autostart
-if [ -z "${TMUX}" ]; then
-    exec tmux new -A -s lain >/dev/null 2>&1
-fi
+# if [ -z "${TMUX}" ]; then
+#     exec tmux new -A -s lain >/dev/null 2>&1
+# fi
