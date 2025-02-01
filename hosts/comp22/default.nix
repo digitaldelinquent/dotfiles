@@ -112,6 +112,7 @@
         docker # OCI container runtime
         docker-compose # Evaluate docker compose files
         alacritty # Terminal of choice
+        ghostty # New Terminal of choice
         alsa-utils # Low level sound stuffies
         android-tools # Tools to use for when connecting to an Android device
         brightnessctl # CLI tool to configure brightness of the screen

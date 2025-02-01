@@ -21,6 +21,7 @@
         ".config/tmux/tmux.conf".source = ../../dots/.config/tmux/tmux.conf;
         ".config/tmux/plugins/tpm".source = inputs.tmux-tpm;
         ".config/alacritty".source = ../../dots/.config/alacritty;
+        ".config/ghostty".source = ../../dots/.config/ghostty;
         ".local/bin/lock.sh".source = ../../scripts/lock.sh;
         ".themes/Dracula".source = inputs.gtk-dracula;
         ".config/qt5ct/colors/Dracula.conf".source = inputs.qt5-dracula;
