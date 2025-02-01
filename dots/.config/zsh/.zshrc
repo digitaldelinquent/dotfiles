@@ -103,7 +103,7 @@ alias k="kubectl"
 alias kc="kubectx"
 alias kn="kubens"
 alias lock="systemctl suspend"
-fastfetch -l $XDG_DATA_HOME/fastfetch/logo
+fastfetch
 eval "$(starship init zsh)"
 
 # Tmux autostart
