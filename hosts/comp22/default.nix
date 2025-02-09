@@ -162,8 +162,10 @@
         exfatprogs # Userspace utils for exfat
         gnumake # For running makefiles
         gcc # GCC compiler
-        apfs-fuse
-        apfsprogs
+        apfs-fuse # MacOS FS stuff
+        apfsprogs # MacOS FS stuff
+        caido # Web app security platform
+        bruno # API testing
     ];
 
     # Install fonts
