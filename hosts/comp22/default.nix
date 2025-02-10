@@ -166,6 +166,9 @@
         apfsprogs # MacOS FS stuff
         caido # Web app security platform
         bruno # API testing
+        unzip # CLI archive utility
+        go # Go compiler
+        cargo # Package manager for rust
     ];
 
     # Install fonts
