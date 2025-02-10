@@ -26,7 +26,7 @@ vim.opt.encoding = 'utf-8'
 
 -- clipboard copy/paste
 
-vim.opt.clipboard = {'unnamed', 'unnamedplus'}
+vim.opt.clipboard = 'unnamedplus'
 
 -- Whitespace
 

@@ -9,12 +9,18 @@ return {
             ensure_installed = {
                 'ansiblels',
                 'bashls',
-                'ast_grep',
                 'sqlls',
                 'terraformls',
                 'svelte',
                 'nil_ls',
-                'jsonls',
+                'clangd',
+                'zls',
+                'gopls',
+                'pyright',
+                'eslint', 
+                'lua_ls', 
+                'vimls', 
+                'html'
             }
         })
 
@@ -23,11 +29,18 @@ return {
 
         lspconfig.ansiblels.setup({ capabilities = capabilties })
         lspconfig.bashls.setup({ capabilities = capabilties })
-        lspconfig.ast_grep.setup({ capabilities = capabilties })
         lspconfig.sqlls.setup({ capabilities = capabilties })
         lspconfig.terraformls.setup({ capabilities = capabilties })
+        lspconfig.svelte.setup({ capabilities = capabilities })
         lspconfig.nil_ls.setup({ capabilities = capabilties })
-        lspconfig.jsonls.setup({ capabilities = capabilties })
+        lspconfig.clangd.setup({ capabilities = capabilities })
+        lspconfig.zls.setup({ capabilities = capabilities })
+        lspconfig.gopls.setup({ capabilities = capabilities })
+        lspconfig.pyright.setup({ capabilities = capabilities })
+        lspconfig.eslint.setup({ capabilities = capabilities })
+        lspconfig.lua_ls.setup({ capabilities = capabilities })
+        lspconfig.vimls.setup({ capabilities = capabilities })
+        lspconfig.html.setup({ capabilities = capabilities })
 
         vim.keymaps.set('n', 'gd', vim.lsp.buf.definition, {})
         vim.keymaps.set('n', 'K', vim.lsp.buf.hover, {})
