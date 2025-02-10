@@ -10,7 +10,6 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "nil_ls",
                     "bashls",
                     "clangd",
                     "zls",
@@ -32,7 +31,6 @@ return {
             local lspconfig = require("lspconfig")
             local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-            lspconfig.nil_ls.setup({ capabilities = capabilties })
             lspconfig.bashls.setup({ capabilities = capabilties })
             lspconfig.clangd.setup({ capabilities = capabilities })
             lspconfig.zls.setup({ capabilities = capabilities })
