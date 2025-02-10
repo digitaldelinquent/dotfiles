@@ -7,16 +7,15 @@ return {
         
         require("mason-lspconfig").setup({
             ensure_installed = {
-                'ansiblels',
-                'bashls',
-                'sqlls',
-                'terraformls',
-                'svelte',
                 'nil_ls',
+                'bashls',
                 'clangd',
                 'zls',
                 'gopls',
                 'pyright',
+                'sqlls',
+                'terraformls',
+                'svelte',
                 'eslint', 
                 'lua_ls', 
                 'vimls', 
@@ -27,16 +26,15 @@ return {
         local lspconfig = require('lspconfig')
         local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-        lspconfig.ansiblels.setup({ capabilities = capabilties })
-        lspconfig.bashls.setup({ capabilities = capabilties })
-        lspconfig.sqlls.setup({ capabilities = capabilties })
-        lspconfig.terraformls.setup({ capabilities = capabilties })
-        lspconfig.svelte.setup({ capabilities = capabilities })
         lspconfig.nil_ls.setup({ capabilities = capabilties })
+        lspconfig.bashls.setup({ capabilities = capabilties })
         lspconfig.clangd.setup({ capabilities = capabilities })
         lspconfig.zls.setup({ capabilities = capabilities })
         lspconfig.gopls.setup({ capabilities = capabilities })
         lspconfig.pyright.setup({ capabilities = capabilities })
+        lspconfig.sqlls.setup({ capabilities = capabilties })
+        lspconfig.terraformls.setup({ capabilities = capabilties })
+        lspconfig.svelte.setup({ capabilities = capabilities })
         lspconfig.eslint.setup({ capabilities = capabilities })
         lspconfig.lua_ls.setup({ capabilities = capabilities })
         lspconfig.vimls.setup({ capabilities = capabilities })
