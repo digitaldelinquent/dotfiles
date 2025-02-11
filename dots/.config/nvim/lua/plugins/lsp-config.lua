@@ -12,7 +12,6 @@ return {
                 ensure_installed = {
                     "bashls",
                     "clangd",
-                    "zls",
                     "gopls",
                     "pyright",
                     "sqlls",
@@ -33,7 +32,6 @@ return {
 
             lspconfig.bashls.setup({ capabilities = capabilties })
             lspconfig.clangd.setup({ capabilities = capabilities })
-            lspconfig.zls.setup({ capabilities = capabilities })
             lspconfig.gopls.setup({ capabilities = capabilities })
             lspconfig.pyright.setup({ capabilities = capabilities })
             lspconfig.sqlls.setup({ capabilities = capabilties })
