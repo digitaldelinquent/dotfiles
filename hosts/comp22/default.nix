@@ -142,6 +142,7 @@
         libsForQt5.qt5ct # Used to configure QT
         remmina # RDP tool
         transmission_4 # Torrenting Linux ISOs
+        openvpn # Tooling for OpenVPN
         wireguard-tools # Utilities for connecting and using wireguard VPNs
         netbird # Homelab VPN
         netbird-ui # UI for netbird overlay VPN
