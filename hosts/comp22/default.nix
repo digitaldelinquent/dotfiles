@@ -165,6 +165,8 @@
         gcc # GCC compiler
         apfs-fuse # MacOS FS stuff
         apfsprogs # MacOS FS stuff
+        nmap # Network port discovery
+        gobuster # URL enumeration
         caido # Web app security platform
         bruno # API testing
         unzip # CLI archive utility
