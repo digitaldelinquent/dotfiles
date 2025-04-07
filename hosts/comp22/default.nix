@@ -172,6 +172,7 @@
         unzip # CLI archive utility
         go # Go compiler
         cargo # Package manager for rust
+        duckdb # Large dataset processing
     ];
 
     # Install fonts
