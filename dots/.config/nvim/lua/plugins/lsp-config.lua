@@ -16,6 +16,8 @@ return {
                     "pyright",
                     "sqlls",
                     "terraformls",
+                    "elixirls",
+                    "helm_ls",
                     "svelte",
                     "eslint", 
                     "vimls", 
@@ -36,6 +38,11 @@ return {
             lspconfig.pyright.setup({ capabilities = capabilities })
             lspconfig.sqlls.setup({ capabilities = capabilties })
             lspconfig.terraformls.setup({ capabilities = capabilties })
+            lspconfig.elixirls.setup({ 
+                capabilities = capabilties; 
+                cmd = { "language_server.sh" }; 
+            })
+            lspconfig.helm_ls.setup({ capabilities = capabilities })
             lspconfig.svelte.setup({ capabilities = capabilities })
             lspconfig.eslint.setup({ capabilities = capabilities })
             lspconfig.vimls.setup({ capabilities = capabilities })
