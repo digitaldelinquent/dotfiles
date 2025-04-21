@@ -12,6 +12,8 @@ return {
                 'python',
                 'sql',
                 'terraform',
+                'elixir',
+                'helm',
                 'nix',
                 'csv',
                 'markdown',
