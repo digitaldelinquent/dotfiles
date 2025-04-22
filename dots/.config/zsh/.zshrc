@@ -102,7 +102,14 @@ alias remote-nix="NIX_SSHOPTS='-o RequestTTY=force' nixos-rebuild --target-host 
 alias k="kubectl"
 alias kc="kubectx"
 alias kn="kubens"
+
+# System command aliases
 alias lock="systemctl suspend"
+alias reload="sudo nixos-rebuild switch --flake .#comp22"
+alias upgrade="sudo nixos-rebuild switch --flake .#comp22 --upgrade"
+alias dump="sudo nix-collect-garbage -d"
+
+# Initialize shell prompt
 fastfetch
 eval "$(starship init zsh)"
 
