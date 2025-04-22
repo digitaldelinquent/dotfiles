@@ -98,11 +98,6 @@
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
-    # Allow EOL electron in order to use Obsidian
-    nixpkgs.config.permittedInsecurePackages = [
-        "electron-25.9.0"
-    ];
-
     # List packages installed in system profile.
     environment.systemPackages = with pkgs; [
         neovim # Editor of choice
@@ -135,7 +130,6 @@
         piper # Mouse configuration tool
         playerctl # CLI tool to control media
         starship # Cool shell prompt written in Rust
-        obsidian # Awesome note taking app
         nodejs # Some stuff relies on this awful thing (some neovim plugins)
         python3 # We all know what this is
         gnome-tweaks # Used to configure GTK
