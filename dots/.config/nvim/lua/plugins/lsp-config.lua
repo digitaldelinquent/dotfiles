@@ -32,21 +32,36 @@ return {
             local lspconfig = require("lspconfig")
             local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-            lspconfig.bashls.setup({ capabilities = capabilties })
-            lspconfig.clangd.setup({ capabilities = capabilities })
-            lspconfig.gopls.setup({ capabilities = capabilities })
-            lspconfig.pyright.setup({ capabilities = capabilities })
-            lspconfig.sqlls.setup({ capabilities = capabilties })
-            lspconfig.terraformls.setup({ capabilities = capabilties })
-            lspconfig.elixirls.setup({ 
-                capabilities = capabilties; 
-                cmd = { "language_server.sh" }; 
-            })
-            lspconfig.helm_ls.setup({ capabilities = capabilities })
-            lspconfig.svelte.setup({ capabilities = capabilities })
-            lspconfig.eslint.setup({ capabilities = capabilities })
-            lspconfig.vimls.setup({ capabilities = capabilities })
-            lspconfig.html.setup({ capabilities = capabilities })
+            local map = function(type, key, value)
+                vim.api.nvim_buf_set_keymap(0,type,key,value,{noremap = true, silent = true})
+            end
+
+            -- Set go to definition key maps
+            local custom_attach = function(client)
+                map('n','gD','<cmd>lua vim.lsp.buf.declaration()<CR>')
+                map('n','gd','<cmd>vsplit | lua vim.lsp.buf.definition()<CR>')
+            end
+
+            local lsp_servers = {
+                "bashls", "clangd", "gopls", "pyright", "sqlls", 
+                "terraformls", "elixirls", "helm_ls", "eslint", "vimls", "html"
+            }
+
+            -- Setup LSPs by iterating
+            for _, lsp in ipairs(lsp_servers) do
+                if lsp == "elixirls" then
+                    lspconfig[lsp].setup({
+                        capabilities = capabilities,  -- Fixed typo here
+                        cmd = { "language_server.sh" },
+                        on_attach = custom_attach
+                    })
+                else
+                    lspconfig[lsp].setup({
+                        capabilities = capabilities,  -- Fixed typo here
+                        on_attach = custom_attach
+                    })
+                end
+            end
         end
     }
 }
