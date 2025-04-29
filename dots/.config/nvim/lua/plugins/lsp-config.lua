@@ -51,13 +51,13 @@ return {
             for _, lsp in ipairs(lsp_servers) do
                 if lsp == "elixirls" then
                     lspconfig[lsp].setup({
-                        capabilities = capabilities,  -- Fixed typo here
+                        capabilities = capabilities,
                         cmd = { "language_server.sh" },
                         on_attach = custom_attach
                     })
                 else
                     lspconfig[lsp].setup({
-                        capabilities = capabilities,  -- Fixed typo here
+                        capabilities = capabilities,
                         on_attach = custom_attach
                     })
                 end
