@@ -23,6 +23,12 @@ services:
       ADMIN_TOKEN: ${VAULTW_ADMIN_TOKEN}
     volumes: 
       - /var/vaultwarden:/data
+  it-tools:
+    image: ghcr.io/corentinth/it-tools:latest
+    restart: unless-stopped
+  cyberchef:
+    image: ghcr.io/gchq/cyberchef:latest
+    restart: unless-stopped
 networks:
   default:
     external: true
