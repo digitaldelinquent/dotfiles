@@ -23,6 +23,16 @@
         reverse_proxy vaultwarden:80
     }
 
+    @it-tools host it-tools.digitaldelinquency.xyz 
+    handle @it-tools {
+        reverse_proxy it-tools:80
+    }
+
+    @cyberchef host cyberchef.digitaldelinquency.xyz 
+    handle @cyberchef {
+        reverse_proxy cyberchef:80
+    }
+
     @uptime-kuma host uptime-kuma.digitaldelinquency.xyz 
     handle @uptime-kuma {
         reverse_proxy uptime-kuma:3001
