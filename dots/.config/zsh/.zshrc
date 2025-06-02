@@ -80,12 +80,16 @@ ZSH_PLUGINS_DIR="$XDG_CONFIG_HOME/zsh/plugins"
 
 # Plugins
 if [ ! -d $ZSH_PLUGINS_DIR ]; then
+    echo "Missing plugins, installing ..."
+
     mkdir -p $ZSH_PLUGINS_DIR
 
-    git clone https://github.com/zsh-users/zsh-autosuggestions \
-        $ZSH_PLUGINS_DIR/zsh-syntax-highlighting
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting \
-        $ZSH_PLUGINS_DIR/zsh-autosuggestions
+    git clone --quiet https://github.com/zsh-users/zsh-autosuggestions \
+        $ZSH_PLUGINS_DIR/zsh-syntax-highlighting > /dev/null
+    git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting \
+        $ZSH_PLUGINS_DIR/zsh-autosuggestions > /dev/null
+
+    echo "Plugin installation complete!"
 fi
 
 source $ZSH_HIGHLIGHTING_REPO/zsh-syntax-highlighting.zsh 2>/dev/null
