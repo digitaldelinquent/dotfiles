@@ -80,7 +80,7 @@ fi
 ZSH_PLUGINS_DIR="$XDG_CONFIG_HOME/zsh/plugins"
 
 if [ ! -d $ZSH_PLUGINS_DIR ]; then
-    echo "Missing shell plugins, installing ..."
+    echo "Missing shell plugins, installing..."
 
     mkdir $ZSH_PLUGINS_DIR
 
@@ -100,12 +100,23 @@ source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 TMUX_PLUGINS_DIR="$XDG_CONFIG_HOME/tmux/plugins"
 
 if [ ! -d $TMUX_PLUGINS_DIR ]; then
-    echo "Missing TPM (tmux plugin manager), installing ..."
+    echo "Missing TPM (tmux plugin manager), installing..."
 
     mkdir $TMUX_PLUGINS_DIR
     git clone --quiet https://github.com/tmux-plugins/tpm $TMUX_PLUGINS_DIR/tpm
 
     echo "TPM (tmux plugin manager) installation complete!"
+fi
+
+# Xresources
+
+if [ ! -f "$HOME/.Xresources" ]; then
+    echo "Missing Xresources, installing..."
+
+    curl https://raw.githubusercontent.com/dracula/xresources/master/Xresources \
+        -o $HOME/.Xresources
+    
+    echo "Xresources installation complete!"
 fi
 
 # Plugin Options
