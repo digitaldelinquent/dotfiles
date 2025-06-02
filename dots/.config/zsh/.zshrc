@@ -92,8 +92,8 @@ if [ ! -d $ZSH_PLUGINS_DIR ]; then
     echo "Plugin installation complete!"
 fi
 
-source $ZSH_HIGHLIGHTING_REPO/zsh-syntax-highlighting.zsh 2>/dev/null
-source $ZSH_AUTO_SUGGESTONS_REPO/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source $ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
 # Plugin Options
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#888888"
