@@ -81,8 +81,10 @@ ZSH_AUTO_SUGGESTONS_REPO='~/.config/zsh/plugins/zsh-autosuggestions'
 
 # Plugins
 if [ ! -d $ZSH_HIGHLIGHTING_REPO || ! -d $ZSH_AUTO_SUGGESTONS_REPO ]; then
-    git clone https://github.com/zsh-users/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting
+    mkdir -p plugins
+
+    git clone https://github.com/zsh-users/zsh-autosuggestions:plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting:plugins/zsh-syntax-highlighting
 fi
 
 source $ZSH_HIGHLIGHTING_REPO/zsh-syntax-highlighting.zsh 2>/dev/null
