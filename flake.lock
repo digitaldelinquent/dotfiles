@@ -55,53 +55,37 @@
         "type": "github"
       }
     },
-    "gtk-dracula": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1725129614,
-        "narHash": "sha256-dMM07wqESVHXbhw7wjR3QRQcf+PZxU90FcVLhGQOf2k=",
-        "type": "tarball",
-        "url": "https://github.com/dracula/gtk/archive/master.zip"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://github.com/dracula/gtk/archive/master.zip"
-      }
-    },
     "home-manager": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1733050161,
-        "narHash": "sha256-lYnT+EYE47f5yY3KS/Kd4pJ6CO9fhCqumkYYkQ3TK20=",
+        "lastModified": 1748830238,
+        "narHash": "sha256-EB+LzYHK0D5aqxZiYoPeoZoOzSAs8eqBDxm3R+6wMKU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "62d536255879be574ebfe9b87c4ac194febf47c5",
+        "rev": "c7fdb7e90bff1a51b79c1eed458fb39e6649a82a",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
-        "ref": "release-24.11",
-        "repo": "home-manager",
-        "type": "github"
+        "id": "home-manager",
+        "type": "indirect"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1732981179,
-        "narHash": "sha256-F7thesZPvAMSwjRu0K8uFshTk3ZZSNAsXTIFvXBT+34=",
+        "lastModified": 1748693115,
+        "narHash": "sha256-StSrWhklmDuXT93yc3GrTlb0cKSS0agTAxMGjLKAsY8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "62c435d93bf046a5396f3016472e8f7c8e2aed65",
+        "rev": "910796cabe436259a29a72e8d3f5e180fc6dfacc",
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-24.11",
-        "type": "indirect"
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "nixpkgs-stable": {
@@ -136,29 +120,26 @@
         "type": "github"
       }
     },
-    "qt5-dracula": {
-      "flake": false,
+    "nixpkgs_2": {
       "locked": {
-        "narHash": "sha256-O6CjdtpgdgW4nZDfuWr91rcZo2mcpAqe7ZYeqzh6VEg=",
-        "type": "file",
-        "url": "https://raw.githubusercontent.com/dracula/qt5/master/Dracula.conf"
+        "lastModified": 1732981179,
+        "narHash": "sha256-F7thesZPvAMSwjRu0K8uFshTk3ZZSNAsXTIFvXBT+34=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "62c435d93bf046a5396f3016472e8f7c8e2aed65",
+        "type": "github"
       },
       "original": {
-        "type": "file",
-        "url": "https://raw.githubusercontent.com/dracula/qt5/master/Dracula.conf"
+        "id": "nixpkgs",
+        "ref": "nixos-24.11",
+        "type": "indirect"
       }
     },
     "root": {
       "inputs": {
         "ghostty": "ghostty",
-        "gtk-dracula": "gtk-dracula",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
-        "qt5-dracula": "qt5-dracula",
-        "tmux-tpm": "tmux-tpm",
-        "xresources-dracula": "xresources-dracula",
-        "zsh-autosuggestions": "zsh-autosuggestions",
-        "zsh-syntax-highlighting": "zsh-syntax-highlighting"
+        "nixpkgs": "nixpkgs_2"
       }
     },
     "systems": {
@@ -174,34 +155,6 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
-      }
-    },
-    "tmux-tpm": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1677502767,
-        "narHash": "sha256-hW8mfwB8F9ZkTQ72WQp/1fy8KL1IIYMZBtZYIwZdMQc=",
-        "owner": "tmux-plugins",
-        "repo": "tpm",
-        "rev": "99469c4a9b1ccf77fade25842dc7bafbc8ce9946",
-        "type": "github"
-      },
-      "original": {
-        "owner": "tmux-plugins",
-        "repo": "tpm",
-        "type": "github"
-      }
-    },
-    "xresources-dracula": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-VgXA3fZo1XFqJ1qHZ8Z2e5ZauvL9eGHGJ+ohBLKhu/E=",
-        "type": "file",
-        "url": "https://raw.githubusercontent.com/dracula/xresources/master/Xresources"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://raw.githubusercontent.com/dracula/xresources/master/Xresources"
       }
     },
     "zig": {
@@ -226,38 +179,6 @@
       "original": {
         "owner": "mitchellh",
         "repo": "zig-overlay",
-        "type": "github"
-      }
-    },
-    "zsh-autosuggestions": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1694098728,
-        "narHash": "sha256-B+Kz3B7d97CM/3ztpQyVkE6EfMipVF8Y4HJNfSRXHtU=",
-        "owner": "zsh-users",
-        "repo": "zsh-autosuggestions",
-        "rev": "c3d4e576c9c86eac62884bd47c01f6faed043fc5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zsh-users",
-        "repo": "zsh-autosuggestions",
-        "type": "github"
-      }
-    },
-    "zsh-syntax-highlighting": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1704566212,
-        "narHash": "sha256-4rW2N+ankAH4sA6Sa5mr9IKsdAg7WTgrmyqJ2V1vygQ=",
-        "owner": "zsh-users",
-        "repo": "zsh-syntax-highlighting",
-        "rev": "e0165eaa730dd0fa321a6a6de74f092fe87630b0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zsh-users",
-        "repo": "zsh-syntax-highlighting",
         "type": "github"
       }
     }
