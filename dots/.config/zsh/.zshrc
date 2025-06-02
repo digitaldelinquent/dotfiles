@@ -76,9 +76,17 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
+ZSH_HIGHLIGHTING_REPO=' ~/.config/zsh/plugins/zsh-syntax-highlighting'
+ZSH_AUTO_SUGGESTONS_REPO='~/.config/zsh/plugins/zsh-autosuggestions'
+
 # Plugins
-source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+if [ ! -d $ZSH_HIGHLIGHTING_REPO || ! -d $ZSH_AUTO_SUGGESTONS_REPO ]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting
+fi
+
+source $ZSH_HIGHLIGHTING_REPO/zsh-syntax-highlighting.zsh 2>/dev/null
+source $ZSH_AUTO_SUGGESTONS_REPO/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
 # Plugin Options
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#888888"
