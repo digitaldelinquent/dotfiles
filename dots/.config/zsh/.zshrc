@@ -85,9 +85,9 @@ if [ ! -d $ZSH_PLUGINS_DIR ]; then
     mkdir -p $ZSH_PLUGINS_DIR
 
     git clone --quiet https://github.com/zsh-users/zsh-autosuggestions \
-        $ZSH_PLUGINS_DIR/zsh-syntax-highlighting
-    git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting \
         $ZSH_PLUGINS_DIR/zsh-autosuggestions
+    git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting \
+        $ZSH_PLUGINS_DIR/zsh-syntax-highlighting
 
     echo "Plugin installation complete!"
 fi
