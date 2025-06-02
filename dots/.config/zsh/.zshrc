@@ -76,17 +76,17 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
-ZSH_PLUGINS_DIR='~/.config/zsh/plugins'
-ZSH_HIGHLIGHTING_REPO='$ZSH_PLUGINS_DIR/zsh-syntax-highlighting'
-ZSH_AUTO_SUGGESTONS_REPO='$ZSH_PLUGINS_DIR/zsh-autosuggestions'
+ZSH_PLUGINS_DIR="$XDG_CONFIG_HOME/zsh/plugins"
+ZSH_HIGHLIGHTING_REPO="$ZSH_PLUGINS_DIR/zsh-syntax-highlighting"
+ZSH_AUTO_SUGGESTONS_REPO="$ZSH_PLUGINS_DIR/zsh-autosuggestions"
 
 # Plugins
 if [ ! -d $ZSH_HIGHLIGHTING_REPO || ! -d $ZSH_AUTO_SUGGESTONS_REPO ]; then
     mkdir -p $ZSH_PLUGINS_DIR
 
-    git clone https://github.com/zsh-users/zsh-autosuggestions:plugins/zsh-autosuggestions \
+    git clone https://github.com/zsh-users/zsh-autosuggestions \
         $ZSH_HIGHLIGHTING_REPO
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting:plugins/zsh-syntax-highlighting \
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting \
         $ZSH_AUTO_SUGGESTONS_REPO
 fi
 
