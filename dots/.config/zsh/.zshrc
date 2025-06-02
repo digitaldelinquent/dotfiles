@@ -77,17 +77,15 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 fi
 
 ZSH_PLUGINS_DIR="$XDG_CONFIG_HOME/zsh/plugins"
-ZSH_HIGHLIGHTING_REPO="$ZSH_PLUGINS_DIR/zsh-syntax-highlighting"
-ZSH_AUTO_SUGGESTONS_REPO="$ZSH_PLUGINS_DIR/zsh-autosuggestions"
 
 # Plugins
-if [ ! -d $ZSH_HIGHLIGHTING_REPO || ! -d $ZSH_AUTO_SUGGESTONS_REPO ]; then
+if [ ! -d $ZSH_PLUGINS_DIR ]; then
     mkdir -p $ZSH_PLUGINS_DIR
 
     git clone https://github.com/zsh-users/zsh-autosuggestions \
-        $ZSH_HIGHLIGHTING_REPO
+        $ZSH_PLUGINS_DIR/zsh-syntax-highlighting
     git clone https://github.com/zsh-users/zsh-syntax-highlighting \
-        $ZSH_AUTO_SUGGESTONS_REPO
+        $ZSH_PLUGINS_DIR/zsh-autosuggestions
 fi
 
 source $ZSH_HIGHLIGHTING_REPO/zsh-syntax-highlighting.zsh 2>/dev/null
