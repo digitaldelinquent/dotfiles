@@ -151,7 +151,9 @@ alias dump="sudo nix-collect-garbage -d"
 # Initialize shell prompt
 fastfetch
 eval "$(starship init zsh)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if [ -d "/home/linuxbrew" ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 # Tmux autostart
 if [ -z "${TMUX}" ]; then
