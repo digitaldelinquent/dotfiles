@@ -1,7 +1,8 @@
 # Dotfiles
 
 These dotfiles use homebrew (yes on linux too) to install all cli-based
-tooling.
+tooling. Please use your systems package manager or something like flatpak for
+everything else.
 
 1. Install all cli-based packages by running `brew bundle install` to re-install all the 
    packages listed in the brewfile
