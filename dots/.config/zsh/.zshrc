@@ -149,7 +149,6 @@ alias upgrade="sudo nixos-rebuild switch --flake .#comp22 --upgrade"
 alias dump="sudo nix-collect-garbage -d"
 
 # Initialize shell prompt
-fastfetch
 eval "$(starship init zsh)"
 if [ -d "/home/linuxbrew" ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
