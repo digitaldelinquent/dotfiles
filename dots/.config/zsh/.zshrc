@@ -153,7 +153,7 @@ alias upgrade="sudo nixos-rebuild switch --flake .#comp22 --upgrade"
 alias dump="sudo nix-collect-garbage -d"
 
 # Initialize shell prompt
-zstyle ':vcs_info:git:*' formats '%b '
+zstyle ':vcs_info:git:*' formats '(%b) '
 setopt PROMPT_SUBST
 
 SHELL_USER="%B%F{#b18ef9}%n%f%b"
