@@ -30,6 +30,10 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots) # Include hidden files
 
+# VCS Info
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
 ## Keybinds
 
 # History search traversal
@@ -149,10 +153,15 @@ alias upgrade="sudo nixos-rebuild switch --flake .#comp22 --upgrade"
 alias dump="sudo nix-collect-garbage -d"
 
 # Initialize shell prompt
-eval "$(starship init zsh)"
-if [ -d "/home/linuxbrew" ]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
+zstyle ':vcs_info:git:*' formats '%b%f %m%u%c %a'
+zstyle ':vcs_info:git:*' actionformats '%b%f %m%u%c %a'
+setopt PROMPT_SUBST
+
+SHELL_USER="%B%F{#b18ef9}%n%f%b"
+SHELL_DIR="%F{cyan}%~%f"
+SHELL_PROMPT_STRING="%B%F{green}>%f%b"
+
+PROMPT='${SHELL_USER} in ${SHELL_DIR} %F{magenta}${vcs_info_msg_0_}%f${SHELL_PROMPT_STRING} '
 
 # Tmux autostart
 if [ -z "${TMUX}" ]; then
