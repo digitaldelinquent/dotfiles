@@ -158,7 +158,7 @@ setopt PROMPT_SUBST
 
 SHELL_USER="%B%F{#b18ef9}%n%f%b"
 SHELL_DIR="%F{cyan}%~%f"
-SHELL_PROMPT_STRING="%B%F{green}↪%f%b"
+SHELL_PROMPT_STRING="%B%(?.%F{green}↪%f.%F{red}↪%f)%b"
 
 PROMPT='${SHELL_USER} in ${SHELL_DIR} ${vcs_info_msg_0_}${SHELL_PROMPT_STRING} '
 
