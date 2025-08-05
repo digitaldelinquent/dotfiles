@@ -153,14 +153,14 @@ alias upgrade="sudo nixos-rebuild switch --flake .#comp22 --upgrade"
 alias dump="sudo nix-collect-garbage -d"
 
 # Initialize shell prompt
-zstyle ':vcs_info:git:*' formats '%b'
+zstyle ':vcs_info:git:*' formats '(%F{magenta}%b%f) '
 setopt PROMPT_SUBST
 
 SHELL_USER="%B%F{#b18ef9}%n%f%b"
 SHELL_DIR="%F{cyan}%~%f"
 SHELL_PROMPT_STRING="%B%F{green}>%f%b"
 
-PROMPT='${SHELL_USER} in ${SHELL_DIR} (%F{magenta}${vcs_info_msg_0_}%f) ${SHELL_PROMPT_STRING} '
+PROMPT='${SHELL_USER} in ${SHELL_DIR} ${vcs_info_msg_0_}${SHELL_PROMPT_STRING} '
 
 # Eval homebrew for linux
 if [ -d "/home/linuxbrew" ]; then
