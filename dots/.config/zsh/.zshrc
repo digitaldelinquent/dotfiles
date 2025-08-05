@@ -162,6 +162,11 @@ SHELL_PROMPT_STRING="%B%F{green}>%f%b"
 
 PROMPT='${SHELL_USER} in ${SHELL_DIR} %F{magenta}${vcs_info_msg_0_}%f${SHELL_PROMPT_STRING} '
 
+# Eval homebrew for linux
+if [ -d "/home/linuxbrew" ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 # Tmux autostart
 if [ -z "${TMUX}" ]; then
     exec tmux new -A -s lain >/dev/null 2>&1
