@@ -141,8 +141,7 @@ alias transmit="transmission-remote"
 alias ping="prettyping"
 alias vim="nvim"
 alias k="kubectl"
-alias kc="kubectx"
-alias kn="kubens"
+alias d="docker"
 alias lock="systemctl suspend"
 
 # Initialize shell prompt
