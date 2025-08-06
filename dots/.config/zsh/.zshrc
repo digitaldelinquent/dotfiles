@@ -140,7 +140,6 @@ alias cat="bat --theme Dracula"
 alias transmit="transmission-remote"
 alias ping="prettyping"
 alias vim="nvim"
-alias remote-nix="NIX_SSHOPTS='-o RequestTTY=force' nixos-rebuild --target-host admin@192.168.1.241 --use-remote-sudo switch --flake .#homelab"
 alias k="kubectl"
 alias kc="kubectx"
 alias kn="kubens"
@@ -150,10 +149,11 @@ alias lock="systemctl suspend"
 zstyle ':vcs_info:git:*' formats '(%F{magenta}%b%f) '
 setopt PROMPT_SUBST
 
+SHELL_START_STRING="%F{#b18ef9}|>%f"
 SHELL_DIR="%F{cyan}%3~%f"
-SHELL_PROMPT_STRING="%B%(?.%F{green}↪%f.%F{red}↪%f)%b"
+SHELL_END_STRING="%B%(?.%F{green}↪%f.%F{red}↪%f)%b"
 
-PROMPT='${SHELL_DIR} ${vcs_info_msg_0_}${SHELL_PROMPT_STRING} '
+PROMPT='${SHELL_START_STRING} ${SHELL_DIR} ${vcs_info_msg_0_}${SHELL_END_STRING} '
 
 # Eval homebrew for linux
 if [ -d "/home/linuxbrew" ]; then
