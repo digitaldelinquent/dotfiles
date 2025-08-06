@@ -142,6 +142,7 @@ alias ping="prettyping"
 alias vim="nvim"
 alias k="kubectl"
 alias d="docker"
+alias s="source $HOME/.config/zsh/.zshrc"
 alias lock="systemctl suspend"
 
 # Initialize shell prompt
