@@ -4,9 +4,9 @@ background-opacity = 0.8
 background-blur = true
 font-family = Hack Nerd Font Mono
 font-feature = -liga
-font-size = 18
-window-padding-x = 10
-window-padding-y = 10
+font-size = 12
+window-padding-x = 0
+window-padding-y = 0
 
 # Keybinds
 # keybind = super+d=new_split:right
