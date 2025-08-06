@@ -113,7 +113,6 @@ if [ ! -d $TMUX_PLUGINS_DIR ]; then
 fi
 
 # Xresources
-
 if [ ! -f "$HOME/.Xresources" ]; then
     echo "Missing Xresources, installing..."
 
@@ -132,7 +131,7 @@ ef() {
     $EDITOR "$(find $HOME/.config -type f | fzf)"
 }
 
-# User Configuration
+# Alias Configuration
 alias ls="eza --icons"
 alias ll="eza -lg --header --icons"
 alias la="eza -a --icons"
@@ -145,22 +144,16 @@ alias remote-nix="NIX_SSHOPTS='-o RequestTTY=force' nixos-rebuild --target-host 
 alias k="kubectl"
 alias kc="kubectx"
 alias kn="kubens"
-
-# System command aliases
 alias lock="systemctl suspend"
-alias reload="sudo nixos-rebuild switch --flake .#comp22"
-alias upgrade="sudo nixos-rebuild switch --flake .#comp22 --upgrade"
-alias dump="sudo nix-collect-garbage -d"
 
 # Initialize shell prompt
 zstyle ':vcs_info:git:*' formats '(%F{magenta}%b%f) '
 setopt PROMPT_SUBST
 
-SHELL_USER="%B%F{#b18ef9}%n%f%b"
 SHELL_DIR="%F{cyan}%3~%f"
 SHELL_PROMPT_STRING="%B%(?.%F{green}↪%f.%F{red}↪%f)%b"
 
-PROMPT='${SHELL_USER} in ${SHELL_DIR} ${vcs_info_msg_0_}${SHELL_PROMPT_STRING} '
+PROMPT='${SHELL_DIR} ${vcs_info_msg_0_}${SHELL_PROMPT_STRING} '
 
 # Eval homebrew for linux
 if [ -d "/home/linuxbrew" ]; then
