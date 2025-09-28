@@ -152,10 +152,10 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr " +"
 zstyle ':vcs_info:*' unstagedstr " !"
 
-GIT_STATUS_INDICATORS="%F{red}%u%f%F{green}%c%f"
+GIT_STATUS_INDICATORS=""
 
-zstyle ':vcs_info:git:*' formats "(%F{magenta}%b%f)${GIT_STATUS_INDICATORS} "
-zstyle ':vcs_info:git:*' actionformats "(%F{magenta}%b|%a%f)${GIT_STATUS_INDICATORS} "
+zstyle ':vcs_info:git:*' formats "(%F{magenta}%b%f)%F{red}%u%f%F{green}%c%f "
+zstyle ':vcs_info:git:*' actionformats "(%F{magenta}%b|%a%f)%F{red}%u%f%F{green}%c%f "
 setopt PROMPT_SUBST
 
 # Initialize shell prompt
