@@ -33,7 +33,7 @@ return {
             -- Set go to definition key maps
             local custom_attach = function(client)
                 map('n','gD','<cmd>lua vim.lsp.buf.declaration()<CR>')
-                map('n','gd','<cmd>vsplit | lua vim.lsp.buf.definition()<CR>')
+                map('n','gd','<cmd>tab split | lua vim.lsp.buf.definition()<CR>')
             end
 
             local lsp_servers = {
