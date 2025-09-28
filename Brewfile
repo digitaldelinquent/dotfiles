@@ -1,4 +1,3 @@
-brew "ansible"
 brew "asdf"
 brew "bat"
 brew "duckdb"

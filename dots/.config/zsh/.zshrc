@@ -155,11 +155,6 @@ SHELL_END_STRING="%B%(?.%F{green}↪%f.%F{red}↪%f)%b"
 
 PROMPT='${SHELL_START_STRING} ${SHELL_DIR} ${vcs_info_msg_0_}${SHELL_END_STRING} '
 
-# Eval homebrew for linux
-if [ -d "/home/linuxbrew" ]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
-
 # Tmux autostart
 if [ -z "${TMUX}" ]; then
     exec tmux new -A -s lain >/dev/null 2>&1
