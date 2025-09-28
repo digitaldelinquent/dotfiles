@@ -43,19 +43,19 @@ style = "Beam"
 size = 15.0
 
 [font.bold]
-family = "Hack Nerd Font"
+family = "JetBrains Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Hack Nerd Font"
+family = "JetBrains Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Hack Nerd Font"
+family = "JetBrains Mono"
 style = "Italic"
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "JetBrains Mono"
 style = "Regular"
 
 [scrolling]
