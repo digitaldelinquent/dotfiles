@@ -145,7 +145,7 @@ alias d="docker"
 alias s="source $HOME/.config/zsh/.zshrc"
 alias lock="systemctl suspend"
 
-# Initialize shell prompt
+# Initialize git status for shell prompt
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:*' check-for-changes true
@@ -155,6 +155,7 @@ zstyle ':vcs_info:git:*' formats '(%F{magenta}%b%f) %F{red}%u%f%F{green}%c%f '
 zstyle ':vcs_info:git:*' actionformats '(%F{magenta}%b|%a%f) %F{red}%u%f%F{green}%c%f '
 setopt PROMPT_SUBST
 
+# Initialize shell prompt
 SHELL_START_STRING="%F{#b18ef9}|>%f"
 SHELL_DIR="%F{cyan}%1~%f"
 SHELL_END_STRING="%B%(?.%F{green}↪%f.%F{red}↪%f)%b"
