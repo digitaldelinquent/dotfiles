@@ -30,10 +30,6 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots) # Include hidden files
 
-# VCS Info
-autoload -Uz vcs_info
-precmd() { vcs_info }
-
 ## Keybinds
 
 # History search traversal
@@ -145,25 +141,13 @@ alias d="docker"
 alias s="source $HOME/.config/zsh/.zshrc"
 alias lock="systemctl suspend"
 
-# Initialize git status indicators for shell prompt
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' get-revision true
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr ' +'
-zstyle ':vcs_info:*' unstagedstr ' !'
+# Install starship if it doesn't exist
+if ! command -v starship >/dev/null 2>&1; then
+    curl -sS https://starship.rs/install.sh | sh
+fi
 
-GIT_STATUS_INDICATORS=""
-
-zstyle ':vcs_info:git:*' formats '(%F{magenta}%b%f)%F{red}%u%f%F{green}%c%f '
-zstyle ':vcs_info:git:*' actionformats '(%F{magenta}%b|%a%f)%F{red}%u%f%F{green}%c%f '
-setopt PROMPT_SUBST
-
-# Initialize shell prompt
-SHELL_START_STRING="%F{#b18ef9}|>%f"
-SHELL_DIR="%F{cyan}%1~%f"
-SHELL_END_STRING="%B%(?.%F{green}↪%f.%F{red}↪%f)%b"
-
-PROMPT='${SHELL_START_STRING} ${SHELL_DIR} ${vcs_info_msg_0_}${SHELL_END_STRING} '
+# # Initialize shell prompt
+eval "$(starship init zsh)"
 
 # Tmux autostart
 if [ -z "${TMUX}" ]; then
