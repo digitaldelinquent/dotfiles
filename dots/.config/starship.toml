@@ -7,11 +7,12 @@ format = """\
     $git_commit\
     $git_state\
     $git_status\
-    $character"""
-
-[character]
-success_symbol='[↪](bold green)'
-error_symbol='[↪](bold red)'
+    $character
+"""
 
 [directory]
 style = "bold cyan"
+
+[character]
+success_symbol = '[->](bold green)'
+error_symbol = '[->](bold red)'
