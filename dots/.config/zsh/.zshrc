@@ -96,7 +96,6 @@ source $ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/d
 source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
 # TPM (tmux plugin manager)
-
 TMUX_PLUGINS_DIR="$XDG_CONFIG_HOME/tmux/plugins"
 
 if [ ! -d $TMUX_PLUGINS_DIR ]; then
