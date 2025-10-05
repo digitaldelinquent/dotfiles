@@ -13,6 +13,9 @@ format = """\
 [directory]
 style = "bold cyan"
 
+[git_branch]
+truncation_length = 35
+
 [character]
-success_symbol = '[->](bold green)'
-error_symbol = '[->](bold red)'
+success_symbol = "[->](bold green)"
+error_symbol = "[->](bold red)"
