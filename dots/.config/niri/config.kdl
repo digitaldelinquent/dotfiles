@@ -42,6 +42,7 @@ binds {
     Ctrl+Print { screenshot show-pointer=false; }
 
     Mod+i { spawn "sysinfo.sh"; }
+    Mod+l { spawn "swaylock" "-i" "$HOME/Media/Wallpapers/lain.png"; }
 }
 
 switch-events {
