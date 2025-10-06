@@ -29,3 +29,4 @@ window-rule {
 }
 
 spawn-at-startup "wallpaper"
+spawn-at-startup "notifications"
