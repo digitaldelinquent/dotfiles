@@ -1,7 +1,7 @@
 # Dotfiles
 
-These dotfiles use homebrew and pacman to install all cli-based tooling. Please use your 
-systems package manager or something like flatpak for everything else.
+These dotfiles use homebrew and pacman to install all cli-based tooling (install scripts coming soon). 
+Please use your systems package manager or something like flatpak for everything else.
 
 1. Install all cli-based packages by running `brew bundle install` to re-install all the 
    packages listed in the brewfile
