@@ -31,6 +31,10 @@ binds {
     Mod+i { spawn "sysinfo.sh"; }
 }
 
+switch-events {
+    lid-close { spawn "swaylock" "-i" "$HOME/Media/Wallpapers/lain.png"; }
+}
+
 layout {
     focus-ring {
         width 2
