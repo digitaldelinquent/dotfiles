@@ -43,5 +43,5 @@ window-rule {
     open-on-workspace "terminal"
 }
 
-spawn-at-startup "swaybg" "-m" "fill" "-i" "$HOME/Media/Wallpapers/lain.png"
+spawn-at-startup "wallpaper.sh"
 spawn-at-startup "notifications.sh"
