@@ -28,10 +28,10 @@ binds {
     Mod+Left { focus-column-left; }
     Mod+Right { focus-column-right; }
 
-    Alt+Up { move-window-to-workspace-up; }
-    Alt+Down { move-window-to-workspace-down; }
-    Alt+Left { move-column-left; }
-    Alt+Right { move-column-right; }
+    Mod+Alt+Up { move-window-to-workspace-up; }
+    Mod+Alt+Down { move-window-to-workspace-down; }
+    Mod+Alt+Left { move-column-left; }
+    Mod+Alt+Right { move-column-right; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
