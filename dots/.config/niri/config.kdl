@@ -1,3 +1,6 @@
+workspace "browser"
+workspace "terminal"
+
 input {
     keyboard {
         xkb {
@@ -27,6 +30,16 @@ window-rule {
         width 2
         active-color "#b18ef9"
     }
+}
+
+window-rule {
+    match at-startup=true app-id=r#"^app\.zen_browser\.zen$"#
+    open-on-workspace "browser"
+}
+
+window-rule {
+    match at-startup=true app-id=r#"^com\.mitchellh\.ghostty$"#
+    open-on-workspace "terminal"
 }
 
 spawn-at-startup "wallpaper.sh"
