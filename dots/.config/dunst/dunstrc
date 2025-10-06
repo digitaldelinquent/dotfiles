@@ -49,7 +49,7 @@
     font = JetBrains Mono:pixelsize=12;2
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/Tela-purple-dark/16x16/status/:/usr/share/icons/Tela-purple-dark/16x16/devices/
+    icon_path = /usr/share/icons/Adwaita/16x16/
 # syntax:ssHash
 
 # act1: #4c83ad;
