@@ -18,7 +18,8 @@ input {
 
 binds {
     Mod+Return { spawn "ghostty"; }
-    Mod+Space { spawn "launcher.sh"; }
+    Mod+Space { spawn "rofi" "-show" "drun"; }
+    Mod+q { close-window; }
     Mod+i { spawn "sysinfo.sh"; }
 }
 
@@ -42,5 +43,5 @@ window-rule {
     open-on-workspace "terminal"
 }
 
-spawn-at-startup "wallpaper.sh"
+spawn-at-startup "swaybg" "-m" "fill" "-i" "$HOME/Media/Wallpapers/lain.png"
 spawn-at-startup "notifications.sh"
