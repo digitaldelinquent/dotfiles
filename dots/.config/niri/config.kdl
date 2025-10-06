@@ -59,3 +59,5 @@ window-rule {
 
 spawn-at-startup "wallpaper.sh"
 spawn-at-startup "notifications.sh"
+spawn-at-startup "ghostty"
+spawn-at-startup "app.zen_browser.zen"
