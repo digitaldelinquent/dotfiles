@@ -7,6 +7,7 @@ font-feature = -liga
 font-size = 12
 window-padding-x = 0
 window-padding-y = 0
+window-decoration = none
 
 # Keybinds
 # keybind = super+d=new_split:right

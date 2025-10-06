@@ -7,7 +7,7 @@ everything else.
 1. Install all cli-based packages by running `brew bundle install` to re-install all the 
    packages listed in the brewfile
 
-2. Next run `stow --adopt dots` to symlink all config files to your home directory.
+2. Next run `stow -R --adopt dots` to symlink all config files to your home directory.
 
 2. After that run `:PlugInstall` while inside the a neovim process to download all vim
    plug packages.
