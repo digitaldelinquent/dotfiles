@@ -20,17 +20,27 @@ binds {
     Mod+Return { spawn "ghostty"; }
     Mod+Space { spawn "rofi" "-show" "drun"; }
     Mod+q { close-window; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+
+    Print { screenshot-screen show-pointer=false; }
+    Ctrl+Print { screenshot show-pointer=false; }
+
     Mod+i { spawn "sysinfo.sh"; }
+}
+
+layout {
+    focus-ring {
+        width 2
+        active-color "#b18ef9"
+    }
 }
 
 window-rule {
     open-maximized true
     draw-border-with-background false
-
-    focus-ring {
-        width 2
-        active-color "#b18ef9"
-    }
 }
 
 window-rule {
