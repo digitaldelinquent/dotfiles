@@ -46,7 +46,7 @@
     #  * anything else will be interpreted as a X color.
     separator_color = frame
 
-    font = Noto Sans:pixelsize=12;2
+    font = JetBrains Mono:pixelsize=12;2
 
     # Paths to default icons.
     icon_path = /usr/share/icons/Tela-purple-dark/16x16/status/:/usr/share/icons/Tela-purple-dark/16x16/devices/
