@@ -15,7 +15,8 @@ input {
 
 binds {
     Mod+Return { spawn "ghostty"; }
-    Mod+Space { spawn "launcher"; }
+    Mod+Space { spawn "launcher.sh"; }
+    Mod+i { spawn "sysinfo.sh"; }
 }
 
 window-rule {
@@ -28,5 +29,5 @@ window-rule {
     }
 }
 
-spawn-at-startup "wallpaper"
-spawn-at-startup "notifications"
+spawn-at-startup "wallpaper.sh"
+spawn-at-startup "notifications.sh"
