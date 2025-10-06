@@ -19,11 +19,19 @@ input {
 binds {
     Mod+Return { spawn "ghostty"; }
     Mod+Space { spawn "rofi" "-show" "drun"; }
+
     Mod+q { close-window; }
+    Mod+f { fullscreen-window; }
+
     Mod+Up { focus-window-or-workspace-up; }
     Mod+Down { focus-window-or-workspace-down; }
     Mod+Left { focus-column-left; }
     Mod+Right { focus-column-right; }
+
+    Alt+Up { move-window-to-workspace-up; }
+    Alt+Down { move-window-to-workspace-down; }
+    Alt+Left { move-column-left; }
+    Alt+Right { move-column-right; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
