@@ -16,12 +16,19 @@ input {
     }
 }
 
+gestures {
+    hot-corners {
+        off
+    }
+}
+
 binds {
     Mod+Return { spawn "ghostty"; }
     Mod+Space { spawn "rofi" "-show" "drun"; }
 
     Mod+q { close-window; }
     Mod+f { fullscreen-window; }
+    Mod+o { toggle-overview; }
 
     Mod+Up { focus-window-or-workspace-up; }
     Mod+Down { focus-window-or-workspace-down; }
@@ -51,6 +58,7 @@ binds {
 
     Mod+i { spawn "sysinfo.sh"; }
     Mod+l { spawn "swaylock" "-i" "$HOME/Media/Wallpapers/lain.png"; }
+    Ctrl+l { quit; }
 }
 
 switch-events {
@@ -79,7 +87,7 @@ window-rule {
     open-on-workspace "terminal"
 }
 
-spawn-at-startup "wallpaper.sh"
+spawn-sh-at-startup "swaybg -m fill -i $HOME/Media/Wallpapers/lain.png"
 spawn-at-startup "notifications.sh"
 spawn-at-startup "ghostty"
 spawn-at-startup "app.zen_browser.zen"
