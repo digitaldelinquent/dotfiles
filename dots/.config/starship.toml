@@ -19,3 +19,4 @@ truncation_length = 35
 [character]
 success_symbol = "[->](bold green)"
 error_symbol = "[->](bold red)"
+vimcmd_symbol = "[<-](bold green)"
