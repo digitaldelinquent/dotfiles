@@ -17,8 +17,16 @@ create_missing_dirs() {
 install_missing_packages() {
     if [ ! command -v yay >/dev/null 2>&1 ]; then
         echo "Missing yay, cloning into Downloads and installing..."
+        
+        if [ ! command -v git >/dev/null 2>&1 ]; then
+            echo "Missing git, installing git first before installing yay..."
+            sudo pacman -S git
+            echo "Git is installed!"
+        fi
+
         git clone --quiet git clone https://aur.archlinux.org/yay-bin \
             $DOWNLOADS_DIR/yay
+        echo "Yay is installed!"
     fi
 
     echo "Updating and upgrading system..."
