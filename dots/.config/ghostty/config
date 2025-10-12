@@ -1,4 +1,4 @@
-# Look and feel
+#Look and feel
 theme = Dracula
 background-opacity = 0.8
 background-blur = true
@@ -7,7 +7,7 @@ font-feature = -liga
 font-size = 12
 window-padding-x = 0
 window-padding-y = 0
-window-decoration=server
+window-decoration=none
 gtk-titlebar = false
 
 # Keybinds
