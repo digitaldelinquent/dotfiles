@@ -6,12 +6,14 @@ dhcpcd
 docker
 dunst
 eza
+fastfetch
 flatpak
 fwupd
 fzf
 ghostty
 git
 grub
+htop
 impala
 iwd
 jq
