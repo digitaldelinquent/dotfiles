@@ -112,6 +112,7 @@ main() {
 
     echo "Changing default shell for user $(whoami) to zsh..."
     chsh -s /bin/zsh $(whoami)
+    rm -f $HOME/.bash*
     echo "Default shell for user $(whoami) is now zsh!"
 
     echo "System is now configured, please logout and log back in"
