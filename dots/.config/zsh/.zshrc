@@ -126,8 +126,10 @@ ef() {
     $EDITOR "$(find $HOME/.config -type f | fzf)"
 }
 
+# Initialize zoxide
+eval "$(zoxide init zsh)"
+
 # Alias Configuration
-alias cd="zoxide"
 alias ls="eza --icons"
 alias ll="eza -lg --header --icons"
 alias la="eza -a --icons"
