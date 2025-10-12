@@ -22,6 +22,10 @@ install_missing_packages() {
             $DOWNLOADS_DIR/yay
     fi
 
+    echo "Updating and upgrading system..."
+    yay -Syuu
+    echo "Update and upgrade complete!"
+
     echo "Installing missing packages..."
 
     yay -S - < packages.txt && flatpak install flathub app.zen_browser.zen
@@ -51,13 +55,21 @@ main() {
     install_missing_packages 
     install_missing_dracula_themes
 
+    echo "Stowing dots..."
     stow -R --adopt dots
+    echo "Dots are now symlinked!"
 
+    echo "Enabling some services..."
     sudo systemctl enable --now iwd
     sudo systemctl enable --now bluetooth.service
     sudo systemctl enable --now ly
+    echo "Networking, bluetooth and display manager services are up!"
 
-    chsh -s /bin/zsh
+    echo "Changing default shell for user $(whoami) to zsh..."
+    chsh -s /bin/zsh $(whoami)
+    echo "Default shell for user $(whoami) is now zsh!"
+
+    echo "System is now configured, please logout and log back in"
 }
 
 main
