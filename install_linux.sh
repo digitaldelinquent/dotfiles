@@ -17,7 +17,6 @@ create_missing_dirs() {
 install_missing_packages() {
     if [ ! command -v yay >/dev/null 2>&1 ]; then
         echo "Missing yay, cloning into Downloads and installing..."
-
         git clone --quiet git clone https://aur.archlinux.org/yay-bin \
             $DOWNLOADS_DIR/yay
     fi
@@ -27,9 +26,7 @@ install_missing_packages() {
     echo "Update and upgrade complete!"
 
     echo "Installing missing packages..."
-
     yay -S - < packages.txt && flatpak install flathub app.zen_browser.zen
-    
     echo "Missing packages installed!"
 }
 
@@ -41,7 +38,6 @@ install_missing_dracula_themes() {
     cp $DOWNLOADS_DIR/rofi/theme/config1.rasi $XDG_CONFIG_DIR/rofi/config.rasi
 
     echo "Installing gtk theme..."
-
     git clone --quuiet https://github.com/dracula/gtk \
         $GTK_THEMES_DIR/Dracula
 
