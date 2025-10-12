@@ -2,6 +2,7 @@ asdf-vm
 bat
 bluetui
 brightnessctl
+cups
 dhcpcd
 docker
 dunst
