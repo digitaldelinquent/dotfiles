@@ -46,6 +46,9 @@ install_missing_dracula_themes() {
     # Rofi
     if [ ! -f "$XDG_CONFIG_DIR/rofi/config.rasi" ]; then
         echo "Missing rofi theme, installing into config dir of $(whoami)..."
+
+        # Delete folders in case they exist in Downloads
+        rm -rf $DOWNLOADS_DIR/rofi &&
         git clone --quiet https://github.com/dracula/rofi \
             $DOWNLOADS_DIR/rofi
 
