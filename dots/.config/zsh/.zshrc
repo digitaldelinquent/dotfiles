@@ -9,6 +9,8 @@ export FZF_DEFAULT_COMMAND="find ~/ -type f"
 # Shell history
 HISTSIZE=10000
 SAVEHIST=10000
+
+mkdir -p $XDG_DATA_HOME/zsh
 HISTFILE=$XDG_DATA_HOME/zsh/history
 
 # Shell compdump
