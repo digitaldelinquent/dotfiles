@@ -57,7 +57,7 @@ binds {
     Ctrl+Print { screenshot show-pointer=false; }
 
     Mod+i { spawn "sysinfo.sh"; }
-    Mod+l { spawn "swaylock" "-i" "$HOME/.dotfiles/wallpapers/flcl.png"; }
+    Mod+l { spawn-sh "swaylock -i $HOME/.dotfiles/wallpapers/flcl.png; systemctl suspend"; }
     Ctrl+l { quit; }
 }
 
