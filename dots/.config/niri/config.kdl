@@ -50,8 +50,8 @@ binds {
     XF86AudioPrev allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext allow-when-locked=true { spawn-sh "playerctl next"; }
 
-    XF86MonBrightnessUp { spawn "brightnessctl" "s" "10%+"; }
-    XF86MonBrightnessDown { spawn "brightnessctl" "s" "10%-"; }
+    XF86MonBrightnessUp { spawn "brightnessctl" "s" "5%+"; }
+    XF86MonBrightnessDown { spawn "brightnessctl" "s" "5%-"; }
 
     Print { screenshot-screen show-pointer=false; }
     Ctrl+Print { screenshot show-pointer=false; }
