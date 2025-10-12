@@ -34,6 +34,7 @@ install_missing_dracula_themes() {
     echo "Checking if system is missing themes for Xresources..."
 
     missing_theme_count=0
+    declare -a missing_themes
 
     # Xresources
     if [ ! -f "$HOME/.Xresources" ]; then
@@ -43,6 +44,7 @@ install_missing_dracula_themes() {
         echo "Xresources installation complete!"
 
         ((++missing_theme_count))
+        missing_themes+="Xresources"
     fi
     
     echo "Checking if system is missing themes for rofi..."
@@ -60,6 +62,7 @@ install_missing_dracula_themes() {
         echo "Rofi theme installation complete!"
 
         ((++missing_theme_count))
+        missing_themes+="rofi"
     fi
 
     echo "Checking if system is missing themes for gtk..."
@@ -72,9 +75,14 @@ install_missing_dracula_themes() {
         echo "GTK theme installation complete!"
 
         ((++missing_theme_count))
+        missing_themes+="gtk"
     fi
 
-    echo "Installed $missing_theme_count missing dracula themes!"
+    if [ $missing_theme_count -eq 0 ]; then
+        echo "No Dracula themes were missing!"
+    else
+        echo "Installed $missing_theme_count missing dracula themes ($missing_themes)!"
+    fi
 }
 
 main() {
