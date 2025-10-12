@@ -142,7 +142,6 @@ alias vim="nvim"
 alias k="kubectl"
 alias d="docker"
 alias s="source $HOME/.config/zsh/.zshrc"
-alias lock="systemctl suspend"
 
 # Install starship if it doesn't exist
 if ! command -v starship >/dev/null 2>&1; then
