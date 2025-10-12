@@ -127,7 +127,7 @@ ef() {
 }
 
 # Initialize zoxide
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
 # Alias Configuration
 alias ls="eza --icons"
