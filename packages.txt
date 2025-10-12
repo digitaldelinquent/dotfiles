@@ -2,6 +2,7 @@ asdf-vm
 bat
 bluetui
 brightnessctl
+caido-desktop
 cups
 dhcpcd
 docker
@@ -37,6 +38,7 @@ playerctl
 prettyping
 pulsemixer
 qt6ct
+remmina
 rofi
 stow
 sudo
