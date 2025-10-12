@@ -50,4 +50,5 @@ uv
 wl-clipboard
 xorg-xwayland
 xwayland-satellite
+zoxide
 zsh

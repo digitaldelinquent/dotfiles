@@ -127,6 +127,7 @@ ef() {
 }
 
 # Alias Configuration
+alias cd="zoxide"
 alias ls="eza --icons"
 alias ll="eza -lg --header --icons"
 alias la="eza -a --icons"
