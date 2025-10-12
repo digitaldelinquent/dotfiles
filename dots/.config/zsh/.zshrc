@@ -139,9 +139,6 @@ alias lla="eza -lga --header --icons"
 alias cat="bat --theme Dracula"
 alias ping="prettyping"
 alias vim="nvim"
-alias k="kubectl"
-alias d="docker"
-alias s="source $HOME/.config/zsh/.zshrc"
 
 # Install starship if it doesn't exist
 if ! command -v starship >/dev/null 2>&1; then
