@@ -33,12 +33,16 @@ install_missing_packages() {
 install_missing_dracula_themes() {
     echo "Checking if system is missing themes for Xresources..."
 
+    missing_theme_count=0
+
     # Xresources
     if [ ! -f "$HOME/.Xresources" ]; then
         echo "Missing Xresources, installing into home directory of $(whoami)..."
         curl https://raw.githubusercontent.com/dracula/xresources/master/Xresources \
             -o $HOME/.Xresources
         echo "Xresources installation complete!"
+
+        ((++missing_theme_count))
     fi
     
     echo "Checking if system is missing themes for rofi..."
@@ -54,6 +58,8 @@ install_missing_dracula_themes() {
 
         cp $DOWNLOADS_DIR/rofi/theme/config1.rasi $XDG_CONFIG_DIR/rofi/config.rasi
         echo "Rofi theme installation complete!"
+
+        ((++missing_theme_count))
     fi
 
     echo "Checking if system is missing themes for gtk..."
@@ -64,9 +70,11 @@ install_missing_dracula_themes() {
         git clone --quiet https://github.com/dracula/gtk \
             $GTK_THEMES_DIR/Dracula
         echo "GTK theme installation complete!"
+
+        ((++missing_theme_count))
     fi
 
-    echo "Missing Dracula themes have been installed!"
+    echo "Installed $missing_theme_count missing dracula themes!"
 }
 
 main() {
