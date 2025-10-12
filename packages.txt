@@ -1,5 +1,4 @@
 asdf-vm
-netbird
 bat
 bluetui
 brightnessctl
