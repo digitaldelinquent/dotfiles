@@ -46,7 +46,7 @@ install_missing_dracula_themes() {
     # Rofi
     if [ ! -f "$XDG_CONFIG_DIR/rofi/config.rasi" ]; then
         echo "Missing rofi theme, installing into config dir of $(whoami)..."
-        git clone --quuiet https://github.com/dracula/rofi \
+        git clone --quiet https://github.com/dracula/rofi \
             $DOWNLOADS_DIR/rofi
 
         cp $DOWNLOADS_DIR/rofi/theme/config1.rasi $XDG_CONFIG_DIR/rofi/config.rasi
@@ -58,7 +58,7 @@ install_missing_dracula_themes() {
     # GTK Theme
     if [ ! -d "$GTK_THEMES_DIR/Dracula" ]; then
         echo "Installing gtk theme..."
-        git clone --quuiet https://github.com/dracula/gtk \
+        git clone --quiet https://github.com/dracula/gtk \
             $GTK_THEMES_DIR/Dracula
         echo "GTK theme installation complete!"
     fi
