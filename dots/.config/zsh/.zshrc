@@ -109,16 +109,6 @@ if [ ! -d $TMUX_PLUGINS_DIR ]; then
     echo "TPM (tmux plugin manager) installation complete!"
 fi
 
-# Xresources
-if [ ! -f "$HOME/.Xresources" ]; then
-    echo "Missing Xresources, installing..."
-
-    curl https://raw.githubusercontent.com/dracula/xresources/master/Xresources \
-        -o $HOME/.Xresources
-    
-    echo "Xresources installation complete!"
-fi
-
 # Plugin Options
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#888888"
 
@@ -141,7 +131,7 @@ alias ping="prettyping"
 alias vim="nvim"
 
 # Install starship if it doesn't exist
-if ! command -v starship >/dev/null 2>&1; then
+if [ ! command -v starship >/dev/null 2>&1 ]; then
     curl -sS https://starship.rs/install.sh | sh
 fi
 
