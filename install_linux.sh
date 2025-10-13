@@ -24,8 +24,11 @@ install_missing_packages() {
             echo "Git is installed!"
         fi
 
+        rm -rf $DOWNLOADS_DIR/yay
         git clone --quiet git clone https://aur.archlinux.org/yay-bin \
             $DOWNLOADS_DIR/yay
+        makepkg -si -D $DOWNLOADS_DIR/yay 
+
         echo "Yay is installed!"
     fi
 
