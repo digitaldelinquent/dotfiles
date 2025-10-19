@@ -57,12 +57,12 @@ binds {
     Ctrl+Print { screenshot show-pointer=false; }
 
     Mod+i { spawn "sysinfo.sh"; }
-    Mod+l { spawn-sh "swaylock -i $HOME/.dotfiles/wallpapers/flcl.png; systemctl suspend"; }
+    Mod+l { spawn-sh "swaylock -i $HOME/.dotfiles/wallpapers/nagato.png; systemctl suspend"; }
     Ctrl+l { quit; }
 }
 
 switch-events {
-    lid-close { spawn "swaylock" "-i" "$HOME/.dotfiles/wallpapers/flcl.png"; }
+    lid-close { spawn "swaylock" "-i" "$HOME/.dotfiles/wallpapers/nagato.png"; }
 }
 
 layout {
@@ -91,7 +91,7 @@ hotkey-overlay {
     skip-at-startup
 }
 
-spawn-sh-at-startup "swaybg -m fill -i $HOME/.dotfiles/wallpapers/flcl.png"
+spawn-sh-at-startup "swaybg -m fill -i $HOME/.dotfiles/wallpapers/nagato.png"
 spawn-at-startup "notifications.sh"
 spawn-at-startup "ghostty"
 spawn-at-startup "app.zen_browser.zen"
