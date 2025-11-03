@@ -111,6 +111,7 @@ main() {
     sudo systemctl enable --now iwd
     sudo systemctl enable --now bluetooth.service
     sudo systemctl enable --now ly
+    sudo systemctl enable --now tailscaled
     echo "Networking, bluetooth and display manager services are up!"
 
     echo "Changing default shell for user $(whoami) to zsh..."

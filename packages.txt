@@ -5,6 +5,7 @@ brightnessctl
 caido-desktop
 cups
 dhcpcd
+dnsutils
 docker
 dunst
 eza
@@ -46,6 +47,7 @@ swaybg
 swayidle
 swaylock
 syncthing
+tailscale
 tmux
 ttf-jetbrains-mono
 uv
