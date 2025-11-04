@@ -108,7 +108,8 @@ main() {
     echo "Dots are now symlinked!"
 
     echo "Enabling some services..."
-    sudo systemctl enable --now iwd
+    sudo systemctl enable --now NetworkManager
+    sudo systemctl enable --now systemd-resolved
     sudo systemctl enable --now bluetooth.service
     sudo systemctl enable --now ly
     sudo systemctl enable --now tailscaled
