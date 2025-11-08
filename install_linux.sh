@@ -96,6 +96,19 @@ install_missing_dracula_themes() {
     fi
 }
 
+configure_networking () {
+    sudo systemctl enable --now NetworkManager
+    sudo systemctl enable --now systemd-resolved
+
+    sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+    echo "Symlinked systemd-resolved conf as /etc/resolv.conf"
+
+    sudo echo "[main]\ndns=systemd-resolved" >> /etc/NetworkManager/conf.d
+    echo "Default DNS is now systemd-resolved"
+
+    sudo systemctl enable --now tailscaled
+}
+
 main() {
     source dots/.profile
 
@@ -108,11 +121,9 @@ main() {
     echo "Dots are now symlinked!"
 
     echo "Enabling some services..."
-    sudo systemctl enable --now NetworkManager
-    sudo systemctl enable --now systemd-resolved
+    configure_networking
     sudo systemctl enable --now bluetooth.service
     sudo systemctl enable --now ly
-    sudo systemctl enable --now tailscaled
     echo "Networking, bluetooth and display manager services are up!"
 
     echo "Changing default shell for user $(whoami) to zsh..."
