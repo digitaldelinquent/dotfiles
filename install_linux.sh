@@ -39,6 +39,10 @@ install_missing_packages() {
     echo "Installing missing packages..."
     yay -S - < packages.txt && flatpak install flathub app.zen_browser.zen
     echo "Missing packages installed!"
+
+    # Configure downloads dir for zen browser
+    flatpak override --user --filesystem=~/Downloads app.zen_browser.zen
+    echo "Downloads directory configured for zen browser"
 }
 
 install_missing_dracula_themes() {
