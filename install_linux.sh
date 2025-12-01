@@ -127,6 +127,7 @@ main() {
     echo "Enabling some services..."
     configure_networking
     sudo systemctl enable --now bluetooth.service
+    sudo systemctl enable --now reflector.service
     sudo systemctl enable --now ly
     echo "Networking, bluetooth and display manager services are up!"
 
