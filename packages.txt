@@ -36,6 +36,7 @@ playerctl
 prettyping
 pulsemixer
 qt6ct
+reflector
 remmina
 rofi
 stow
