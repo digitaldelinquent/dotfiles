@@ -17,7 +17,7 @@ create_missing_dirs() {
 install_missing_packages() {
     if [ ! command -v yay >/dev/null 2>&1 ]; then
         echo "Missing yay, cloning into Downloads and installing..."
-        
+
         if [ ! command -v git >/dev/null 2>&1 ]; then
             echo "Missing git, installing git first before installing yay..."
             sudo pacman -S git
@@ -25,9 +25,9 @@ install_missing_packages() {
         fi
 
         rm -rf $DOWNLOADS_DIR/yay
-        git clone --quiet git clone https://aur.archlinux.org/yay-bin \
+        git clone --quiet https://aur.archlinux.org/yay-bin \
             $DOWNLOADS_DIR/yay
-        makepkg -si -D $DOWNLOADS_DIR/yay 
+        makepkg -si -D $DOWNLOADS_DIR/yay
 
         echo "Yay is installed!"
     fi
@@ -61,7 +61,7 @@ install_missing_dracula_themes() {
         ((++missing_theme_count))
         missing_themes+="Xresources"
     fi
-    
+
     echo "Checking if system is missing themes for rofi..."
 
     # Rofi
@@ -117,7 +117,7 @@ main() {
     source dots/.profile
 
     create_missing_dirs
-    install_missing_packages 
+    install_missing_packages
     install_missing_dracula_themes
 
     echo "Stowing dots..."
