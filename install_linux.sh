@@ -128,7 +128,7 @@ main() {
     configure_networking
     sudo systemctl enable --now bluetooth.service
     sudo systemctl enable --now reflector.service
-    sudo systemctl enable --now ly
+    sudo systemctl enable --now ly@tty1.service
     echo "Networking, bluetooth and display manager services are up!"
 
     echo "Changing default shell for user $(whoami) to zsh..."
