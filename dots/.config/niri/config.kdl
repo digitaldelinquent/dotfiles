@@ -66,6 +66,7 @@ switch-events {
 }
 
 layout {
+    gaps 0
     focus-ring {
         width 2
         active-color "#b18ef9"
