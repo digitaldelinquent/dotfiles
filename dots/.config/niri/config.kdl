@@ -67,8 +67,8 @@ switch-events {
 
 layout {
     gaps 0
-    focus-ring {
-        width 2
+    border {
+        width 3
         active-color "#b18ef9"
         inactive-color "#44475a"
     }
