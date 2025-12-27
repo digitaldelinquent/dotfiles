@@ -97,18 +97,6 @@ fi
 source $ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
-# TPM (tmux plugin manager)
-TMUX_PLUGINS_DIR="$XDG_CONFIG_HOME/tmux/plugins"
-
-if [ ! -d $TMUX_PLUGINS_DIR ]; then
-    echo "Missing TPM (tmux plugin manager), installing..."
-
-    mkdir $TMUX_PLUGINS_DIR
-    git clone --quiet https://github.com/tmux-plugins/tpm $TMUX_PLUGINS_DIR/tpm
-
-    echo "TPM (tmux plugin manager) installation complete!"
-fi
-
 # Plugin Options
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#888888"
 
